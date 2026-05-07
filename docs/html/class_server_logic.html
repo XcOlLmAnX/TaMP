@@ -1,0 +1,494 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.16.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>TaMP: Класс ServerLogic</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">TaMP<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">Task and Math Platform — клиент-серверное приложение на Qt/C++</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.16.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Поиск',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('class_server_logic.html','','class_server_logic-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Класс ServerLogic</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Диспетчер запросов: маршрутизирует команды к специализированным обработчикам.  
+ <a href="#details">Подробнее...</a></p>
+
+<p><code>#include &lt;<a class="el" href="server__logic_8h_source.html">server_logic.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:a9c31117497cac57c53a19b16c1038039" id="r_a9c31117497cac57c53a19b16c1038039"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a9c31117497cac57c53a19b16c1038039">ServerLogic</a> (<a class="el" href="class_db_handler.html">DbHandler</a> &amp;<a class="el" href="#a1479c1b84839c126d8363cb3edebae1e">db</a>)</td></tr>
+<tr class="memdesc:a9c31117497cac57c53a19b16c1038039"><td class="mdescLeft">&#160;</td><td class="mdescRight">Создаёт объект бизнес-логики, привязанный к указанному <a class="el" href="class_db_handler.html" title="Управляет SQLite-базой данных пользователей через Qt SQL.">DbHandler</a>.  <br /></td></tr>
+<tr class="memitem:a30bbbe8779bc0f0ae9ac2ccd57d8d132" id="r_a30bbbe8779bc0f0ae9ac2ccd57d8d132"><td class="memItemLeft">std::string&#160;</td><td class="memItemRight"><a class="el" href="#a30bbbe8779bc0f0ae9ac2ccd57d8d132">handleRequest</a> (const <a class="el" href="struct_request.html">Request</a> &amp;req)</td></tr>
+<tr class="memdesc:a30bbbe8779bc0f0ae9ac2ccd57d8d132"><td class="mdescLeft">&#160;</td><td class="mdescRight">Маршрутизирует запрос к соответствующему обработчику и возвращает ответ.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-methods" class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Закрытые члены</h2></td></tr>
+<tr class="memitem:abfc93814f01b66208c0cd5f6245c4a6e" id="r_abfc93814f01b66208c0cd5f6245c4a6e"><td class="memItemLeft">std::string&#160;</td><td class="memItemRight"><a class="el" href="#abfc93814f01b66208c0cd5f6245c4a6e">handleAuth</a> (const std::vector&lt; std::string &gt; &amp;args)</td></tr>
+<tr class="memdesc:abfc93814f01b66208c0cd5f6245c4a6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Обрабатывает команду AUTH: проверяет логин и MD5-хэш пароля.  <br /></td></tr>
+<tr class="memitem:aaba66699c6386675982eb004b424cb6e" id="r_aaba66699c6386675982eb004b424cb6e"><td class="memItemLeft">std::string&#160;</td><td class="memItemRight"><a class="el" href="#aaba66699c6386675982eb004b424cb6e">handleReg</a> (const std::vector&lt; std::string &gt; &amp;args)</td></tr>
+<tr class="memdesc:aaba66699c6386675982eb004b424cb6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Обрабатывает команду REG: регистрирует нового пользователя.  <br /></td></tr>
+<tr class="memitem:afea413f1d21cec022594674f6385e17a" id="r_afea413f1d21cec022594674f6385e17a"><td class="memItemLeft">std::string&#160;</td><td class="memItemRight"><a class="el" href="#afea413f1d21cec022594674f6385e17a">handleReset</a> (const std::vector&lt; std::string &gt; &amp;args)</td></tr>
+<tr class="memdesc:afea413f1d21cec022594674f6385e17a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Обрабатывает команду RESET: генерирует код и отправляет его на email.  <br /></td></tr>
+<tr class="memitem:a94e436f54edbef1ad1f2b32a4ccc153f" id="r_a94e436f54edbef1ad1f2b32a4ccc153f"><td class="memItemLeft">std::string&#160;</td><td class="memItemRight"><a class="el" href="#a94e436f54edbef1ad1f2b32a4ccc153f">handleConfirm</a> (const std::vector&lt; std::string &gt; &amp;args)</td></tr>
+<tr class="memdesc:a94e436f54edbef1ad1f2b32a4ccc153f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Обрабатывает команду CONFIRM: проверяет код сброса пароля.  <br /></td></tr>
+<tr class="memitem:a222bca00f460901a438834df4a764ee0" id="r_a222bca00f460901a438834df4a764ee0"><td class="memItemLeft">std::string&#160;</td><td class="memItemRight"><a class="el" href="#a222bca00f460901a438834df4a764ee0">handleNewpass</a> (const std::vector&lt; std::string &gt; &amp;args)</td></tr>
+<tr class="memdesc:a222bca00f460901a438834df4a764ee0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Обрабатывает команду NEWPASS: удаляет код из resetCodes и обновляет пароль в БД.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-attribs" class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Закрытые данные</h2></td></tr>
+<tr class="memitem:a1479c1b84839c126d8363cb3edebae1e" id="r_a1479c1b84839c126d8363cb3edebae1e"><td class="memItemLeft"><a class="el" href="class_db_handler.html">DbHandler</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a1479c1b84839c126d8363cb3edebae1e">db</a></td></tr>
+<tr class="memdesc:a1479c1b84839c126d8363cb3edebae1e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ссылка на обработчик базы данных.  <br /></td></tr>
+<tr class="memitem:a21f20e1b41bbfa281822bf97680d56cc" id="r_a21f20e1b41bbfa281822bf97680d56cc"><td class="memItemLeft">std::map&lt; std::string, std::string &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a21f20e1b41bbfa281822bf97680d56cc">resetCodes</a></td></tr>
+<tr class="memdesc:a21f20e1b41bbfa281822bf97680d56cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Временные коды сброса: логин → код.  <br /></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>Диспетчер запросов: маршрутизирует команды к специализированным обработчикам. </p>
+<p>Принимает разобранный <a class="el" href="struct_request.html" title="Разобранный запрос клиента.">Request</a> и возвращает строку ответа в формате протокола TaMP. Взаимодействует с <a class="el" href="class_db_handler.html" title="Управляет SQLite-базой данных пользователей через Qt SQL.">DbHandler</a> для операций с базой данных и со <a class="el" href="class_smtp_client.html" title="Статический класс-утилита для отправки транзакционных email через Mail.ru SMTP.">SmtpClient</a> для отправки email при сбросе пароля.</p>
+<p>Временное хранилище кодов сброса (resetCodes) живёт в памяти процесса — коды не персистентны и сбрасываются при перезапуске сервера.</p>
+<dl class="section see"><dt>См. также</dt><dd><a class="el" href="class_db_handler.html" title="Управляет SQLite-базой данных пользователей через Qt SQL.">DbHandler</a>, <a class="el" href="class_smtp_client.html" title="Статический класс-утилита для отправки транзакционных email через Mail.ru SMTP.">SmtpClient</a>, <a class="el" href="class_server_interface.html" title="Управляет жизненным циклом серверного TCP-сокета и последовательной обработкой клиентов.">ServerInterface</a> </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="server__logic_8h_source.html">server_logic.h</a> строка <a class="el" href="server__logic_8h_source.html#l00026">26</a></p>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Конструктор(ы)</h2>
+<a id="a9c31117497cac57c53a19b16c1038039" name="a9c31117497cac57c53a19b16c1038039"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c31117497cac57c53a19b16c1038039">&#9670;&#160;</a></span>ServerLogic()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ServerLogic::ServerLogic </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_db_handler.html">DbHandler</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>db</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel explicit">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Создаёт объект бизнес-логики, привязанный к указанному <a class="el" href="class_db_handler.html" title="Управляет SQLite-базой данных пользователей через Qt SQL.">DbHandler</a>. </p>
+<p>Инициализирует объект ссылкой на <a class="el" href="class_db_handler.html" title="Управляет SQLite-базой данных пользователей через Qt SQL.">DbHandler</a>.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"><a class="el" href="#a1479c1b84839c126d8363cb3edebae1e" title="Ссылка на обработчик базы данных.">db</a></td><td>Ссылка на инициализированный обработчик базы данных. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">См. определение в файле <a class="el" href="server__logic_8cpp_source.html">server_logic.cpp</a> строка <a class="el" href="server__logic_8cpp_source.html#l00017">17</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="server__logic_8h_source.html#l00045">db</a>.</p>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Методы</h2>
+<a id="abfc93814f01b66208c0cd5f6245c4a6e" name="abfc93814f01b66208c0cd5f6245c4a6e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abfc93814f01b66208c0cd5f6245c4a6e">&#9670;&#160;</a></span>handleAuth()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">string ServerLogic::handleAuth </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; std::string &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>args</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Обрабатывает команду AUTH: проверяет логин и MD5-хэш пароля. </p>
+<p>Проверяет учётные данные через <a class="el" href="class_db_handler.html#aca35ad6a52a618b5aa0e081dba52ef18" title="Проверяет пару логин/хэш и возвращает имя пользователя.">DbHandler::authUser()</a>.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">args</td><td>Аргументы: {login, hash}. При неверном размере возвращает ошибку. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Строка ответа (makeAuthOk / makeAuthFail). </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="server__logic_8cpp_source.html">server_logic.cpp</a> строка <a class="el" href="server__logic_8cpp_source.html#l00036">36</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="server__logic_8h_source.html#l00045">db</a>, <a class="el" href="protocol_8h.html#af7cedd807741cbce86bade0c33953494">makeAuthFail()</a> и <a class="el" href="protocol_8h.html#abaa86236f116e6d39d140e86295804cc">makeAuthOk()</a>.</p>
+
+<p class="reference">Используется в <a class="el" href="server__logic_8cpp_source.html#l00022">handleRequest()</a>.</p>
+
+</div>
+</div>
+<a id="a94e436f54edbef1ad1f2b32a4ccc153f" name="a94e436f54edbef1ad1f2b32a4ccc153f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a94e436f54edbef1ad1f2b32a4ccc153f">&#9670;&#160;</a></span>handleConfirm()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">string ServerLogic::handleConfirm </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; std::string &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>args</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Обрабатывает команду CONFIRM: проверяет код сброса пароля. </p>
+<p>Проверяет код из resetCodes против введённого пользователем.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">args</td><td>Аргументы: {login, code}. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd><a class="el" href="protocol_8h.html#aa2b4e0a62ac301e81327bdd1686930e4" title="Формирует ответ об успешном подтверждении кода.">makeConfirmOk()</a> если код совпадает, иначе <a class="el" href="protocol_8h.html#ac170f61a5f3551b9297a1d317eaf52f9" title="Формирует ответ об ошибке подтверждения кода (неверный или просроченный код).">makeConfirmFail()</a>. </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="server__logic_8cpp_source.html">server_logic.cpp</a> строка <a class="el" href="server__logic_8cpp_source.html#l00093">93</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="protocol_8h.html#ac170f61a5f3551b9297a1d317eaf52f9">makeConfirmFail()</a>, <a class="el" href="protocol_8h.html#aa2b4e0a62ac301e81327bdd1686930e4">makeConfirmOk()</a> и <a class="el" href="server__logic_8h_source.html#l00046">resetCodes</a>.</p>
+
+<p class="reference">Используется в <a class="el" href="server__logic_8cpp_source.html#l00022">handleRequest()</a>.</p>
+
+</div>
+</div>
+<a id="a222bca00f460901a438834df4a764ee0" name="a222bca00f460901a438834df4a764ee0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a222bca00f460901a438834df4a764ee0">&#9670;&#160;</a></span>handleNewpass()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">string ServerLogic::handleNewpass </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; std::string &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>args</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Обрабатывает команду NEWPASS: удаляет код из resetCodes и обновляет пароль в БД. </p>
+<p>Удаляет код сброса и обновляет пароль в БД через <a class="el" href="class_db_handler.html#a51be19faafb75f69439d7952ada06ede" title="Обновляет хэш пароля пользователя, найденного по email.">DbHandler::updatePassword()</a>.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">args</td><td>Аргументы: {login, hash}. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd><a class="el" href="protocol_8h.html#aea5a9ac39c6904319a7020e0a8e57218" title="Формирует ответ об успешной установке нового пароля.">makeNewpassOk()</a> при успехе, <a class="el" href="protocol_8h.html#a2959efa3b72aeadaf2b0065031f8f930" title="Формирует ответ об ошибке установки нового пароля.">makeNewpassFail()</a> при ошибке.</dd></dl>
+<p>Код удаляется из resetCodes независимо от результата обновления пароля, чтобы предотвратить повторное использование. </p>
+
+<p class="definition">См. определение в файле <a class="el" href="server__logic_8cpp_source.html">server_logic.cpp</a> строка <a class="el" href="server__logic_8cpp_source.html#l00113">113</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="server__logic_8h_source.html#l00045">db</a>, <a class="el" href="protocol_8h.html#a2959efa3b72aeadaf2b0065031f8f930">makeNewpassFail()</a>, <a class="el" href="protocol_8h.html#aea5a9ac39c6904319a7020e0a8e57218">makeNewpassOk()</a> и <a class="el" href="server__logic_8h_source.html#l00046">resetCodes</a>.</p>
+
+<p class="reference">Используется в <a class="el" href="server__logic_8cpp_source.html#l00022">handleRequest()</a>.</p>
+
+</div>
+</div>
+<a id="aaba66699c6386675982eb004b424cb6e" name="aaba66699c6386675982eb004b424cb6e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaba66699c6386675982eb004b424cb6e">&#9670;&#160;</a></span>handleReg()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">string ServerLogic::handleReg </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; std::string &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>args</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Обрабатывает команду REG: регистрирует нового пользователя. </p>
+<p>Регистрирует нового пользователя через <a class="el" href="class_db_handler.html#a8ee0efbdcf3f99e545702f9a604bce12" title="Добавляет новую запись пользователя в базу данных.">DbHandler::registerUser()</a>.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">args</td><td>Аргументы: {login, name, hash, email}. При неверном размере возвращает ошибку. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Строка ответа (makeRegOk / makeRegFail). </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="server__logic_8cpp_source.html">server_logic.cpp</a> строка <a class="el" href="server__logic_8cpp_source.html#l00045">45</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="server__logic_8h_source.html#l00045">db</a>, <a class="el" href="protocol_8h.html#a97906ec2626b8b7ba1e045d4fe251043">makeRegFail()</a> и <a class="el" href="protocol_8h.html#a7e2b791ca74f86a2d96c8b4daa340f0c">makeRegOk()</a>.</p>
+
+<p class="reference">Используется в <a class="el" href="server__logic_8cpp_source.html#l00022">handleRequest()</a>.</p>
+
+</div>
+</div>
+<a id="a30bbbe8779bc0f0ae9ac2ccd57d8d132" name="a30bbbe8779bc0f0ae9ac2ccd57d8d132"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a30bbbe8779bc0f0ae9ac2ccd57d8d132">&#9670;&#160;</a></span>handleRequest()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string ServerLogic::handleRequest </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_request.html">Request</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>req</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Маршрутизирует запрос к соответствующему обработчику и возвращает ответ. </p>
+<p>Диспетчеризирует запрос по типу команды.</p>
+<p>Неизвестные команды возвращают <span class="tt">"error&amp;unknown_command\n"</span>.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">req</td><td>Разобранный запрос клиента. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Строка ответа в формате протокола TaMP. </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="server__logic_8cpp_source.html">server_logic.cpp</a> строка <a class="el" href="server__logic_8cpp_source.html#l00022">22</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="protocol_8h_source.html#l00037">Request::args</a>, <a class="el" href="protocol_8h_source.html#l00021">AUTH</a>, <a class="el" href="protocol_8h_source.html#l00026">CONFIRM</a>, <a class="el" href="server__logic_8cpp_source.html#l00036">handleAuth()</a>, <a class="el" href="server__logic_8cpp_source.html#l00093">handleConfirm()</a>, <a class="el" href="server__logic_8cpp_source.html#l00113">handleNewpass()</a>, <a class="el" href="server__logic_8cpp_source.html#l00045">handleReg()</a>, <a class="el" href="server__logic_8cpp_source.html#l00058">handleReset()</a>, <a class="el" href="protocol_8h_source.html#l00027">NEWPASS</a>, <a class="el" href="protocol_8h_source.html#l00022">REG</a>, <a class="el" href="protocol_8h_source.html#l00025">RESET</a> и <a class="el" href="protocol_8h_source.html#l00036">Request::type</a>.</p>
+
+</div>
+</div>
+<a id="afea413f1d21cec022594674f6385e17a" name="afea413f1d21cec022594674f6385e17a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afea413f1d21cec022594674f6385e17a">&#9670;&#160;</a></span>handleReset()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">string ServerLogic::handleReset </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; std::string &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>args</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Обрабатывает команду RESET: генерирует код и отправляет его на email. </p>
+<p>Ищет email по логину, генерирует 6-значный код и отправляет письмо.</p>
+<p>Генерирует 6-значный случайный код (mt19937), сохраняет его в resetCodes и отправляет через <a class="el" href="class_smtp_client.html#a1314f5dad90876cd5a0338f5a3026bf9" title="Отправляет письмо с кодом сброса пароля и именем пользователя в теле.">SmtpClient::sendPasswordResetCode()</a>. Email маскируется перед отправкой ответа клиенту.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">args</td><td>Аргументы: {login}. При неверном размере или отсутствии логина — ошибка. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Строка ответа с замаскированным email (makeResetOk) или ошибка (makeResetFail).</dd></dl>
+<p>Код хранится в resetCodes[login] до подтверждения. Email маскируется: все символы до '@' кроме последних двух заменяются на '*****'. </p>
+
+<p class="definition">См. определение в файле <a class="el" href="server__logic_8cpp_source.html">server_logic.cpp</a> строка <a class="el" href="server__logic_8cpp_source.html#l00058">58</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="server__logic_8h_source.html#l00045">db</a>, <a class="el" href="protocol_8h.html#a6eb303bc9748cebced99b91cd27ccf78">makeResetFail()</a>, <a class="el" href="protocol_8h.html#afbac05fe8f0a8fea006ccdce8d297058">makeResetOk()</a>, <a class="el" href="server__logic_8h_source.html#l00046">resetCodes</a> и <a class="el" href="smtpclient__mailru_8cpp_source.html#l00222">SmtpClient::sendPasswordResetCode()</a>.</p>
+
+<p class="reference">Используется в <a class="el" href="server__logic_8cpp_source.html#l00022">handleRequest()</a>.</p>
+
+</div>
+</div>
+<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Данные класса</h2>
+<a id="a1479c1b84839c126d8363cb3edebae1e" name="a1479c1b84839c126d8363cb3edebae1e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1479c1b84839c126d8363cb3edebae1e">&#9670;&#160;</a></span>db</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_db_handler.html">DbHandler</a>&amp; ServerLogic::db</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Ссылка на обработчик базы данных. </p>
+
+<p class="definition">См. определение в файле <a class="el" href="server__logic_8h_source.html">server_logic.h</a> строка <a class="el" href="server__logic_8h_source.html#l00045">45</a></p>
+
+<p class="reference">Используется в <a class="el" href="server__logic_8cpp_source.html#l00036">handleAuth()</a>, <a class="el" href="server__logic_8cpp_source.html#l00113">handleNewpass()</a>, <a class="el" href="server__logic_8cpp_source.html#l00045">handleReg()</a>, <a class="el" href="server__logic_8cpp_source.html#l00058">handleReset()</a> и <a class="el" href="server__logic_8cpp_source.html#l00017">ServerLogic()</a>.</p>
+
+</div>
+</div>
+<a id="a21f20e1b41bbfa281822bf97680d56cc" name="a21f20e1b41bbfa281822bf97680d56cc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a21f20e1b41bbfa281822bf97680d56cc">&#9670;&#160;</a></span>resetCodes</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::map&lt;std::string, std::string&gt; ServerLogic::resetCodes</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Временные коды сброса: логин → код. </p>
+
+<p class="definition">См. определение в файле <a class="el" href="server__logic_8h_source.html">server_logic.h</a> строка <a class="el" href="server__logic_8h_source.html#l00046">46</a></p>
+
+<p class="reference">Используется в <a class="el" href="server__logic_8cpp_source.html#l00093">handleConfirm()</a>, <a class="el" href="server__logic_8cpp_source.html#l00113">handleNewpass()</a> и <a class="el" href="server__logic_8cpp_source.html#l00058">handleReset()</a>.</p>
+
+</div>
+</div>
+<hr/>Объявления и описания членов классов находятся в файлах:<ul>
+<li>TaMP_Server/<a class="el" href="server__logic_8h_source.html">server_logic.h</a></li>
+<li>TaMP_Server/<a class="el" href="server__logic_8cpp_source.html">server_logic.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="class_server_logic.html">ServerLogic</a></li>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
+  </ul>
+</div>
+</body>
+</html>

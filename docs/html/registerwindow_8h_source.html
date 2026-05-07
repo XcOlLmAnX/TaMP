@@ -1,0 +1,155 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.16.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>TaMP: Исходный файл TaMP_Client/registerwindow.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">TaMP<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">Task and Math Platform — клиент-серверное приложение на Qt/C++</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.16.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Поиск',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('registerwindow_8h_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">registerwindow.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="registerwindow_8h.html">См. документацию.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;QWidget&gt;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;QLineEdit&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;QPushButton&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;QLabel&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span></div>
+<div class="foldopen" id="foldopen00024" data-start="{" data-end="};">
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="class_register_window.html">   24</a></span><span class="keyword">class </span><a class="code hl_function" href="class_register_window.html#a0afbe90533f73fb296bfd483c3738baf">RegisterWindow</a> : <span class="keyword">public</span> QWidget {</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    Q_OBJECT</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keyword">explicit</span> <a class="code hl_function" href="class_register_window.html#a0afbe90533f73fb296bfd483c3738baf">RegisterWindow</a>(QWidget* parent = <span class="keyword">nullptr</span>);</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>signals:</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="class_register_window.html#aa51f3d2581f27bb20d03a4399701c668">   40</a></span>    <span class="keywordtype">void</span> <a class="code hl_signal" href="class_register_window.html#aa51f3d2581f27bb20d03a4399701c668">registerSuccess</a>();</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="class_register_window.html#a875243c5ff534b4f09f22ce2b1d6ac1d">   45</a></span>    <span class="keywordtype">void</span> <a class="code hl_signal" href="class_register_window.html#a875243c5ff534b4f09f22ce2b1d6ac1d">goToLogin</a>();</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="keyword">private</span> slots:</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="class_register_window.html#a65acf7265fb0079ea43289ae885ab041">onRegisterClicked</a>();</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="class_register_window.html#a227dc3f4742593c6551eb092defeb5d7">onMessageReceived</a>(<span class="keyword">const</span> QString&amp; message);</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="class_register_window.html#ac242df1194dddb7928592268969f4723">   60</a></span>    QLineEdit*   <a class="code hl_variable" href="class_register_window.html#ac242df1194dddb7928592268969f4723">editLogin</a>;    </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="class_register_window.html#a4a7eff91998ee10bc2dcaef3c6aa214f">   61</a></span>    QLineEdit*   <a class="code hl_variable" href="class_register_window.html#a4a7eff91998ee10bc2dcaef3c6aa214f">editName</a>;     </div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="class_register_window.html#a23eecd230c2d6eb69accf0e775cdbca0">   62</a></span>    QLineEdit*   <a class="code hl_variable" href="class_register_window.html#a23eecd230c2d6eb69accf0e775cdbca0">editPassword</a>; </div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno"><a class="line" href="class_register_window.html#aca82e6e03f6939e9c66a081ef620fd5e">   63</a></span>    QLineEdit*   <a class="code hl_variable" href="class_register_window.html#aca82e6e03f6939e9c66a081ef620fd5e">editEmail</a>;    </div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="class_register_window.html#a64814b4d6a55587270491678286806d1">   65</a></span>    QPushButton* <a class="code hl_variable" href="class_register_window.html#a64814b4d6a55587270491678286806d1">btnRegister</a>;  </div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="class_register_window.html#adfda451756bbfa9d7fb9b20d4a87aacd">   66</a></span>    QPushButton* <a class="code hl_variable" href="class_register_window.html#adfda451756bbfa9d7fb9b20d4a87aacd">btnBack</a>;      </div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno"><a class="line" href="class_register_window.html#a903483008ff29046c72c061361011f34">   68</a></span>    QLabel*      <a class="code hl_variable" href="class_register_window.html#a903483008ff29046c72c061361011f34">labelStatus</a>;  </div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>};</div>
+</div>
+<div class="ttc" id="aclass_register_window_html_a0afbe90533f73fb296bfd483c3738baf"><div class="ttname"><a href="class_register_window.html#a0afbe90533f73fb296bfd483c3738baf">RegisterWindow::RegisterWindow</a></div><div class="ttdeci">RegisterWindow(QWidget *parent=nullptr)</div><div class="ttdoc">Создаёт и компонует виджеты окна регистрации.</div><div class="ttdef"><b>Определения</b> <a href="registerwindow_8cpp_source.html#l00016">registerwindow.cpp:16</a></div></div>
+<div class="ttc" id="aclass_register_window_html_a227dc3f4742593c6551eb092defeb5d7"><div class="ttname"><a href="class_register_window.html#a227dc3f4742593c6551eb092defeb5d7">RegisterWindow::onMessageReceived</a></div><div class="ttdeci">void onMessageReceived(const QString &amp;message)</div><div class="ttdoc">Обрабатывает ответ сервера; реагирует только на строки с префиксом «reg».</div><div class="ttdef"><b>Определения</b> <a href="registerwindow_8cpp_source.html#l00143">registerwindow.cpp:143</a></div></div>
+<div class="ttc" id="aclass_register_window_html_a23eecd230c2d6eb69accf0e775cdbca0"><div class="ttname"><a href="class_register_window.html#a23eecd230c2d6eb69accf0e775cdbca0">RegisterWindow::editPassword</a></div><div class="ttdeci">QLineEdit * editPassword</div><div class="ttdoc">Поле ввода пароля (скрытый ввод).</div><div class="ttdef"><b>Определения</b> <a href="#l00062">registerwindow.h:62</a></div></div>
+<div class="ttc" id="aclass_register_window_html_a4a7eff91998ee10bc2dcaef3c6aa214f"><div class="ttname"><a href="class_register_window.html#a4a7eff91998ee10bc2dcaef3c6aa214f">RegisterWindow::editName</a></div><div class="ttdeci">QLineEdit * editName</div><div class="ttdoc">Поле ввода отображаемого имени пользователя.</div><div class="ttdef"><b>Определения</b> <a href="#l00061">registerwindow.h:61</a></div></div>
+<div class="ttc" id="aclass_register_window_html_a64814b4d6a55587270491678286806d1"><div class="ttname"><a href="class_register_window.html#a64814b4d6a55587270491678286806d1">RegisterWindow::btnRegister</a></div><div class="ttdeci">QPushButton * btnRegister</div><div class="ttdoc">Кнопка отправки формы регистрации.</div><div class="ttdef"><b>Определения</b> <a href="#l00065">registerwindow.h:65</a></div></div>
+<div class="ttc" id="aclass_register_window_html_a65acf7265fb0079ea43289ae885ab041"><div class="ttname"><a href="class_register_window.html#a65acf7265fb0079ea43289ae885ab041">RegisterWindow::onRegisterClicked</a></div><div class="ttdeci">void onRegisterClicked()</div><div class="ttdoc">Валидирует данные формы и отправляет запрос регистрации серверу.</div><div class="ttdef"><b>Определения</b> <a href="registerwindow_8cpp_source.html#l00070">registerwindow.cpp:70</a></div></div>
+<div class="ttc" id="aclass_register_window_html_a875243c5ff534b4f09f22ce2b1d6ac1d"><div class="ttname"><a href="class_register_window.html#a875243c5ff534b4f09f22ce2b1d6ac1d">RegisterWindow::goToLogin</a></div><div class="ttdeci">void goToLogin()</div><div class="ttdoc">Испускается при нажатии кнопки «Назад» (возврат к LoginWindow).</div></div>
+<div class="ttc" id="aclass_register_window_html_a903483008ff29046c72c061361011f34"><div class="ttname"><a href="class_register_window.html#a903483008ff29046c72c061361011f34">RegisterWindow::labelStatus</a></div><div class="ttdeci">QLabel * labelStatus</div><div class="ttdoc">Метка для отображения результата или ошибки валидации.</div><div class="ttdef"><b>Определения</b> <a href="#l00068">registerwindow.h:68</a></div></div>
+<div class="ttc" id="aclass_register_window_html_aa51f3d2581f27bb20d03a4399701c668"><div class="ttname"><a href="class_register_window.html#aa51f3d2581f27bb20d03a4399701c668">RegisterWindow::registerSuccess</a></div><div class="ttdeci">void registerSuccess()</div><div class="ttdoc">Испускается после подтверждения сервером успешной регистрации.</div></div>
+<div class="ttc" id="aclass_register_window_html_ac242df1194dddb7928592268969f4723"><div class="ttname"><a href="class_register_window.html#ac242df1194dddb7928592268969f4723">RegisterWindow::editLogin</a></div><div class="ttdeci">QLineEdit * editLogin</div><div class="ttdoc">Поле ввода желаемого логина.</div><div class="ttdef"><b>Определения</b> <a href="#l00060">registerwindow.h:60</a></div></div>
+<div class="ttc" id="aclass_register_window_html_aca82e6e03f6939e9c66a081ef620fd5e"><div class="ttname"><a href="class_register_window.html#aca82e6e03f6939e9c66a081ef620fd5e">RegisterWindow::editEmail</a></div><div class="ttdeci">QLineEdit * editEmail</div><div class="ttdoc">Поле ввода адреса электронной почты.</div><div class="ttdef"><b>Определения</b> <a href="#l00063">registerwindow.h:63</a></div></div>
+<div class="ttc" id="aclass_register_window_html_adfda451756bbfa9d7fb9b20d4a87aacd"><div class="ttname"><a href="class_register_window.html#adfda451756bbfa9d7fb9b20d4a87aacd">RegisterWindow::btnBack</a></div><div class="ttdeci">QPushButton * btnBack</div><div class="ttdoc">Кнопка возврата к форме авторизации.</div><div class="ttdef"><b>Определения</b> <a href="#l00066">registerwindow.h:66</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><b>TaMP_Client</b></li><li class="navelem"><a href="registerwindow_8h.html">registerwindow.h</a></li>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
+  </ul>
+</div>
+</body>
+</html>

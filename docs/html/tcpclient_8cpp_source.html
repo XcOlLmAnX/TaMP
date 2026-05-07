@@ -1,0 +1,192 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.16.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>TaMP: Исходный файл TaMP_Client/tcpclient.cpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">TaMP<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">Task and Math Platform — клиент-серверное приложение на Qt/C++</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.16.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Поиск',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('tcpclient_8cpp_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">tcpclient.cpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="tcpclient_8cpp.html">См. документацию.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;<a class="code" href="tcpclient_8h.html">tcpclient.h</a>&quot;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">using namespace </span>std;</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><a class="code hl_class" href="class_tcp_client.html">TcpClient</a>* <a class="code hl_variable" href="class_tcp_client.html#ab0166cc86e36a2e9fb55766715893f1b">TcpClient::instance</a> = <span class="keyword">nullptr</span>; </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span></div>
+<div class="foldopen" id="foldopen00015" data-start="{" data-end="}">
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="class_tcp_client.html#ab277c18049116f4bf451c4da5201068c">   15</a></span>TcpClient* <a class="code hl_function" href="class_tcp_client.html#ab277c18049116f4bf451c4da5201068c">TcpClient::getInstance</a>() {</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_tcp_client.html#ab0166cc86e36a2e9fb55766715893f1b">instance</a> == <span class="keyword">nullptr</span>) {</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        <a class="code hl_variable" href="class_tcp_client.html#ab0166cc86e36a2e9fb55766715893f1b">instance</a> = <span class="keyword">new</span> TcpClient();</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    }</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="class_tcp_client.html#ab0166cc86e36a2e9fb55766715893f1b">instance</a>;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>}</div>
+</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span></div>
+<div class="foldopen" id="foldopen00025" data-start="{" data-end="}">
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="class_tcp_client.html#a135f8e77b7d681ec99077774e2c8949c">   25</a></span>TcpClient::TcpClient(QObject* parent) : QObject(parent) {</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <a class="code hl_variable" href="class_tcp_client.html#ae3f20719336e412d3fafc386bdedcfc5">socket</a> = <span class="keyword">new</span> QTcpSocket(<span class="keyword">this</span>);</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    connect(<a class="code hl_variable" href="class_tcp_client.html#ae3f20719336e412d3fafc386bdedcfc5">socket</a>, &amp;QTcpSocket::connected,</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>            <span class="keyword">this</span>,   &amp;<a class="code hl_signal" href="class_tcp_client.html#aabd13467a245e42958a878ad76eedc37">TcpClient::connected</a>);</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    connect(<a class="code hl_variable" href="class_tcp_client.html#ae3f20719336e412d3fafc386bdedcfc5">socket</a>, &amp;QTcpSocket::disconnected,</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>            <span class="keyword">this</span>,   &amp;<a class="code hl_signal" href="class_tcp_client.html#aca260c48bd72f58298abf4c7367af89a">TcpClient::disconnected</a>);</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    connect(<a class="code hl_variable" href="class_tcp_client.html#ae3f20719336e412d3fafc386bdedcfc5">socket</a>, &amp;QTcpSocket::readyRead,</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>            <span class="keyword">this</span>,   &amp;<a class="code hl_slot" href="class_tcp_client.html#aa4d3a74fc6a970742dc0c412733689e5">TcpClient::onReadyRead</a>);</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    connect(<a class="code hl_variable" href="class_tcp_client.html#ae3f20719336e412d3fafc386bdedcfc5">socket</a>, &amp;QAbstractSocket::errorOccurred,</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>            <span class="keyword">this</span>,   &amp;<a class="code hl_slot" href="class_tcp_client.html#a06339c8c8ca2da55370064ad75a5035e">TcpClient::onError</a>);</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>}</div>
+</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span></div>
+<div class="foldopen" id="foldopen00044" data-start="{" data-end="}">
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="class_tcp_client.html#a4a213e75858331808482901ab543ecbd">   44</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_tcp_client.html#a4a213e75858331808482901ab543ecbd">TcpClient::connectToServer</a>(<span class="keyword">const</span> QString&amp; host, <span class="keywordtype">int</span> port) {</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <a class="code hl_variable" href="class_tcp_client.html#ae3f20719336e412d3fafc386bdedcfc5">socket</a>-&gt;connectToHost(host, port);</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>}</div>
+</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span></div>
+<div class="foldopen" id="foldopen00051" data-start="{" data-end="}">
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="class_tcp_client.html#af344b6ae03bd9525e5d9fe021fe7b550">   51</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_tcp_client.html#af344b6ae03bd9525e5d9fe021fe7b550">TcpClient::sendMessage</a>(<span class="keyword">const</span> QString&amp; message) {</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="class_tcp_client.html#a9848295776a90b6de6acd2e32f69c7c5">isConnected</a>()) {</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        <a class="code hl_variable" href="class_tcp_client.html#ae3f20719336e412d3fafc386bdedcfc5">socket</a>-&gt;write(message.toUtf8());</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    }</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>}</div>
+</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span></div>
+<div class="foldopen" id="foldopen00061" data-start="{" data-end="}">
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="class_tcp_client.html#a9848295776a90b6de6acd2e32f69c7c5">   61</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="class_tcp_client.html#a9848295776a90b6de6acd2e32f69c7c5">TcpClient::isConnected</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="class_tcp_client.html#ae3f20719336e412d3fafc386bdedcfc5">socket</a>-&gt;state() == QAbstractSocket::ConnectedState;</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>}</div>
+</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span></div>
+<div class="foldopen" id="foldopen00068" data-start="{" data-end="}">
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno"><a class="line" href="class_tcp_client.html#aa4d3a74fc6a970742dc0c412733689e5">   68</a></span><span class="keywordtype">void</span> <a class="code hl_slot" href="class_tcp_client.html#aa4d3a74fc6a970742dc0c412733689e5">TcpClient::onReadyRead</a>() {</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    <span class="keywordflow">while</span> (<a class="code hl_variable" href="class_tcp_client.html#ae3f20719336e412d3fafc386bdedcfc5">socket</a>-&gt;canReadLine()) {</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        QString line = QString::fromUtf8(<a class="code hl_variable" href="class_tcp_client.html#ae3f20719336e412d3fafc386bdedcfc5">socket</a>-&gt;readLine()).trimmed();</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        <span class="keywordflow">if</span> (!line.isEmpty()) {</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>            emit <a class="code hl_signal" href="class_tcp_client.html#a47ebc8fd276d5e391db59986d43feb21">messageReceived</a>(line);</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>        }</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    }</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>}</div>
+</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span></div>
+<div class="foldopen" id="foldopen00081" data-start="{" data-end="}">
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno"><a class="line" href="class_tcp_client.html#a06339c8c8ca2da55370064ad75a5035e">   81</a></span><span class="keywordtype">void</span> <a class="code hl_slot" href="class_tcp_client.html#a06339c8c8ca2da55370064ad75a5035e">TcpClient::onError</a>(QAbstractSocket::SocketError error) {</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    Q_UNUSED(error)</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    emit <a class="code hl_signal" href="class_tcp_client.html#a3da504db1d5c2664a2813b649f610426">errorOccurred</a>(<a class="code hl_variable" href="class_tcp_client.html#ae3f20719336e412d3fafc386bdedcfc5">socket</a>-&gt;errorString());</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>}</div>
+</div>
+<div class="ttc" id="aclass_tcp_client_html"><div class="ttname"><a href="class_tcp_client.html">TcpClient</a></div><div class="ttdoc">Единственный объект TCP-соединения в клиентском приложении.</div><div class="ttdef"><b>Определения</b> <a href="tcpclient_8h_source.html#l00026">tcpclient.h:26</a></div></div>
+<div class="ttc" id="aclass_tcp_client_html_a06339c8c8ca2da55370064ad75a5035e"><div class="ttname"><a href="class_tcp_client.html#a06339c8c8ca2da55370064ad75a5035e">TcpClient::onError</a></div><div class="ttdeci">void onError(QAbstractSocket::SocketError error)</div><div class="ttdoc">Транслирует код ошибки сокета в сигнал errorOccurred() с текстом.</div><div class="ttdef"><b>Определения</b> <a href="#l00081">tcpclient.cpp:81</a></div></div>
+<div class="ttc" id="aclass_tcp_client_html_a3da504db1d5c2664a2813b649f610426"><div class="ttname"><a href="class_tcp_client.html#a3da504db1d5c2664a2813b649f610426">TcpClient::errorOccurred</a></div><div class="ttdeci">void errorOccurred(const QString &amp;error)</div><div class="ttdoc">Испускается при возникновении ошибки сокета.</div></div>
+<div class="ttc" id="aclass_tcp_client_html_a47ebc8fd276d5e391db59986d43feb21"><div class="ttname"><a href="class_tcp_client.html#a47ebc8fd276d5e391db59986d43feb21">TcpClient::messageReceived</a></div><div class="ttdeci">void messageReceived(const QString &amp;message)</div><div class="ttdoc">Испускается при получении одной полной строки от сервера.</div></div>
+<div class="ttc" id="aclass_tcp_client_html_a4a213e75858331808482901ab543ecbd"><div class="ttname"><a href="class_tcp_client.html#a4a213e75858331808482901ab543ecbd">TcpClient::connectToServer</a></div><div class="ttdeci">void connectToServer(const QString &amp;host, int port)</div><div class="ttdoc">Инициирует асинхронное TCP-подключение к серверу.</div><div class="ttdef"><b>Определения</b> <a href="#l00044">tcpclient.cpp:44</a></div></div>
+<div class="ttc" id="aclass_tcp_client_html_a9848295776a90b6de6acd2e32f69c7c5"><div class="ttname"><a href="class_tcp_client.html#a9848295776a90b6de6acd2e32f69c7c5">TcpClient::isConnected</a></div><div class="ttdeci">bool isConnected() const</div><div class="ttdoc">Проверяет активность TCP-соединения.</div><div class="ttdef"><b>Определения</b> <a href="#l00061">tcpclient.cpp:61</a></div></div>
+<div class="ttc" id="aclass_tcp_client_html_aa4d3a74fc6a970742dc0c412733689e5"><div class="ttname"><a href="class_tcp_client.html#aa4d3a74fc6a970742dc0c412733689e5">TcpClient::onReadyRead</a></div><div class="ttdeci">void onReadyRead()</div><div class="ttdoc">Читает из сокета все доступные строки и испускает messageReceived().</div><div class="ttdef"><b>Определения</b> <a href="#l00068">tcpclient.cpp:68</a></div></div>
+<div class="ttc" id="aclass_tcp_client_html_aabd13467a245e42958a878ad76eedc37"><div class="ttname"><a href="class_tcp_client.html#aabd13467a245e42958a878ad76eedc37">TcpClient::connected</a></div><div class="ttdeci">void connected()</div><div class="ttdoc">Испускается при успешном установлении TCP-соединения с сервером.</div></div>
+<div class="ttc" id="aclass_tcp_client_html_ab0166cc86e36a2e9fb55766715893f1b"><div class="ttname"><a href="class_tcp_client.html#ab0166cc86e36a2e9fb55766715893f1b">TcpClient::instance</a></div><div class="ttdeci">static TcpClient * instance</div><div class="ttdoc">Единственный экземпляр синглтона.</div><div class="ttdef"><b>Определения</b> <a href="tcpclient_8h_source.html#l00101">tcpclient.h:101</a></div></div>
+<div class="ttc" id="aclass_tcp_client_html_ab277c18049116f4bf451c4da5201068c"><div class="ttname"><a href="class_tcp_client.html#ab277c18049116f4bf451c4da5201068c">TcpClient::getInstance</a></div><div class="ttdeci">static TcpClient * getInstance()</div><div class="ttdoc">Возвращает единственный экземпляр TcpClient, создавая его при первом вызове.</div><div class="ttdef"><b>Определения</b> <a href="#l00015">tcpclient.cpp:15</a></div></div>
+<div class="ttc" id="aclass_tcp_client_html_aca260c48bd72f58298abf4c7367af89a"><div class="ttname"><a href="class_tcp_client.html#aca260c48bd72f58298abf4c7367af89a">TcpClient::disconnected</a></div><div class="ttdeci">void disconnected()</div><div class="ttdoc">Испускается при разрыве TCP-соединения с сервером.</div></div>
+<div class="ttc" id="aclass_tcp_client_html_ae3f20719336e412d3fafc386bdedcfc5"><div class="ttname"><a href="class_tcp_client.html#ae3f20719336e412d3fafc386bdedcfc5">TcpClient::socket</a></div><div class="ttdeci">QTcpSocket * socket</div><div class="ttdoc">Сокет для обмена данными с сервером.</div><div class="ttdef"><b>Определения</b> <a href="tcpclient_8h_source.html#l00103">tcpclient.h:103</a></div></div>
+<div class="ttc" id="aclass_tcp_client_html_af344b6ae03bd9525e5d9fe021fe7b550"><div class="ttname"><a href="class_tcp_client.html#af344b6ae03bd9525e5d9fe021fe7b550">TcpClient::sendMessage</a></div><div class="ttdeci">void sendMessage(const QString &amp;message)</div><div class="ttdoc">Отправляет строку на сервер в кодировке UTF-8.</div><div class="ttdef"><b>Определения</b> <a href="#l00051">tcpclient.cpp:51</a></div></div>
+<div class="ttc" id="atcpclient_8h_html"><div class="ttname"><a href="tcpclient_8h.html">tcpclient.h</a></div><div class="ttdoc">Синглтон-обёртка над QTcpSocket для TCP-связи с сервером TaMP.</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><b>TaMP_Client</b></li><li class="navelem"><a href="tcpclient_8cpp.html">tcpclient.cpp</a></li>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
+  </ul>
+</div>
+</body>
+</html>

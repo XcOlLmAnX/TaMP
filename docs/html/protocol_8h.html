@@ -1,0 +1,527 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.16.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>TaMP: Файл TaMP_Server/protocol.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">TaMP<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">Task and Math Platform — клиент-серверное приложение на Qt/C++</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.16.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Поиск',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('protocol_8h.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Файл protocol.h</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Описание текстового протокола TaMP и вспомогательные функции формирования ответов.  
+<a href="#details">Подробнее...</a></p>
+<div class="textblock"><code>#include &lt;string&gt;</code><br />
+<code>#include &lt;vector&gt;</code><br />
+</div>
+<p><a href="protocol_8h_source.html">См. исходные тексты.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Классы</h2></td></tr>
+<tr class="memitem:Request" id="r_Request"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="struct_request.html">Request</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Разобранный запрос клиента.  <a href="struct_request.html#details">Подробнее...</a><br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-enum-members" class="groupheader"><a id="enum-members" name="enum-members"></a>
+Перечисления</h2></td></tr>
+<tr class="memitem:a21e038f5b8958e203d28bc4f18472352" id="r_a21e038f5b8958e203d28bc4f18472352"><td class="memItemLeft">enum class &#160;</td><td class="memItemRight"><a class="el" href="#a21e038f5b8958e203d28bc4f18472352">CommandType</a> { <br />
+&#160;&#160;<a class="el" href="#a21e038f5b8958e203d28bc4f18472352af458afcda462a9ed24f08634cb2ceced">AUTH</a>
+, <a class="el" href="#a21e038f5b8958e203d28bc4f18472352af4cf3fe4b67244332eecec055742d449">REG</a>
+, <a class="el" href="#a21e038f5b8958e203d28bc4f18472352a73f760f8a96d0acec3dec614a688ff79">STAT</a>
+, <a class="el" href="#a21e038f5b8958e203d28bc4f18472352a8c46d8d9d3402788403e2f6911153089">CHECK</a>
+, <br />
+&#160;&#160;<a class="el" href="#a21e038f5b8958e203d28bc4f18472352ab5859d8721cfdc0312b2838b9c985bc1">RESET</a>
+, <a class="el" href="#a21e038f5b8958e203d28bc4f18472352aa9b685a9e8c2047d4b9faac6217d7b4a">CONFIRM</a>
+, <a class="el" href="#a21e038f5b8958e203d28bc4f18472352a78479f2b6511eb5301a555e91035e4c1">NEWPASS</a>
+, <a class="el" href="#a21e038f5b8958e203d28bc4f18472352a696b031073e74bf2cb98e5ef201d4aa3">UNKNOWN</a>
+<br />
+ }</td></tr>
+<tr class="memdesc:a21e038f5b8958e203d28bc4f18472352"><td class="mdescLeft">&#160;</td><td class="mdescRight">Типы команд, поддерживаемых сервером TaMP.  <a href="#a21e038f5b8958e203d28bc4f18472352">Подробнее...</a><br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Функции</h2></td></tr>
+<tr class="memitem:a0729bc8ada979ad53bc0be2a9bcb3cd2" id="r_a0729bc8ada979ad53bc0be2a9bcb3cd2"><td class="memItemLeft"><a class="el" href="struct_request.html">Request</a>&#160;</td><td class="memItemRight"><a class="el" href="#a0729bc8ada979ad53bc0be2a9bcb3cd2">parseRequest</a> (const std::string &amp;raw)</td></tr>
+<tr class="memdesc:a0729bc8ada979ad53bc0be2a9bcb3cd2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Разбирает сырую строку клиентского запроса в структуру <a class="el" href="struct_request.html" title="Разобранный запрос клиента.">Request</a>.  <br /></td></tr>
+<tr class="memitem:abaa86236f116e6d39d140e86295804cc" id="r_abaa86236f116e6d39d140e86295804cc"><td class="memItemLeft">std::string&#160;</td><td class="memItemRight"><a class="el" href="#abaa86236f116e6d39d140e86295804cc">makeAuthOk</a> (const std::string &amp;name)</td></tr>
+<tr class="memdesc:abaa86236f116e6d39d140e86295804cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Формирует ответ об успешной авторизации.  <br /></td></tr>
+<tr class="memitem:af7cedd807741cbce86bade0c33953494" id="r_af7cedd807741cbce86bade0c33953494"><td class="memItemLeft">std::string&#160;</td><td class="memItemRight"><a class="el" href="#af7cedd807741cbce86bade0c33953494">makeAuthFail</a> ()</td></tr>
+<tr class="memdesc:af7cedd807741cbce86bade0c33953494"><td class="mdescLeft">&#160;</td><td class="mdescRight">Формирует ответ об ошибке авторизации (неверный логин или пароль).  <br /></td></tr>
+<tr class="memitem:a7e2b791ca74f86a2d96c8b4daa340f0c" id="r_a7e2b791ca74f86a2d96c8b4daa340f0c"><td class="memItemLeft">std::string&#160;</td><td class="memItemRight"><a class="el" href="#a7e2b791ca74f86a2d96c8b4daa340f0c">makeRegOk</a> (const std::string &amp;login)</td></tr>
+<tr class="memdesc:a7e2b791ca74f86a2d96c8b4daa340f0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Формирует ответ об успешной регистрации.  <br /></td></tr>
+<tr class="memitem:a97906ec2626b8b7ba1e045d4fe251043" id="r_a97906ec2626b8b7ba1e045d4fe251043"><td class="memItemLeft">std::string&#160;</td><td class="memItemRight"><a class="el" href="#a97906ec2626b8b7ba1e045d4fe251043">makeRegFail</a> ()</td></tr>
+<tr class="memdesc:a97906ec2626b8b7ba1e045d4fe251043"><td class="mdescLeft">&#160;</td><td class="mdescRight">Формирует ответ об ошибке регистрации (логин занят).  <br /></td></tr>
+<tr class="memitem:af2e21ac6c51d8f0bd42f7385223dc584" id="r_af2e21ac6c51d8f0bd42f7385223dc584"><td class="memItemLeft">std::string&#160;</td><td class="memItemRight"><a class="el" href="#af2e21ac6c51d8f0bd42f7385223dc584">makeCheckOk</a> ()</td></tr>
+<tr class="memdesc:af2e21ac6c51d8f0bd42f7385223dc584"><td class="mdescLeft">&#160;</td><td class="mdescRight">Формирует ответ об успешном результате команды CHECK.  <br /></td></tr>
+<tr class="memitem:a4d72cfc0dbd4c31afc89d43b1aaf7104" id="r_a4d72cfc0dbd4c31afc89d43b1aaf7104"><td class="memItemLeft">std::string&#160;</td><td class="memItemRight"><a class="el" href="#a4d72cfc0dbd4c31afc89d43b1aaf7104">makeCheckFail</a> ()</td></tr>
+<tr class="memdesc:a4d72cfc0dbd4c31afc89d43b1aaf7104"><td class="mdescLeft">&#160;</td><td class="mdescRight">Формирует ответ об ошибке команды CHECK.  <br /></td></tr>
+<tr class="memitem:afbac05fe8f0a8fea006ccdce8d297058" id="r_afbac05fe8f0a8fea006ccdce8d297058"><td class="memItemLeft">std::string&#160;</td><td class="memItemRight"><a class="el" href="#afbac05fe8f0a8fea006ccdce8d297058">makeResetOk</a> (const std::string &amp;maskedEmail)</td></tr>
+<tr class="memdesc:afbac05fe8f0a8fea006ccdce8d297058"><td class="mdescLeft">&#160;</td><td class="mdescRight">Формирует ответ об успешной отправке кода сброса пароля.  <br /></td></tr>
+<tr class="memitem:a6eb303bc9748cebced99b91cd27ccf78" id="r_a6eb303bc9748cebced99b91cd27ccf78"><td class="memItemLeft">std::string&#160;</td><td class="memItemRight"><a class="el" href="#a6eb303bc9748cebced99b91cd27ccf78">makeResetFail</a> ()</td></tr>
+<tr class="memdesc:a6eb303bc9748cebced99b91cd27ccf78"><td class="mdescLeft">&#160;</td><td class="mdescRight">Формирует ответ об ошибке сброса пароля (логин не найден или ошибка отправки).  <br /></td></tr>
+<tr class="memitem:aa2b4e0a62ac301e81327bdd1686930e4" id="r_aa2b4e0a62ac301e81327bdd1686930e4"><td class="memItemLeft">std::string&#160;</td><td class="memItemRight"><a class="el" href="#aa2b4e0a62ac301e81327bdd1686930e4">makeConfirmOk</a> ()</td></tr>
+<tr class="memdesc:aa2b4e0a62ac301e81327bdd1686930e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Формирует ответ об успешном подтверждении кода.  <br /></td></tr>
+<tr class="memitem:ac170f61a5f3551b9297a1d317eaf52f9" id="r_ac170f61a5f3551b9297a1d317eaf52f9"><td class="memItemLeft">std::string&#160;</td><td class="memItemRight"><a class="el" href="#ac170f61a5f3551b9297a1d317eaf52f9">makeConfirmFail</a> ()</td></tr>
+<tr class="memdesc:ac170f61a5f3551b9297a1d317eaf52f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Формирует ответ об ошибке подтверждения кода (неверный или просроченный код).  <br /></td></tr>
+<tr class="memitem:aea5a9ac39c6904319a7020e0a8e57218" id="r_aea5a9ac39c6904319a7020e0a8e57218"><td class="memItemLeft">std::string&#160;</td><td class="memItemRight"><a class="el" href="#aea5a9ac39c6904319a7020e0a8e57218">makeNewpassOk</a> ()</td></tr>
+<tr class="memdesc:aea5a9ac39c6904319a7020e0a8e57218"><td class="mdescLeft">&#160;</td><td class="mdescRight">Формирует ответ об успешной установке нового пароля.  <br /></td></tr>
+<tr class="memitem:a2959efa3b72aeadaf2b0065031f8f930" id="r_a2959efa3b72aeadaf2b0065031f8f930"><td class="memItemLeft">std::string&#160;</td><td class="memItemRight"><a class="el" href="#a2959efa3b72aeadaf2b0065031f8f930">makeNewpassFail</a> ()</td></tr>
+<tr class="memdesc:a2959efa3b72aeadaf2b0065031f8f930"><td class="mdescLeft">&#160;</td><td class="mdescRight">Формирует ответ об ошибке установки нового пароля.  <br /></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>Описание текстового протокола TaMP и вспомогательные функции формирования ответов. </p>
+<p>Протокол основан на текстовых строках в кодировке UTF-8, разделённых '\n'. Каждый запрос имеет вид: <span class="tt">команда&amp;аргумент1&amp;аргумент2…\n</span>. Каждый ответ — <span class="tt">команда±[&amp;данные]\n</span>, где '+' означает успех, '-' — ошибку. </p>
+
+<p class="definition">См. определение в файле <a class="el" href="protocol_8h_source.html">protocol.h</a></p>
+</div><a name="doc-enum-members" id="doc-enum-members"></a><h2 id="header-doc-enum-members" class="groupheader">Перечисления</h2>
+<a id="a21e038f5b8958e203d28bc4f18472352" name="a21e038f5b8958e203d28bc4f18472352"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a21e038f5b8958e203d28bc4f18472352">&#9670;&#160;</a></span>CommandType</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum class <a class="el" href="#a21e038f5b8958e203d28bc4f18472352">CommandType</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel strong">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Типы команд, поддерживаемых сервером TaMP. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Элементы перечислений</th></tr><tr><td class="fieldname"><a id="a21e038f5b8958e203d28bc4f18472352af458afcda462a9ed24f08634cb2ceced" name="a21e038f5b8958e203d28bc4f18472352af458afcda462a9ed24f08634cb2ceced"></a>AUTH&#160;</td><td class="fielddoc"><p>Авторизация: <span class="tt">auth&amp;{login}&amp;{md5hash}</span>. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a21e038f5b8958e203d28bc4f18472352af4cf3fe4b67244332eecec055742d449" name="a21e038f5b8958e203d28bc4f18472352af4cf3fe4b67244332eecec055742d449"></a>REG&#160;</td><td class="fielddoc"><p>Регистрация: <span class="tt">reg&amp;{login}&amp;{name}&amp;{md5hash}&amp;{email}</span>. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a21e038f5b8958e203d28bc4f18472352a73f760f8a96d0acec3dec614a688ff79" name="a21e038f5b8958e203d28bc4f18472352a73f760f8a96d0acec3dec614a688ff79"></a>STAT&#160;</td><td class="fielddoc"><p>Получение статистики (зарезервировано, не реализовано). </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a21e038f5b8958e203d28bc4f18472352a8c46d8d9d3402788403e2f6911153089" name="a21e038f5b8958e203d28bc4f18472352a8c46d8d9d3402788403e2f6911153089"></a>CHECK&#160;</td><td class="fielddoc"><p>Проверка данных (зарезервировано, не реализовано). </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a21e038f5b8958e203d28bc4f18472352ab5859d8721cfdc0312b2838b9c985bc1" name="a21e038f5b8958e203d28bc4f18472352ab5859d8721cfdc0312b2838b9c985bc1"></a>RESET&#160;</td><td class="fielddoc"><p>Запрос кода сброса пароля: <span class="tt">reset&amp;{login}</span>. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a21e038f5b8958e203d28bc4f18472352aa9b685a9e8c2047d4b9faac6217d7b4a" name="a21e038f5b8958e203d28bc4f18472352aa9b685a9e8c2047d4b9faac6217d7b4a"></a>CONFIRM&#160;</td><td class="fielddoc"><p>Подтверждение кода: <span class="tt">confirm&amp;{login}&amp;{code}</span>. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a21e038f5b8958e203d28bc4f18472352a78479f2b6511eb5301a555e91035e4c1" name="a21e038f5b8958e203d28bc4f18472352a78479f2b6511eb5301a555e91035e4c1"></a>NEWPASS&#160;</td><td class="fielddoc"><p>Установка нового пароля: <span class="tt">newpass&amp;{login}&amp;{md5hash}</span>. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a21e038f5b8958e203d28bc4f18472352a696b031073e74bf2cb98e5ef201d4aa3" name="a21e038f5b8958e203d28bc4f18472352a696b031073e74bf2cb98e5ef201d4aa3"></a>UNKNOWN&#160;</td><td class="fielddoc"><p>Неизвестная или некорректно сформированная команда. </p>
+</td></tr>
+</table>
+
+<p class="definition">См. определение в файле <a class="el" href="protocol_8h_source.html">protocol.h</a> строка <a class="el" href="protocol_8h_source.html#l00020">20</a></p>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Функции</h2>
+<a id="af7cedd807741cbce86bade0c33953494" name="af7cedd807741cbce86bade0c33953494"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af7cedd807741cbce86bade0c33953494">&#9670;&#160;</a></span>makeAuthFail()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string makeAuthFail </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Формирует ответ об ошибке авторизации (неверный логин или пароль). </p>
+<dl class="section return"><dt>Возвращает</dt><dd>Строка <span class="tt">auth-\\n</span>. </dd></dl>
+
+<p class="reference">Используется в <a class="el" href="server__logic_8cpp_source.html#l00036">ServerLogic::handleAuth()</a>.</p>
+
+</div>
+</div>
+<a id="abaa86236f116e6d39d140e86295804cc" name="abaa86236f116e6d39d140e86295804cc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abaa86236f116e6d39d140e86295804cc">&#9670;&#160;</a></span>makeAuthOk()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string makeAuthOk </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>name</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Формирует ответ об успешной авторизации. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>Отображаемое имя пользователя. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Строка вида <span class="tt">auth+&amp;{name}\n</span>. </dd></dl>
+
+<p class="reference">Используется в <a class="el" href="server__logic_8cpp_source.html#l00036">ServerLogic::handleAuth()</a>.</p>
+
+</div>
+</div>
+<a id="a4d72cfc0dbd4c31afc89d43b1aaf7104" name="a4d72cfc0dbd4c31afc89d43b1aaf7104"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d72cfc0dbd4c31afc89d43b1aaf7104">&#9670;&#160;</a></span>makeCheckFail()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string makeCheckFail </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Формирует ответ об ошибке команды CHECK. </p>
+<dl class="section return"><dt>Возвращает</dt><dd>Строка <span class="tt">check-\\n</span>. </dd></dl>
+
+</div>
+</div>
+<a id="af2e21ac6c51d8f0bd42f7385223dc584" name="af2e21ac6c51d8f0bd42f7385223dc584"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af2e21ac6c51d8f0bd42f7385223dc584">&#9670;&#160;</a></span>makeCheckOk()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string makeCheckOk </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Формирует ответ об успешном результате команды CHECK. </p>
+<dl class="section return"><dt>Возвращает</dt><dd>Строка <span class="tt">check+\\n</span>. </dd></dl>
+
+</div>
+</div>
+<a id="ac170f61a5f3551b9297a1d317eaf52f9" name="ac170f61a5f3551b9297a1d317eaf52f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac170f61a5f3551b9297a1d317eaf52f9">&#9670;&#160;</a></span>makeConfirmFail()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string makeConfirmFail </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Формирует ответ об ошибке подтверждения кода (неверный или просроченный код). </p>
+<dl class="section return"><dt>Возвращает</dt><dd>Строка <span class="tt">confirm-\\n</span>. </dd></dl>
+
+<p class="reference">Используется в <a class="el" href="server__logic_8cpp_source.html#l00093">ServerLogic::handleConfirm()</a>.</p>
+
+</div>
+</div>
+<a id="aa2b4e0a62ac301e81327bdd1686930e4" name="aa2b4e0a62ac301e81327bdd1686930e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa2b4e0a62ac301e81327bdd1686930e4">&#9670;&#160;</a></span>makeConfirmOk()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string makeConfirmOk </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Формирует ответ об успешном подтверждении кода. </p>
+<dl class="section return"><dt>Возвращает</dt><dd>Строка <span class="tt">confirm+\\n</span>. </dd></dl>
+
+<p class="reference">Используется в <a class="el" href="server__logic_8cpp_source.html#l00093">ServerLogic::handleConfirm()</a>.</p>
+
+</div>
+</div>
+<a id="a2959efa3b72aeadaf2b0065031f8f930" name="a2959efa3b72aeadaf2b0065031f8f930"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2959efa3b72aeadaf2b0065031f8f930">&#9670;&#160;</a></span>makeNewpassFail()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string makeNewpassFail </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Формирует ответ об ошибке установки нового пароля. </p>
+<dl class="section return"><dt>Возвращает</dt><dd>Строка <span class="tt">newpass-\\n</span>. </dd></dl>
+
+<p class="reference">Используется в <a class="el" href="server__logic_8cpp_source.html#l00113">ServerLogic::handleNewpass()</a>.</p>
+
+</div>
+</div>
+<a id="aea5a9ac39c6904319a7020e0a8e57218" name="aea5a9ac39c6904319a7020e0a8e57218"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aea5a9ac39c6904319a7020e0a8e57218">&#9670;&#160;</a></span>makeNewpassOk()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string makeNewpassOk </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Формирует ответ об успешной установке нового пароля. </p>
+<dl class="section return"><dt>Возвращает</dt><dd>Строка <span class="tt">newpass+\\n</span>. </dd></dl>
+
+<p class="reference">Используется в <a class="el" href="server__logic_8cpp_source.html#l00113">ServerLogic::handleNewpass()</a>.</p>
+
+</div>
+</div>
+<a id="a97906ec2626b8b7ba1e045d4fe251043" name="a97906ec2626b8b7ba1e045d4fe251043"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a97906ec2626b8b7ba1e045d4fe251043">&#9670;&#160;</a></span>makeRegFail()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string makeRegFail </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Формирует ответ об ошибке регистрации (логин занят). </p>
+<dl class="section return"><dt>Возвращает</dt><dd>Строка <span class="tt">reg-\\n</span>. </dd></dl>
+
+<p class="reference">Используется в <a class="el" href="server__logic_8cpp_source.html#l00045">ServerLogic::handleReg()</a>.</p>
+
+</div>
+</div>
+<a id="a7e2b791ca74f86a2d96c8b4daa340f0c" name="a7e2b791ca74f86a2d96c8b4daa340f0c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7e2b791ca74f86a2d96c8b4daa340f0c">&#9670;&#160;</a></span>makeRegOk()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string makeRegOk </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>login</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Формирует ответ об успешной регистрации. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">login</td><td>Логин зарегистрированного пользователя. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Строка вида <span class="tt">reg+&amp;{login}\n</span>. </dd></dl>
+
+<p class="reference">Используется в <a class="el" href="server__logic_8cpp_source.html#l00045">ServerLogic::handleReg()</a>.</p>
+
+</div>
+</div>
+<a id="a6eb303bc9748cebced99b91cd27ccf78" name="a6eb303bc9748cebced99b91cd27ccf78"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6eb303bc9748cebced99b91cd27ccf78">&#9670;&#160;</a></span>makeResetFail()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string makeResetFail </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Формирует ответ об ошибке сброса пароля (логин не найден или ошибка отправки). </p>
+<dl class="section return"><dt>Возвращает</dt><dd>Строка <span class="tt">reset-\\n</span>. </dd></dl>
+
+<p class="reference">Используется в <a class="el" href="server__logic_8cpp_source.html#l00058">ServerLogic::handleReset()</a>.</p>
+
+</div>
+</div>
+<a id="afbac05fe8f0a8fea006ccdce8d297058" name="afbac05fe8f0a8fea006ccdce8d297058"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afbac05fe8f0a8fea006ccdce8d297058">&#9670;&#160;</a></span>makeResetOk()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string makeResetOk </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>maskedEmail</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Формирует ответ об успешной отправке кода сброса пароля. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">maskedEmail</td><td>Email с замаскированными символами (например, <span class="tt">***** <a href="#" onclick="location.href='mai'+'lto:'+'st@'+'ma'+'il.'+'ru'; return false;">st@ma<span class="obfuscator">.nosp@m.</span>il.r<span class="obfuscator">.nosp@m.</span>u</a></span>). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Строка вида <span class="tt">reset+&amp;{maskedEmail}\n</span>. </dd></dl>
+
+<p class="reference">Используется в <a class="el" href="server__logic_8cpp_source.html#l00058">ServerLogic::handleReset()</a>.</p>
+
+</div>
+</div>
+<a id="a0729bc8ada979ad53bc0be2a9bcb3cd2" name="a0729bc8ada979ad53bc0be2a9bcb3cd2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0729bc8ada979ad53bc0be2a9bcb3cd2">&#9670;&#160;</a></span>parseRequest()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_request.html">Request</a> parseRequest </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>raw</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Разбирает сырую строку клиентского запроса в структуру <a class="el" href="struct_request.html" title="Разобранный запрос клиента.">Request</a>. </p>
+<p>Разделитель аргументов — символ '&amp;'. Завершающие '\r' и '\n' обрезаются. Если команда неизвестна или количество аргументов не совпадает с ожидаемым, возвращается <a class="el" href="struct_request.html" title="Разобранный запрос клиента.">Request</a> с type == <a class="el" href="#a21e038f5b8958e203d28bc4f18472352a696b031073e74bf2cb98e5ef201d4aa3" title="Неизвестная или некорректно сформированная команда.">CommandType::UNKNOWN</a>.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">raw</td><td>Сырая строка запроса, полученная от клиента. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Заполненная структура <a class="el" href="struct_request.html" title="Разобранный запрос клиента.">Request</a>. </dd></dl>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><b>TaMP_Server</b></li><li class="navelem"><a href="protocol_8h.html">protocol.h</a></li>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
+  </ul>
+</div>
+</body>
+</html>

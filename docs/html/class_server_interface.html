@@ -1,0 +1,344 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.16.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>TaMP: Класс ServerInterface</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">TaMP<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">Task and Math Platform — клиент-серверное приложение на Qt/C++</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.16.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Поиск',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('class_server_interface.html','','class_server_interface-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Класс ServerInterface</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Управляет жизненным циклом серверного TCP-сокета и последовательной обработкой клиентов.  
+ <a href="#details">Подробнее...</a></p>
+
+<p><code>#include &lt;<a class="el" href="server__interface_8h_source.html">server_interface.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:acb4fa64e1ba9c81c341c76d6375c8584" id="r_acb4fa64e1ba9c81c341c76d6375c8584"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#acb4fa64e1ba9c81c341c76d6375c8584">ServerInterface</a> (int port, <a class="el" href="class_server_logic.html">ServerLogic</a> &amp;<a class="el" href="#a94a8156e20167def58ac56861dde4979">logic</a>)</td></tr>
+<tr class="memdesc:acb4fa64e1ba9c81c341c76d6375c8584"><td class="mdescLeft">&#160;</td><td class="mdescRight">Инициализирует QTcpServer и начинает прослушивание на указанном порту.  <br /></td></tr>
+<tr class="memitem:abde4a5d7d4d9a3654d349fc526f91974" id="r_abde4a5d7d4d9a3654d349fc526f91974"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#abde4a5d7d4d9a3654d349fc526f91974">~ServerInterface</a> ()</td></tr>
+<tr class="memdesc:abde4a5d7d4d9a3654d349fc526f91974"><td class="mdescLeft">&#160;</td><td class="mdescRight">Закрывает серверный сокет.  <br /></td></tr>
+<tr class="memitem:a6e2ac2dd2e03c211551969966ba9adbd" id="r_a6e2ac2dd2e03c211551969966ba9adbd"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a6e2ac2dd2e03c211551969966ba9adbd">run</a> ()</td></tr>
+<tr class="memdesc:a6e2ac2dd2e03c211551969966ba9adbd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Запускает бесконечный цикл waitForNewConnection() → <a class="el" href="#a1d6be01fb693b9eb0294d2825f4fe857" title="Читает запросы клиента в цикле и отправляет ответы до разрыва соединения.">handleClient()</a> → …  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-methods" class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Закрытые члены</h2></td></tr>
+<tr class="memitem:a1d6be01fb693b9eb0294d2825f4fe857" id="r_a1d6be01fb693b9eb0294d2825f4fe857"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a1d6be01fb693b9eb0294d2825f4fe857">handleClient</a> (QTcpSocket *client)</td></tr>
+<tr class="memdesc:a1d6be01fb693b9eb0294d2825f4fe857"><td class="mdescLeft">&#160;</td><td class="mdescRight">Читает запросы клиента в цикле и отправляет ответы до разрыва соединения.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-attribs" class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Закрытые данные</h2></td></tr>
+<tr class="memitem:ab9f9c9a203197b5e5792bc59c00857d9" id="r_ab9f9c9a203197b5e5792bc59c00857d9"><td class="memItemLeft">QTcpServer *&#160;</td><td class="memItemRight"><a class="el" href="#ab9f9c9a203197b5e5792bc59c00857d9">server</a></td></tr>
+<tr class="memdesc:ab9f9c9a203197b5e5792bc59c00857d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Qt TCP-сервер.  <br /></td></tr>
+<tr class="memitem:a94a8156e20167def58ac56861dde4979" id="r_a94a8156e20167def58ac56861dde4979"><td class="memItemLeft"><a class="el" href="class_server_logic.html">ServerLogic</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a94a8156e20167def58ac56861dde4979">logic</a></td></tr>
+<tr class="memdesc:a94a8156e20167def58ac56861dde4979"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ссылка на обработчик бизнес-логики.  <br /></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>Управляет жизненным циклом серверного TCP-сокета и последовательной обработкой клиентов. </p>
+<p>Инициализирует QTcpServer, привязывает к порту и переводит в режим прослушивания. Метод <a class="el" href="#a6e2ac2dd2e03c211551969966ba9adbd" title="Запускает бесконечный цикл waitForNewConnection() → handleClient() → …">run()</a> блокирует вызывающий поток в бесконечном цикле, принимая по одному клиенту за раз (без многопоточности).</p>
+<dl class="section note"><dt>Заметки</dt><dd>Однопоточная архитектура: пока один клиент обслуживается, следующий ждёт в очереди.</dd></dl>
+<dl class="exception"><dt>Исключения</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::runtime_error</td><td>при ошибке listen().</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>См. также</dt><dd><a class="el" href="class_server_logic.html" title="Диспетчер запросов: маршрутизирует команды к специализированным обработчикам.">ServerLogic</a> </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="server__interface_8h_source.html">server_interface.h</a> строка <a class="el" href="server__interface_8h_source.html#l00027">27</a></p>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Конструктор(ы)</h2>
+<a id="acb4fa64e1ba9c81c341c76d6375c8584" name="acb4fa64e1ba9c81c341c76d6375c8584"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acb4fa64e1ba9c81c341c76d6375c8584">&#9670;&#160;</a></span>ServerInterface()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ServerInterface::ServerInterface </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>port</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_server_logic.html">ServerLogic</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>logic</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Инициализирует QTcpServer и начинает прослушивание на указанном порту. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">port</td><td>Порт для прослушивания (например, 12345). </td></tr>
+    <tr><td class="paramname"><a class="el" href="#a94a8156e20167def58ac56861dde4979" title="Ссылка на обработчик бизнес-логики.">logic</a></td><td>Ссылка на объект бизнес-логики для обработки запросов. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Исключения</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::runtime_error</td><td>при ошибке listen(). </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">См. определение в файле <a class="el" href="server__interface_8cpp_source.html">server_interface.cpp</a> строка <a class="el" href="server__interface_8cpp_source.html#l00013">13</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="server__interface_8h_source.html#l00052">logic</a> и <a class="el" href="server__interface_8h_source.html#l00051">server</a>.</p>
+
+</div>
+</div>
+<a id="abde4a5d7d4d9a3654d349fc526f91974" name="abde4a5d7d4d9a3654d349fc526f91974"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abde4a5d7d4d9a3654d349fc526f91974">&#9670;&#160;</a></span>~ServerInterface()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ServerInterface::~ServerInterface </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Закрывает серверный сокет. </p>
+
+<p class="definition">См. определение в файле <a class="el" href="server__interface_8cpp_source.html">server_interface.cpp</a> строка <a class="el" href="server__interface_8cpp_source.html#l00026">26</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="server__interface_8h_source.html#l00051">server</a>.</p>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Методы</h2>
+<a id="a1d6be01fb693b9eb0294d2825f4fe857" name="a1d6be01fb693b9eb0294d2825f4fe857"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d6be01fb693b9eb0294d2825f4fe857">&#9670;&#160;</a></span>handleClient()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ServerInterface::handleClient </td>
+          <td>(</td>
+          <td class="paramtype">QTcpSocket *</td>          <td class="paramname"><span class="paramname"><em>client</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Читает запросы клиента в цикле и отправляет ответы до разрыва соединения. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">client</td><td>Сокет принятого клиента. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">См. определение в файле <a class="el" href="server__interface_8cpp_source.html">server_interface.cpp</a> строка <a class="el" href="server__interface_8cpp_source.html#l00053">53</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="server__interface_8h_source.html#l00052">logic</a> и <a class="el" href="protocol_8cpp_source.html#l00036">parseRequest()</a>.</p>
+
+<p class="reference">Используется в <a class="el" href="server__interface_8cpp_source.html#l00033">run()</a>.</p>
+
+</div>
+</div>
+<a id="a6e2ac2dd2e03c211551969966ba9adbd" name="a6e2ac2dd2e03c211551969966ba9adbd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6e2ac2dd2e03c211551969966ba9adbd">&#9670;&#160;</a></span>run()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ServerInterface::run </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Запускает бесконечный цикл waitForNewConnection() → <a class="el" href="#a1d6be01fb693b9eb0294d2825f4fe857" title="Читает запросы клиента в цикле и отправляет ответы до разрыва соединения.">handleClient()</a> → … </p>
+<p>Для каждого принятого соединения выводит IP клиента в stdout, обрабатывает все его запросы синхронно, затем закрывает сокет. </p>
+
+<p class="definition">См. определение в файле <a class="el" href="server__interface_8cpp_source.html">server_interface.cpp</a> строка <a class="el" href="server__interface_8cpp_source.html#l00033">33</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="server__interface_8cpp_source.html#l00053">handleClient()</a> и <a class="el" href="server__interface_8h_source.html#l00051">server</a>.</p>
+
+<p class="reference">Используется в <a class="el" href="_ta_m_p___server_2main_8cpp_source.html#l00035">main()</a>.</p>
+
+</div>
+</div>
+<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Данные класса</h2>
+<a id="a94a8156e20167def58ac56861dde4979" name="a94a8156e20167def58ac56861dde4979"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a94a8156e20167def58ac56861dde4979">&#9670;&#160;</a></span>logic</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_server_logic.html">ServerLogic</a>&amp; ServerInterface::logic</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Ссылка на обработчик бизнес-логики. </p>
+
+<p class="definition">См. определение в файле <a class="el" href="server__interface_8h_source.html">server_interface.h</a> строка <a class="el" href="server__interface_8h_source.html#l00052">52</a></p>
+
+<p class="reference">Используется в <a class="el" href="server__interface_8cpp_source.html#l00053">handleClient()</a> и <a class="el" href="server__interface_8cpp_source.html#l00013">ServerInterface()</a>.</p>
+
+</div>
+</div>
+<a id="ab9f9c9a203197b5e5792bc59c00857d9" name="ab9f9c9a203197b5e5792bc59c00857d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab9f9c9a203197b5e5792bc59c00857d9">&#9670;&#160;</a></span>server</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QTcpServer* ServerInterface::server</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Qt TCP-сервер. </p>
+
+<p class="definition">См. определение в файле <a class="el" href="server__interface_8h_source.html">server_interface.h</a> строка <a class="el" href="server__interface_8h_source.html#l00051">51</a></p>
+
+<p class="reference">Используется в <a class="el" href="server__interface_8cpp_source.html#l00033">run()</a>, <a class="el" href="server__interface_8cpp_source.html#l00013">ServerInterface()</a> и <a class="el" href="server__interface_8cpp_source.html#l00026">~ServerInterface()</a>.</p>
+
+</div>
+</div>
+<hr/>Объявления и описания членов классов находятся в файлах:<ul>
+<li>TaMP_Server/<a class="el" href="server__interface_8h_source.html">server_interface.h</a></li>
+<li>TaMP_Server/<a class="el" href="server__interface_8cpp_source.html">server_interface.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="class_server_interface.html">ServerInterface</a></li>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
+  </ul>
+</div>
+</body>
+</html>

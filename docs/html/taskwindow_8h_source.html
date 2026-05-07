@@ -1,0 +1,175 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.16.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>TaMP: Исходный файл TaMP_Client/taskwindow.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">TaMP<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">Task and Math Platform — клиент-серверное приложение на Qt/C++</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.16.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Поиск',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('taskwindow_8h_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">taskwindow.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="taskwindow_8h.html">См. документацию.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;QWidget&gt;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;QSlider&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;QLabel&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;QPushButton&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;QVBoxLayout&gt;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;QHBoxLayout&gt;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;QTableWidget&gt;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;qcustomplot.h&quot;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;QPixmap&gt;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span></div>
+<div class="foldopen" id="foldopen00032" data-start="{" data-end="};">
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="class_task_window.html">   32</a></span><span class="keyword">class </span><a class="code hl_function" href="class_task_window.html#addd531fe1ee3a3b45f545dc59401c8b4">TaskWindow</a> : <span class="keyword">public</span> QWidget {</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    Q_OBJECT</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <span class="keyword">explicit</span> <a class="code hl_function" href="class_task_window.html#addd531fe1ee3a3b45f545dc59401c8b4">TaskWindow</a>(QWidget* parent = <span class="keyword">nullptr</span>);</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_task_window.html#a69ed68a0b672a2685358362f2cf05f55">setName</a>(<span class="keyword">const</span> QString&amp; name);</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>signals:</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="class_task_window.html#adaca0f6078f289e128bc27b530201687">   54</a></span>    <span class="keywordtype">void</span> <a class="code hl_signal" href="class_task_window.html#adaca0f6078f289e128bc27b530201687">logout</a>();</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="keyword">private</span> slots:</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="class_task_window.html#a0eb21a179309f5875ad2fe9807c0d674">updatePlot</a>();</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno"><a class="line" href="class_task_window.html#a5150f7e791da6f5b593dccca04b2b024">   63</a></span>    QCustomPlot*  <a class="code hl_variable" href="class_task_window.html#a5150f7e791da6f5b593dccca04b2b024">plot</a>;        </div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="class_task_window.html#a0212988ec9ef24bd3a94d88921da0e23">   64</a></span>    QSlider*      <a class="code hl_variable" href="class_task_window.html#a0212988ec9ef24bd3a94d88921da0e23">sliderA</a>;     </div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="class_task_window.html#ac3cee433c17d94a89444ee27f7c5e071">   65</a></span>    QSlider*      <a class="code hl_variable" href="class_task_window.html#ac3cee433c17d94a89444ee27f7c5e071">sliderB</a>;     </div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="class_task_window.html#abc76e013759c8fb459bda10ea05b60c5">   66</a></span>    QSlider*      <a class="code hl_variable" href="class_task_window.html#abc76e013759c8fb459bda10ea05b60c5">sliderC</a>;     </div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno"><a class="line" href="class_task_window.html#ac4952a241daea5605600a3147d00e644">   68</a></span>    QLabel*       <a class="code hl_variable" href="class_task_window.html#ac4952a241daea5605600a3147d00e644">labelA</a>;      </div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno"><a class="line" href="class_task_window.html#ad397311ff10993197dfa6528320472a8">   69</a></span>    QLabel*       <a class="code hl_variable" href="class_task_window.html#ad397311ff10993197dfa6528320472a8">labelB</a>;      </div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="class_task_window.html#a6582bd63764d6e8315d19826e5fb1bab">   70</a></span>    QLabel*       <a class="code hl_variable" href="class_task_window.html#a6582bd63764d6e8315d19826e5fb1bab">labelC</a>;      </div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno"><a class="line" href="class_task_window.html#aca913666c3c54fc2b8de5b41c2aa99d4">   72</a></span>    QPushButton*  <a class="code hl_variable" href="class_task_window.html#aca913666c3c54fc2b8de5b41c2aa99d4">btnLogout</a>;   </div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno"><a class="line" href="class_task_window.html#aebb28dbad83cb9a474a4ba9cbb1428d9">   73</a></span>    QTableWidget* <a class="code hl_variable" href="class_task_window.html#aebb28dbad83cb9a474a4ba9cbb1428d9">table</a>;       </div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span></div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    QHBoxLayout* <a class="code hl_function" href="class_task_window.html#a666b2874dfbf94822ed746a3cfa9568c">makeSliderRow</a>(<span class="keyword">const</span> QString&amp; name,</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>                                QSlider*&amp; slider,</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>                                QLabel*&amp; valueLabel);</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span></div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    <span class="keywordtype">double</span> <a class="code hl_function" href="class_task_window.html#a032d19437897446d8d945c1dbe6e642f">f</a>(<span class="keywordtype">double</span> x, <span class="keywordtype">int</span> a, <span class="keywordtype">int</span> b, <span class="keywordtype">int</span> c);</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span></div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_task_window.html#ae6bb28382b307e6ddfeb917e22652416">setupPlot</a>();</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span></div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_task_window.html#a038cf326ca0d53fc62ce1a0475a8f573">updateTable</a>(<span class="keywordtype">int</span> a, <span class="keywordtype">int</span> b, <span class="keywordtype">int</span> c);</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>};</div>
+</div>
+<div class="ttc" id="aclass_task_window_html_a0212988ec9ef24bd3a94d88921da0e23"><div class="ttname"><a href="class_task_window.html#a0212988ec9ef24bd3a94d88921da0e23">TaskWindow::sliderA</a></div><div class="ttdeci">QSlider * sliderA</div><div class="ttdoc">Слайдер параметра a (смещение при x &lt; 0).</div><div class="ttdef"><b>Определения</b> <a href="#l00064">taskwindow.h:64</a></div></div>
+<div class="ttc" id="aclass_task_window_html_a032d19437897446d8d945c1dbe6e642f"><div class="ttname"><a href="class_task_window.html#a032d19437897446d8d945c1dbe6e642f">TaskWindow::f</a></div><div class="ttdeci">double f(double x, int a, int b, int c)</div><div class="ttdoc">Вычисляет значение кусочной функции в точке x.</div><div class="ttdef"><b>Определения</b> <a href="taskwindow_8cpp_source.html#l00161">taskwindow.cpp:161</a></div></div>
+<div class="ttc" id="aclass_task_window_html_a038cf326ca0d53fc62ce1a0475a8f573"><div class="ttname"><a href="class_task_window.html#a038cf326ca0d53fc62ce1a0475a8f573">TaskWindow::updateTable</a></div><div class="ttdeci">void updateTable(int a, int b, int c)</div><div class="ttdoc">Заполняет таблицу значениями функции для x ∈ {−10, −8, …, 10}.</div><div class="ttdef"><b>Определения</b> <a href="taskwindow_8cpp_source.html#l00170">taskwindow.cpp:170</a></div></div>
+<div class="ttc" id="aclass_task_window_html_a0eb21a179309f5875ad2fe9807c0d674"><div class="ttname"><a href="class_task_window.html#a0eb21a179309f5875ad2fe9807c0d674">TaskWindow::updatePlot</a></div><div class="ttdeci">void updatePlot()</div><div class="ttdoc">Пересчитывает и отрисовывает график и таблицу по текущим значениям слайдеров.</div><div class="ttdef"><b>Определения</b> <a href="taskwindow_8cpp_source.html#l00193">taskwindow.cpp:193</a></div></div>
+<div class="ttc" id="aclass_task_window_html_a5150f7e791da6f5b593dccca04b2b024"><div class="ttname"><a href="class_task_window.html#a5150f7e791da6f5b593dccca04b2b024">TaskWindow::plot</a></div><div class="ttdeci">QCustomPlot * plot</div><div class="ttdoc">Область отрисовки графика функции.</div><div class="ttdef"><b>Определения</b> <a href="#l00063">taskwindow.h:63</a></div></div>
+<div class="ttc" id="aclass_task_window_html_a6582bd63764d6e8315d19826e5fb1bab"><div class="ttname"><a href="class_task_window.html#a6582bd63764d6e8315d19826e5fb1bab">TaskWindow::labelC</a></div><div class="ttdeci">QLabel * labelC</div><div class="ttdoc">Текстовое отображение текущего значения c.</div><div class="ttdef"><b>Определения</b> <a href="#l00070">taskwindow.h:70</a></div></div>
+<div class="ttc" id="aclass_task_window_html_a666b2874dfbf94822ed746a3cfa9568c"><div class="ttname"><a href="class_task_window.html#a666b2874dfbf94822ed746a3cfa9568c">TaskWindow::makeSliderRow</a></div><div class="ttdeci">QHBoxLayout * makeSliderRow(const QString &amp;name, QSlider *&amp;slider, QLabel *&amp;valueLabel)</div><div class="ttdoc">Создаёт строку управления слайдером с подписью и меткой значения.</div><div class="ttdef"><b>Определения</b> <a href="taskwindow_8cpp_source.html#l00133">taskwindow.cpp:133</a></div></div>
+<div class="ttc" id="aclass_task_window_html_a69ed68a0b672a2685358362f2cf05f55"><div class="ttname"><a href="class_task_window.html#a69ed68a0b672a2685358362f2cf05f55">TaskWindow::setName</a></div><div class="ttdeci">void setName(const QString &amp;name)</div><div class="ttdoc">Задаёт имя вошедшего пользователя в заголовке окна.</div><div class="ttdef"><b>Определения</b> <a href="taskwindow_8cpp_source.html#l00073">taskwindow.cpp:73</a></div></div>
+<div class="ttc" id="aclass_task_window_html_abc76e013759c8fb459bda10ea05b60c5"><div class="ttname"><a href="class_task_window.html#abc76e013759c8fb459bda10ea05b60c5">TaskWindow::sliderC</a></div><div class="ttdeci">QSlider * sliderC</div><div class="ttdoc">Слайдер параметра c (смещение при x ≥ 2).</div><div class="ttdef"><b>Определения</b> <a href="#l00066">taskwindow.h:66</a></div></div>
+<div class="ttc" id="aclass_task_window_html_ac3cee433c17d94a89444ee27f7c5e071"><div class="ttname"><a href="class_task_window.html#ac3cee433c17d94a89444ee27f7c5e071">TaskWindow::sliderB</a></div><div class="ttdeci">QSlider * sliderB</div><div class="ttdoc">Слайдер параметра b (показатель степени при 0 ≤ x &lt; 2).</div><div class="ttdef"><b>Определения</b> <a href="#l00065">taskwindow.h:65</a></div></div>
+<div class="ttc" id="aclass_task_window_html_ac4952a241daea5605600a3147d00e644"><div class="ttname"><a href="class_task_window.html#ac4952a241daea5605600a3147d00e644">TaskWindow::labelA</a></div><div class="ttdeci">QLabel * labelA</div><div class="ttdoc">Текстовое отображение текущего значения a.</div><div class="ttdef"><b>Определения</b> <a href="#l00068">taskwindow.h:68</a></div></div>
+<div class="ttc" id="aclass_task_window_html_aca913666c3c54fc2b8de5b41c2aa99d4"><div class="ttname"><a href="class_task_window.html#aca913666c3c54fc2b8de5b41c2aa99d4">TaskWindow::btnLogout</a></div><div class="ttdeci">QPushButton * btnLogout</div><div class="ttdoc">Кнопка выхода из аккаунта.</div><div class="ttdef"><b>Определения</b> <a href="#l00072">taskwindow.h:72</a></div></div>
+<div class="ttc" id="aclass_task_window_html_ad397311ff10993197dfa6528320472a8"><div class="ttname"><a href="class_task_window.html#ad397311ff10993197dfa6528320472a8">TaskWindow::labelB</a></div><div class="ttdeci">QLabel * labelB</div><div class="ttdoc">Текстовое отображение текущего значения b.</div><div class="ttdef"><b>Определения</b> <a href="#l00069">taskwindow.h:69</a></div></div>
+<div class="ttc" id="aclass_task_window_html_adaca0f6078f289e128bc27b530201687"><div class="ttname"><a href="class_task_window.html#adaca0f6078f289e128bc27b530201687">TaskWindow::logout</a></div><div class="ttdeci">void logout()</div><div class="ttdoc">Испускается при нажатии кнопки «Выйти».</div></div>
+<div class="ttc" id="aclass_task_window_html_addd531fe1ee3a3b45f545dc59401c8b4"><div class="ttname"><a href="class_task_window.html#addd531fe1ee3a3b45f545dc59401c8b4">TaskWindow::TaskWindow</a></div><div class="ttdeci">TaskWindow(QWidget *parent=nullptr)</div><div class="ttdoc">Создаёт и компонует все виджеты окна задачи.</div><div class="ttdef"><b>Определения</b> <a href="taskwindow_8cpp_source.html#l00013">taskwindow.cpp:13</a></div></div>
+<div class="ttc" id="aclass_task_window_html_ae6bb28382b307e6ddfeb917e22652416"><div class="ttname"><a href="class_task_window.html#ae6bb28382b307e6ddfeb917e22652416">TaskWindow::setupPlot</a></div><div class="ttdeci">void setupPlot()</div><div class="ttdoc">Применяет стиль к QCustomPlot: тёмный фон, белые оси, сетка, легенда.</div><div class="ttdef"><b>Определения</b> <a href="taskwindow_8cpp_source.html#l00084">taskwindow.cpp:84</a></div></div>
+<div class="ttc" id="aclass_task_window_html_aebb28dbad83cb9a474a4ba9cbb1428d9"><div class="ttname"><a href="class_task_window.html#aebb28dbad83cb9a474a4ba9cbb1428d9">TaskWindow::table</a></div><div class="ttdeci">QTableWidget * table</div><div class="ttdoc">Таблица значений: колонки X и F(x).</div><div class="ttdef"><b>Определения</b> <a href="#l00073">taskwindow.h:73</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><b>TaMP_Client</b></li><li class="navelem"><a href="taskwindow_8h.html">taskwindow.h</a></li>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
+  </ul>
+</div>
+</body>
+</html>

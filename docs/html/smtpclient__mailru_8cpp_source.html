@@ -1,0 +1,303 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.16.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>TaMP: Исходный файл TaMP_Server/smtpclient_mailru.cpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">TaMP<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">Task and Math Platform — клиент-серверное приложение на Qt/C++</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.16.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Поиск',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('smtpclient__mailru_8cpp_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">smtpclient_mailru.cpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="smtpclient__mailru_8cpp.html">См. документацию.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &quot;<a class="code" href="smtpclient__mailru_8h.html">smtpclient_mailru.h</a>&quot;</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;QSslSocket&gt;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;QByteArray&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;QDebug&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;QFile&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;QTextStream&gt;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;QCoreApplication&gt;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;QDir&gt;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keyword">const</span> QString <a class="code hl_variable" href="class_smtp_client.html#adcbe7697b890f04b1440624aac2c14d2">SmtpClient::smtpHost</a> = <span class="stringliteral">&quot;smtp.mail.ru&quot;</span>;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="keyword">const</span> <span class="keywordtype">int</span>     <a class="code hl_variable" href="class_smtp_client.html#affa871bbdb4be76528996b3c712004bb">SmtpClient::smtpPort</a> = 465;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span></div>
+<div class="foldopen" id="foldopen00030" data-start="{" data-end="}">
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="smtpclient__mailru_8cpp.html#aa334a6b0a524b90fb88d18188d53c2f8">   30</a></span><span class="keyword">static</span> QString <a class="code hl_function" href="smtpclient__mailru_8cpp.html#aa334a6b0a524b90fb88d18188d53c2f8">readEmailTxtValue</a>(<span class="keyword">const</span> QString&amp; key) {</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    QStringList searchPaths = {</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        QCoreApplication::applicationDirPath() + <span class="stringliteral">&quot;/email.txt&quot;</span>,</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        QCoreApplication::applicationDirPath() + <span class="stringliteral">&quot;/../email.txt&quot;</span>,</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        QDir::currentPath() + <span class="stringliteral">&quot;/email.txt&quot;</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    };</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="keywordflow">for</span> (<span class="keyword">const</span> QString&amp; path : searchPaths) {</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        QFile f(path);</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        <span class="keywordflow">if</span> (!f.open(QIODevice::ReadOnly | QIODevice::Text)) <span class="keywordflow">continue</span>;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        QTextStream in(&amp;f);</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        <span class="keywordflow">while</span> (!in.atEnd()) {</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>            QString line = in.readLine();</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>            <span class="keywordflow">if</span> (line.startsWith(<span class="charliteral">&#39;#&#39;</span>)) <span class="keywordflow">continue</span>;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>            <span class="keywordtype">int</span> sep = line.indexOf(<span class="charliteral">&#39;=&#39;</span>);</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>            <span class="keywordflow">if</span> (sep &lt; 0) <span class="keywordflow">continue</span>;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>            QString k = line.left(sep).trimmed();</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>            QString v = line.mid(sep + 1).trimmed();</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>            <span class="keywordflow">if</span> (k == key) {</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>                v.remove(<span class="charliteral">&#39; &#39;</span>);</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>                <span class="keywordflow">return</span> v;</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>            }</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        }</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    }</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    qWarning() &lt;&lt; <span class="stringliteral">&quot;[SmtpClient] email.txt: key&quot;</span> &lt;&lt; key &lt;&lt; <span class="stringliteral">&quot;not found&quot;</span>;</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    <span class="keywordflow">return</span> {};</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>}</div>
+</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span></div>
+<div class="foldopen" id="foldopen00067" data-start="{" data-end="}">
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="class_smtp_client.html#ae9e052e53098a86c318a125d36da6814">   67</a></span>QString <a class="code hl_function" href="class_smtp_client.html#ae9e052e53098a86c318a125d36da6814">SmtpClient::getSender</a>() {</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="smtpclient__mailru_8cpp.html#aa334a6b0a524b90fb88d18188d53c2f8">readEmailTxtValue</a>(<span class="stringliteral">&quot;email&quot;</span>);</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>}</div>
+</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span></div>
+<div class="foldopen" id="foldopen00075" data-start="{" data-end="}">
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno"><a class="line" href="class_smtp_client.html#a5c6b308c13063bcc24a6b8656342445e">   75</a></span>QString <a class="code hl_function" href="class_smtp_client.html#a5c6b308c13063bcc24a6b8656342445e">SmtpClient::getSenderPassword</a>() {</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="smtpclient__mailru_8cpp.html#aa334a6b0a524b90fb88d18188d53c2f8">readEmailTxtValue</a>(<span class="stringliteral">&quot;key&quot;</span>);</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>}</div>
+</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span></div>
+<div class="foldopen" id="foldopen00086" data-start="{" data-end="}">
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno"><a class="line" href="smtpclient__mailru_8cpp.html#aad59138e61022bb12828d6fc5b2ca0d2">   86</a></span><span class="keyword">static</span> QByteArray <a class="code hl_function" href="smtpclient__mailru_8cpp.html#aad59138e61022bb12828d6fc5b2ca0d2">waitForData</a>(QSslSocket* socket, <span class="keywordtype">int</span> timeoutMs = 15000) {</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    QByteArray result;</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    <span class="keywordflow">if</span> (socket-&gt;bytesAvailable() == 0)</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>        socket-&gt;waitForReadyRead(timeoutMs);</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    result = socket-&gt;readAll();</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    <span class="keywordflow">while</span> (socket-&gt;waitForReadyRead(500))</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>        result.append(socket-&gt;readAll());</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    <span class="keywordflow">return</span> result;</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>}</div>
+</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span></div>
+<div class="foldopen" id="foldopen00106" data-start="{" data-end="}">
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno"><a class="line" href="smtpclient__mailru_8cpp.html#afe9fb9e0abbd47ca0eace72bb8f4ad4c">  106</a></span><span class="keyword">static</span> QString <a class="code hl_function" href="smtpclient__mailru_8cpp.html#afe9fb9e0abbd47ca0eace72bb8f4ad4c">readResponse</a>(QSslSocket* socket, <span class="keywordtype">int</span> timeoutMs = 15000) {</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    QByteArray data = <a class="code hl_function" href="smtpclient__mailru_8cpp.html#aad59138e61022bb12828d6fc5b2ca0d2">waitForData</a>(socket, timeoutMs);</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    QString all = QString::fromUtf8(data).trimmed();</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>    <span class="keywordflow">if</span> (!all.isEmpty()) {</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>        QStringList lines = all.split(<span class="charliteral">&#39;\n&#39;</span>);</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>        QString last = lines.last().trimmed();</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>        qDebug() &lt;&lt; <span class="stringliteral">&quot;[SMTP] &lt;--&quot;</span> &lt;&lt; last;</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>        <span class="keywordflow">return</span> last;</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    }</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    <span class="keywordflow">return</span> {};</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>}</div>
+</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span></div>
+<div class="foldopen" id="foldopen00125" data-start="{" data-end="}">
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno"><a class="line" href="smtpclient__mailru_8cpp.html#a22fb83c66bc84d9abb53242a85cabe6a">  125</a></span><span class="keyword">static</span> QString <a class="code hl_function" href="smtpclient__mailru_8cpp.html#a22fb83c66bc84d9abb53242a85cabe6a">sendCmd</a>(QSslSocket* socket, <span class="keyword">const</span> QByteArray&amp; cmd) {</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>    qDebug() &lt;&lt; <span class="stringliteral">&quot;[SMTP] --&gt;&quot;</span> &lt;&lt; cmd.trimmed();</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>    socket-&gt;write(cmd);</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>    socket-&gt;flush();</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>    socket-&gt;waitForBytesWritten(5000);</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="smtpclient__mailru_8cpp.html#afe9fb9e0abbd47ca0eace72bb8f4ad4c">readResponse</a>(socket);</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>}</div>
+</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span></div>
+<div class="foldopen" id="foldopen00145" data-start="{" data-end="}">
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno"><a class="line" href="smtpclient__mailru_8cpp.html#a633ce67582e0b1dba62b2db5224df440">  145</a></span><span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="smtpclient__mailru_8cpp.html#a633ce67582e0b1dba62b2db5224df440">doSend</a>(<span class="keyword">const</span> QString&amp; toEmail,</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>                   <span class="keyword">const</span> QString&amp; subjectText,</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>                   <span class="keyword">const</span> QString&amp; bodyText) {</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>    QString senderEmail    = <a class="code hl_function" href="class_smtp_client.html#ae9e052e53098a86c318a125d36da6814">SmtpClient::getSender</a>();</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>    QString senderPassword = <a class="code hl_function" href="class_smtp_client.html#a5c6b308c13063bcc24a6b8656342445e">SmtpClient::getSenderPassword</a>();</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span> </div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>    QSslSocket socket;</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>    socket.connectToHostEncrypted(<a class="code hl_variable" href="class_smtp_client.html#adcbe7697b890f04b1440624aac2c14d2">SmtpClient::smtpHost</a>, <a class="code hl_variable" href="class_smtp_client.html#affa871bbdb4be76528996b3c712004bb">SmtpClient::smtpPort</a>);</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>    socket.ignoreSslErrors();</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>    <span class="keywordflow">if</span> (!socket.waitForEncrypted(20000)) {</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>        qDebug() &lt;&lt; <span class="stringliteral">&quot;[SMTP] SSL connection failed:&quot;</span> &lt;&lt; socket.errorString();</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>    }</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>    qDebug() &lt;&lt; <span class="stringliteral">&quot;[SMTP] SSL connected&quot;</span>;</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span> </div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>    QString resp = <a class="code hl_function" href="smtpclient__mailru_8cpp.html#afe9fb9e0abbd47ca0eace72bb8f4ad4c">readResponse</a>(&amp;socket, 15000);</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>    <span class="keywordflow">if</span> (resp.isEmpty() || !resp.startsWith(<span class="stringliteral">&quot;220&quot;</span>)) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span> </div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>    resp = <a class="code hl_function" href="smtpclient__mailru_8cpp.html#a22fb83c66bc84d9abb53242a85cabe6a">sendCmd</a>(&amp;socket, <span class="stringliteral">&quot;EHLO localhost\r\n&quot;</span>);</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>    <span class="keywordflow">if</span> (!resp.startsWith(<span class="stringliteral">&quot;250&quot;</span>)) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span> </div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>    resp = <a class="code hl_function" href="smtpclient__mailru_8cpp.html#a22fb83c66bc84d9abb53242a85cabe6a">sendCmd</a>(&amp;socket, <span class="stringliteral">&quot;AUTH LOGIN\r\n&quot;</span>);</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>    <span class="keywordflow">if</span> (!resp.startsWith(<span class="stringliteral">&quot;334&quot;</span>)) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span> </div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>    resp = <a class="code hl_function" href="smtpclient__mailru_8cpp.html#a22fb83c66bc84d9abb53242a85cabe6a">sendCmd</a>(&amp;socket, senderEmail.toUtf8().toBase64() + <span class="stringliteral">&quot;\r\n&quot;</span>);</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>    <span class="keywordflow">if</span> (!resp.startsWith(<span class="stringliteral">&quot;334&quot;</span>)) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span> </div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>    resp = <a class="code hl_function" href="smtpclient__mailru_8cpp.html#a22fb83c66bc84d9abb53242a85cabe6a">sendCmd</a>(&amp;socket, senderPassword.toUtf8().toBase64() + <span class="stringliteral">&quot;\r\n&quot;</span>);</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>    <span class="keywordflow">if</span> (!resp.startsWith(<span class="stringliteral">&quot;235&quot;</span>)) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>    qDebug() &lt;&lt; <span class="stringliteral">&quot;[SMTP] Authenticated&quot;</span>;</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span> </div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>    resp = <a class="code hl_function" href="smtpclient__mailru_8cpp.html#a22fb83c66bc84d9abb53242a85cabe6a">sendCmd</a>(&amp;socket, <span class="stringliteral">&quot;MAIL FROM:&lt;&quot;</span> + senderEmail.toUtf8() + <span class="stringliteral">&quot;&gt;\r\n&quot;</span>);</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>    <span class="keywordflow">if</span> (!resp.startsWith(<span class="stringliteral">&quot;250&quot;</span>)) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span> </div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>    resp = <a class="code hl_function" href="smtpclient__mailru_8cpp.html#a22fb83c66bc84d9abb53242a85cabe6a">sendCmd</a>(&amp;socket, <span class="stringliteral">&quot;RCPT TO:&lt;&quot;</span> + toEmail.toUtf8() + <span class="stringliteral">&quot;&gt;\r\n&quot;</span>);</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>    <span class="keywordflow">if</span> (!resp.startsWith(<span class="stringliteral">&quot;250&quot;</span>)) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span> </div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>    resp = <a class="code hl_function" href="smtpclient__mailru_8cpp.html#a22fb83c66bc84d9abb53242a85cabe6a">sendCmd</a>(&amp;socket, <span class="stringliteral">&quot;DATA\r\n&quot;</span>);</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>    <span class="keywordflow">if</span> (!resp.startsWith(<span class="stringliteral">&quot;354&quot;</span>)) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span> </div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>    QByteArray subjectB64 = subjectText.toUtf8().toBase64();</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>    QByteArray email;</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>    email += <span class="stringliteral">&quot;Subject: =?UTF-8?B?&quot;</span> + subjectB64 + <span class="stringliteral">&quot;?=\r\n&quot;</span>;</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>    email += <span class="stringliteral">&quot;From: &quot;</span> + senderEmail.toUtf8() + <span class="stringliteral">&quot;\r\n&quot;</span>;</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>    email += <span class="stringliteral">&quot;To: &quot;</span> + toEmail.toUtf8() + <span class="stringliteral">&quot;\r\n&quot;</span>;</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>    email += <span class="stringliteral">&quot;Content-Type: text/plain; charset=UTF-8\r\n&quot;</span>;</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>    email += <span class="stringliteral">&quot;\r\n&quot;</span>;</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>    email += bodyText.toUtf8() + <span class="stringliteral">&quot;\r\n&quot;</span>;</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>    email += <span class="stringliteral">&quot;.\r\n&quot;</span>;</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span> </div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>    socket.write(email);</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>    socket.flush();</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>    socket.waitForBytesWritten(5000);</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>    resp = <a class="code hl_function" href="smtpclient__mailru_8cpp.html#afe9fb9e0abbd47ca0eace72bb8f4ad4c">readResponse</a>(&amp;socket);</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>    <span class="keywordflow">if</span> (!resp.startsWith(<span class="stringliteral">&quot;250&quot;</span>)) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span> </div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>    <a class="code hl_function" href="smtpclient__mailru_8cpp.html#a22fb83c66bc84d9abb53242a85cabe6a">sendCmd</a>(&amp;socket, <span class="stringliteral">&quot;QUIT\r\n&quot;</span>);</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>    socket.disconnectFromHost();</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>    <span class="keywordflow">if</span> (socket.state() != QAbstractSocket::UnconnectedState)</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>        socket.waitForDisconnected(5000);</div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span> </div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>    qDebug() &lt;&lt; <span class="stringliteral">&quot;[SMTP] Email sent to&quot;</span> &lt;&lt; toEmail;</div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>}</div>
+</div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span></div>
+<div class="foldopen" id="foldopen00213" data-start="{" data-end="}">
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno"><a class="line" href="class_smtp_client.html#ab637a48b3f57c35e60fe92c648fc662a">  213</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="class_smtp_client.html#ab637a48b3f57c35e60fe92c648fc662a">SmtpClient::sendVerificationCode</a>(<span class="keyword">const</span> QString&amp; toEmail, <span class="keyword">const</span> QString&amp; code) {</div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>    QString subject = QString::fromUtf8(<span class="stringliteral">&quot;Код подтверждения TaMP&quot;</span>);</div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>    QString body    = QString::fromUtf8(<span class="stringliteral">&quot;Ваш код подтверждения: &quot;</span>) + code;</div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="smtpclient__mailru_8cpp.html#a633ce67582e0b1dba62b2db5224df440">doSend</a>(toEmail, subject, body);</div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>}</div>
+</div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span></div>
+<div class="foldopen" id="foldopen00222" data-start="{" data-end="}">
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno"><a class="line" href="class_smtp_client.html#a1314f5dad90876cd5a0338f5a3026bf9">  222</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="class_smtp_client.html#a1314f5dad90876cd5a0338f5a3026bf9">SmtpClient::sendPasswordResetCode</a>(<span class="keyword">const</span> QString&amp; toEmail,</div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>                                      <span class="keyword">const</span> QString&amp; login,</div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>                                      <span class="keyword">const</span> QString&amp; code) {</div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>    QString subject = QString::fromUtf8(<span class="stringliteral">&quot;Восстановление пароля TaMP&quot;</span>);</div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>    QString body    =</div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>        QString::fromUtf8(<span class="stringliteral">&quot;Здравствуйте, &quot;</span>) + login +</div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>        QString::fromUtf8(<span class="stringliteral">&quot;.\n\nВаш код для сброса пароля: &quot;</span>) + code +</div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>        QString::fromUtf8(<span class="stringliteral">&quot;\n\nЕсли вы не запрашивали сброс пароля - игнорируйте это письмо.&quot;</span>);</div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span> </div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="smtpclient__mailru_8cpp.html#a633ce67582e0b1dba62b2db5224df440">doSend</a>(toEmail, subject, body);</div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>}</div>
+</div>
+<div class="ttc" id="aclass_smtp_client_html_a1314f5dad90876cd5a0338f5a3026bf9"><div class="ttname"><a href="class_smtp_client.html#a1314f5dad90876cd5a0338f5a3026bf9">SmtpClient::sendPasswordResetCode</a></div><div class="ttdeci">static bool sendPasswordResetCode(const QString &amp;toEmail, const QString &amp;login, const QString &amp;code)</div><div class="ttdoc">Отправляет письмо с кодом сброса пароля и именем пользователя в теле.</div><div class="ttdef"><b>Определения</b> <a href="#l00222">smtpclient_mailru.cpp:222</a></div></div>
+<div class="ttc" id="aclass_smtp_client_html_a5c6b308c13063bcc24a6b8656342445e"><div class="ttname"><a href="class_smtp_client.html#a5c6b308c13063bcc24a6b8656342445e">SmtpClient::getSenderPassword</a></div><div class="ttdeci">static QString getSenderPassword()</div><div class="ttdoc">Считывает app-пароль отправителя из ключа «key» в файле email.txt.</div><div class="ttdef"><b>Определения</b> <a href="#l00075">smtpclient_mailru.cpp:75</a></div></div>
+<div class="ttc" id="aclass_smtp_client_html_ab637a48b3f57c35e60fe92c648fc662a"><div class="ttname"><a href="class_smtp_client.html#ab637a48b3f57c35e60fe92c648fc662a">SmtpClient::sendVerificationCode</a></div><div class="ttdeci">static bool sendVerificationCode(const QString &amp;toEmail, const QString &amp;code)</div><div class="ttdoc">Отправляет письмо с кодом верификации.</div><div class="ttdef"><b>Определения</b> <a href="#l00213">smtpclient_mailru.cpp:213</a></div></div>
+<div class="ttc" id="aclass_smtp_client_html_adcbe7697b890f04b1440624aac2c14d2"><div class="ttname"><a href="class_smtp_client.html#adcbe7697b890f04b1440624aac2c14d2">SmtpClient::smtpHost</a></div><div class="ttdeci">static const QString smtpHost</div><div class="ttdoc">SMTP-сервер Mail.ru: «smtp.mail.ru».</div><div class="ttdef"><b>Определения</b> <a href="smtpclient__mailru_8h_source.html#l00032">smtpclient_mailru.h:32</a></div></div>
+<div class="ttc" id="aclass_smtp_client_html_ae9e052e53098a86c318a125d36da6814"><div class="ttname"><a href="class_smtp_client.html#ae9e052e53098a86c318a125d36da6814">SmtpClient::getSender</a></div><div class="ttdeci">static QString getSender()</div><div class="ttdoc">Считывает адрес отправителя из ключа «email» в файле email.txt.</div><div class="ttdef"><b>Определения</b> <a href="#l00067">smtpclient_mailru.cpp:67</a></div></div>
+<div class="ttc" id="aclass_smtp_client_html_affa871bbdb4be76528996b3c712004bb"><div class="ttname"><a href="class_smtp_client.html#affa871bbdb4be76528996b3c712004bb">SmtpClient::smtpPort</a></div><div class="ttdeci">static const int smtpPort</div><div class="ttdoc">Порт implicit SSL: 465.</div><div class="ttdef"><b>Определения</b> <a href="smtpclient__mailru_8h_source.html#l00033">smtpclient_mailru.h:33</a></div></div>
+<div class="ttc" id="asmtpclient__mailru_8cpp_html_a22fb83c66bc84d9abb53242a85cabe6a"><div class="ttname"><a href="smtpclient__mailru_8cpp.html#a22fb83c66bc84d9abb53242a85cabe6a">sendCmd</a></div><div class="ttdeci">static QString sendCmd(QSslSocket *socket, const QByteArray &amp;cmd)</div><div class="ttdoc">Отправляет SMTP-команду и возвращает ответ сервера.</div><div class="ttdef"><b>Определения</b> <a href="#l00125">smtpclient_mailru.cpp:125</a></div></div>
+<div class="ttc" id="asmtpclient__mailru_8cpp_html_a633ce67582e0b1dba62b2db5224df440"><div class="ttname"><a href="smtpclient__mailru_8cpp.html#a633ce67582e0b1dba62b2db5224df440">doSend</a></div><div class="ttdeci">static bool doSend(const QString &amp;toEmail, const QString &amp;subjectText, const QString &amp;bodyText)</div><div class="ttdoc">Выполняет полный цикл SMTP-аутентификации и отправки одного письма.</div><div class="ttdef"><b>Определения</b> <a href="#l00145">smtpclient_mailru.cpp:145</a></div></div>
+<div class="ttc" id="asmtpclient__mailru_8cpp_html_aa334a6b0a524b90fb88d18188d53c2f8"><div class="ttname"><a href="smtpclient__mailru_8cpp.html#aa334a6b0a524b90fb88d18188d53c2f8">readEmailTxtValue</a></div><div class="ttdeci">static QString readEmailTxtValue(const QString &amp;key)</div><div class="ttdoc">Ищет файл email.txt по трём путям и возвращает значение по ключу.</div><div class="ttdef"><b>Определения</b> <a href="#l00030">smtpclient_mailru.cpp:30</a></div></div>
+<div class="ttc" id="asmtpclient__mailru_8cpp_html_aad59138e61022bb12828d6fc5b2ca0d2"><div class="ttname"><a href="smtpclient__mailru_8cpp.html#aad59138e61022bb12828d6fc5b2ca0d2">waitForData</a></div><div class="ttdeci">static QByteArray waitForData(QSslSocket *socket, int timeoutMs=15000)</div><div class="ttdoc">Ожидает поступления данных в сокет и читает всё доступное.</div><div class="ttdef"><b>Определения</b> <a href="#l00086">smtpclient_mailru.cpp:86</a></div></div>
+<div class="ttc" id="asmtpclient__mailru_8cpp_html_afe9fb9e0abbd47ca0eace72bb8f4ad4c"><div class="ttname"><a href="smtpclient__mailru_8cpp.html#afe9fb9e0abbd47ca0eace72bb8f4ad4c">readResponse</a></div><div class="ttdeci">static QString readResponse(QSslSocket *socket, int timeoutMs=15000)</div><div class="ttdoc">Читает ответ SMTP-сервера и возвращает последнюю строку.</div><div class="ttdef"><b>Определения</b> <a href="#l00106">smtpclient_mailru.cpp:106</a></div></div>
+<div class="ttc" id="asmtpclient__mailru_8h_html"><div class="ttname"><a href="smtpclient__mailru_8h.html">smtpclient_mailru.h</a></div><div class="ttdoc">SMTP-клиент для отправки email через Mail.ru по протоколу SMTP/SSL (порт 465).</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><b>TaMP_Server</b></li><li class="navelem"><a href="smtpclient__mailru_8cpp.html">smtpclient_mailru.cpp</a></li>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
+  </ul>
+</div>
+</body>
+</html>

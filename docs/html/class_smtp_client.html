@@ -1,0 +1,375 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.16.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>TaMP: Класс SmtpClient</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">TaMP<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">Task and Math Platform — клиент-серверное приложение на Qt/C++</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.16.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Поиск',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('class_smtp_client.html','','class_smtp_client-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Класс SmtpClient</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Статический класс-утилита для отправки транзакционных email через Mail.ru SMTP.  
+ <a href="#details">Подробнее...</a></p>
+
+<p><code>#include &lt;<a class="el" href="smtpclient__mailru_8h_source.html">smtpclient_mailru.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+Открытые статические члены</h2></td></tr>
+<tr class="memitem:ae9e052e53098a86c318a125d36da6814" id="r_ae9e052e53098a86c318a125d36da6814"><td class="memItemLeft">static QString&#160;</td><td class="memItemRight"><a class="el" href="#ae9e052e53098a86c318a125d36da6814">getSender</a> ()</td></tr>
+<tr class="memdesc:ae9e052e53098a86c318a125d36da6814"><td class="mdescLeft">&#160;</td><td class="mdescRight">Считывает адрес отправителя из ключа «email» в файле email.txt.  <br /></td></tr>
+<tr class="memitem:a5c6b308c13063bcc24a6b8656342445e" id="r_a5c6b308c13063bcc24a6b8656342445e"><td class="memItemLeft">static QString&#160;</td><td class="memItemRight"><a class="el" href="#a5c6b308c13063bcc24a6b8656342445e">getSenderPassword</a> ()</td></tr>
+<tr class="memdesc:a5c6b308c13063bcc24a6b8656342445e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Считывает app-пароль отправителя из ключа «key» в файле email.txt.  <br /></td></tr>
+<tr class="memitem:ab637a48b3f57c35e60fe92c648fc662a" id="r_ab637a48b3f57c35e60fe92c648fc662a"><td class="memItemLeft">static bool&#160;</td><td class="memItemRight"><a class="el" href="#ab637a48b3f57c35e60fe92c648fc662a">sendVerificationCode</a> (const QString &amp;toEmail, const QString &amp;code)</td></tr>
+<tr class="memdesc:ab637a48b3f57c35e60fe92c648fc662a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Отправляет письмо с кодом верификации.  <br /></td></tr>
+<tr class="memitem:a1314f5dad90876cd5a0338f5a3026bf9" id="r_a1314f5dad90876cd5a0338f5a3026bf9"><td class="memItemLeft">static bool&#160;</td><td class="memItemRight"><a class="el" href="#a1314f5dad90876cd5a0338f5a3026bf9">sendPasswordResetCode</a> (const QString &amp;toEmail, const QString &amp;login, const QString &amp;code)</td></tr>
+<tr class="memdesc:a1314f5dad90876cd5a0338f5a3026bf9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Отправляет письмо с кодом сброса пароля и именем пользователя в теле.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-static-attribs" class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
+Статические открытые данные</h2></td></tr>
+<tr class="memitem:adcbe7697b890f04b1440624aac2c14d2" id="r_adcbe7697b890f04b1440624aac2c14d2"><td class="memItemLeft">static const QString&#160;</td><td class="memItemRight"><a class="el" href="#adcbe7697b890f04b1440624aac2c14d2">smtpHost</a> = &quot;smtp.mail.ru&quot;</td></tr>
+<tr class="memdesc:adcbe7697b890f04b1440624aac2c14d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">SMTP-сервер Mail.ru: «smtp.mail.ru».  <br /></td></tr>
+<tr class="memitem:affa871bbdb4be76528996b3c712004bb" id="r_affa871bbdb4be76528996b3c712004bb"><td class="memItemLeft">static const int&#160;</td><td class="memItemRight"><a class="el" href="#affa871bbdb4be76528996b3c712004bb">smtpPort</a> = 465</td></tr>
+<tr class="memdesc:affa871bbdb4be76528996b3c712004bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Порт implicit SSL: 465.  <br /></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>Статический класс-утилита для отправки транзакционных email через Mail.ru SMTP. </p>
+<p>Все методы статические — создавать экземпляр класса не нужно. Соединение устанавливается с нуля для каждого вызова (implicit SSL, порт 465). Используется QSslSocket из Qt Network.</p>
+<dl class="section note"><dt>Заметки</dt><dd>Отправка блокирует вызывающий поток на время SMTP-транзакции. </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="smtpclient__mailru_8h_source.html">smtpclient_mailru.h</a> строка <a class="el" href="smtpclient__mailru_8h_source.html#l00030">30</a></p>
+</div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Методы</h2>
+<a id="ae9e052e53098a86c318a125d36da6814" name="ae9e052e53098a86c318a125d36da6814"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae9e052e53098a86c318a125d36da6814">&#9670;&#160;</a></span>getSender()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString SmtpClient::getSender </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Считывает адрес отправителя из ключа «email» в файле email.txt. </p>
+<p>Читает адрес отправителя из ключа «email» в email.txt.</p>
+<dl class="section return"><dt>Возвращает</dt><dd>Email отправителя, или пустая строка если ключ не найден.</dd>
+<dd>
+Email отправителя или пустая строка. </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="smtpclient__mailru_8cpp_source.html">smtpclient_mailru.cpp</a> строка <a class="el" href="smtpclient__mailru_8cpp_source.html#l00067">67</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="smtpclient__mailru_8cpp_source.html#l00030">readEmailTxtValue()</a>.</p>
+
+<p class="reference">Используется в <a class="el" href="smtpclient__mailru_8cpp_source.html#l00145">doSend()</a>.</p>
+
+</div>
+</div>
+<a id="a5c6b308c13063bcc24a6b8656342445e" name="a5c6b308c13063bcc24a6b8656342445e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5c6b308c13063bcc24a6b8656342445e">&#9670;&#160;</a></span>getSenderPassword()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString SmtpClient::getSenderPassword </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Считывает app-пароль отправителя из ключа «key» в файле email.txt. </p>
+<p>Читает app-пароль из ключа «key» в email.txt.</p>
+<dl class="section return"><dt>Возвращает</dt><dd>Пароль приложения, или пустая строка если ключ не найден.</dd>
+<dd>
+App-пароль отправителя или пустая строка. </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="smtpclient__mailru_8cpp_source.html">smtpclient_mailru.cpp</a> строка <a class="el" href="smtpclient__mailru_8cpp_source.html#l00075">75</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="smtpclient__mailru_8cpp_source.html#l00030">readEmailTxtValue()</a>.</p>
+
+<p class="reference">Используется в <a class="el" href="smtpclient__mailru_8cpp_source.html#l00145">doSend()</a>.</p>
+
+</div>
+</div>
+<a id="a1314f5dad90876cd5a0338f5a3026bf9" name="a1314f5dad90876cd5a0338f5a3026bf9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1314f5dad90876cd5a0338f5a3026bf9">&#9670;&#160;</a></span>sendPasswordResetCode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool SmtpClient::sendPasswordResetCode </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>toEmail</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>login</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>code</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Отправляет письмо с кодом сброса пароля и именем пользователя в теле. </p>
+<p>Отправляет письмо с кодом сброса пароля и приветствием по имени пользователя.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">toEmail</td><td>Email получателя. </td></tr>
+    <tr><td class="paramname">login</td><td>Логин пользователя (вставляется в приветствие письма). </td></tr>
+    <tr><td class="paramname">code</td><td>6-значный код сброса пароля (plain text). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd><code>true</code> при успешной отправке, <code>false</code> при любой SMTP-ошибке. </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="smtpclient__mailru_8cpp_source.html">smtpclient_mailru.cpp</a> строка <a class="el" href="smtpclient__mailru_8cpp_source.html#l00222">222</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="smtpclient__mailru_8cpp_source.html#l00145">doSend()</a>.</p>
+
+<p class="reference">Используется в <a class="el" href="server__logic_8cpp_source.html#l00058">ServerLogic::handleReset()</a>.</p>
+
+</div>
+</div>
+<a id="ab637a48b3f57c35e60fe92c648fc662a" name="ab637a48b3f57c35e60fe92c648fc662a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab637a48b3f57c35e60fe92c648fc662a">&#9670;&#160;</a></span>sendVerificationCode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool SmtpClient::sendVerificationCode </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>toEmail</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>code</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Отправляет письмо с кодом верификации. </p>
+<p>Отправляет письмо с кодом верификации на указанный email.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">toEmail</td><td>Email получателя. </td></tr>
+    <tr><td class="paramname">code</td><td>6-значный код подтверждения (plain text). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd><code>true</code> при успешной отправке, <code>false</code> при любой SMTP-ошибке. </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="smtpclient__mailru_8cpp_source.html">smtpclient_mailru.cpp</a> строка <a class="el" href="smtpclient__mailru_8cpp_source.html#l00213">213</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="smtpclient__mailru_8cpp_source.html#l00145">doSend()</a>.</p>
+
+</div>
+</div>
+<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Данные класса</h2>
+<a id="adcbe7697b890f04b1440624aac2c14d2" name="adcbe7697b890f04b1440624aac2c14d2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adcbe7697b890f04b1440624aac2c14d2">&#9670;&#160;</a></span>smtpHost</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const QString SmtpClient::smtpHost = &quot;smtp.mail.ru&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>SMTP-сервер Mail.ru: «smtp.mail.ru». </p>
+
+<p class="definition">См. определение в файле <a class="el" href="smtpclient__mailru_8h_source.html">smtpclient_mailru.h</a> строка <a class="el" href="smtpclient__mailru_8h_source.html#l00032">32</a></p>
+
+<p class="reference">Используется в <a class="el" href="smtpclient__mailru_8cpp_source.html#l00145">doSend()</a>.</p>
+
+</div>
+</div>
+<a id="affa871bbdb4be76528996b3c712004bb" name="affa871bbdb4be76528996b3c712004bb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#affa871bbdb4be76528996b3c712004bb">&#9670;&#160;</a></span>smtpPort</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int SmtpClient::smtpPort = 465</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Порт implicit SSL: 465. </p>
+
+<p class="definition">См. определение в файле <a class="el" href="smtpclient__mailru_8h_source.html">smtpclient_mailru.h</a> строка <a class="el" href="smtpclient__mailru_8h_source.html#l00033">33</a></p>
+
+<p class="reference">Используется в <a class="el" href="smtpclient__mailru_8cpp_source.html#l00145">doSend()</a>.</p>
+
+</div>
+</div>
+<hr/>Объявления и описания членов классов находятся в файлах:<ul>
+<li>TaMP_Server/<a class="el" href="smtpclient__mailru_8h_source.html">smtpclient_mailru.h</a></li>
+<li>TaMP_Server/<a class="el" href="smtpclient__mailru_8cpp_source.html">smtpclient_mailru.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="class_smtp_client.html">SmtpClient</a></li>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,211 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.16.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>TaMP: Исходный файл TaMP_Server/db_handler.cpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">TaMP<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">Task and Math Platform — клиент-серверное приложение на Qt/C++</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.16.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Поиск',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('db__handler_8cpp_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">db_handler.cpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="db__handler_8cpp.html">См. документацию.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &quot;<a class="code" href="db__handler_8h.html">db_handler.h</a>&quot;</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &lt;QSqlQuery&gt;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;QSqlError&gt;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;stdexcept&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span></div>
+<div class="foldopen" id="foldopen00015" data-start="{" data-end="}">
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="class_db_handler.html#a76a5d0897453819bd523dce3dd383519">   15</a></span><a class="code hl_function" href="class_db_handler.html#a76a5d0897453819bd523dce3dd383519">DbHandler::DbHandler</a>(<span class="keyword">const</span> std::string&amp; dbPath) {</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <a class="code hl_variable" href="class_db_handler.html#a3224de60e376c7c119a9a95a71b843ec">db</a> = QSqlDatabase::addDatabase(<span class="stringliteral">&quot;QSQLITE&quot;</span>);</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <a class="code hl_variable" href="class_db_handler.html#a3224de60e376c7c119a9a95a71b843ec">db</a>.setDatabaseName(QString::fromStdString(dbPath));</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="class_db_handler.html#a3224de60e376c7c119a9a95a71b843ec">db</a>.open())</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;Cannot open database: &quot;</span> + <a class="code hl_variable" href="class_db_handler.html#a3224de60e376c7c119a9a95a71b843ec">db</a>.lastError().text().toStdString());</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <a class="code hl_function" href="class_db_handler.html#a37fc765f8f801253bf370dc565d03c47">initTables</a>();</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>}</div>
+</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span></div>
+<div class="foldopen" id="foldopen00026" data-start="{" data-end="}">
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="class_db_handler.html#a68a43d0ed68e3eadaed44e5b6be5ab10">   26</a></span><a class="code hl_function" href="class_db_handler.html#a68a43d0ed68e3eadaed44e5b6be5ab10">DbHandler::~DbHandler</a>() {</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <a class="code hl_variable" href="class_db_handler.html#a3224de60e376c7c119a9a95a71b843ec">db</a>.close();</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>}</div>
+</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span></div>
+<div class="foldopen" id="foldopen00034" data-start="{" data-end="}">
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="class_db_handler.html#a37fc765f8f801253bf370dc565d03c47">   34</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_db_handler.html#a37fc765f8f801253bf370dc565d03c47">DbHandler::initTables</a>() {</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    QSqlQuery q(<a class="code hl_variable" href="class_db_handler.html#a3224de60e376c7c119a9a95a71b843ec">db</a>);</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="keywordflow">if</span> (!q.exec(</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>            <span class="stringliteral">&quot;CREATE TABLE IF NOT EXISTS users (&quot;</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>            <span class="stringliteral">&quot;  id    INTEGER PRIMARY KEY AUTOINCREMENT,&quot;</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>            <span class="stringliteral">&quot;  name  TEXT    NOT NULL,&quot;</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>            <span class="stringliteral">&quot;  login TEXT    NOT NULL UNIQUE,&quot;</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>            <span class="stringliteral">&quot;  hash  TEXT    NOT NULL,&quot;</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>            <span class="stringliteral">&quot;  email TEXT    NOT NULL&quot;</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>            <span class="stringliteral">&quot;);&quot;</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        ))</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;initTables failed: &quot;</span> + q.lastError().text().toStdString());</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>}</div>
+</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span></div>
+<div class="foldopen" id="foldopen00051" data-start="{" data-end="}">
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="class_db_handler.html#aca35ad6a52a618b5aa0e081dba52ef18">   51</a></span>std::string <a class="code hl_function" href="class_db_handler.html#aca35ad6a52a618b5aa0e081dba52ef18">DbHandler::authUser</a>(<span class="keyword">const</span> std::string&amp; login, <span class="keyword">const</span> std::string&amp; hash) {</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    QSqlQuery q(<a class="code hl_variable" href="class_db_handler.html#a3224de60e376c7c119a9a95a71b843ec">db</a>);</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    q.prepare(<span class="stringliteral">&quot;SELECT name FROM users WHERE login = :login AND hash = :hash;&quot;</span>);</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    q.bindValue(<span class="stringliteral">&quot;:login&quot;</span>, QString::fromStdString(login));</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    q.bindValue(<span class="stringliteral">&quot;:hash&quot;</span>,  QString::fromStdString(hash));</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    q.exec();</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    <span class="keywordflow">if</span> (q.next())</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>        <span class="keywordflow">return</span> q.value(0).toString().toStdString();</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <span class="keywordflow">return</span> {};</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>}</div>
+</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span></div>
+<div class="foldopen" id="foldopen00065" data-start="{" data-end="}">
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="class_db_handler.html#a8ee0efbdcf3f99e545702f9a604bce12">   65</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="class_db_handler.html#a8ee0efbdcf3f99e545702f9a604bce12">DbHandler::registerUser</a>(<span class="keyword">const</span> std::string&amp; login, <span class="keyword">const</span> std::string&amp; name,</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>                              <span class="keyword">const</span> std::string&amp; hash, <span class="keyword">const</span> std::string&amp; email) {</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    QSqlQuery q(<a class="code hl_variable" href="class_db_handler.html#a3224de60e376c7c119a9a95a71b843ec">db</a>);</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    q.prepare(<span class="stringliteral">&quot;INSERT INTO users (login, name, hash, email) VALUES (:login, :name, :hash, :email);&quot;</span>);</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    q.bindValue(<span class="stringliteral">&quot;:login&quot;</span>, QString::fromStdString(login));</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    q.bindValue(<span class="stringliteral">&quot;:name&quot;</span>,  QString::fromStdString(name));</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    q.bindValue(<span class="stringliteral">&quot;:hash&quot;</span>,  QString::fromStdString(hash));</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    q.bindValue(<span class="stringliteral">&quot;:email&quot;</span>, QString::fromStdString(email));</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    <span class="keywordflow">return</span> q.exec();</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>}</div>
+</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span></div>
+<div class="foldopen" id="foldopen00079" data-start="{" data-end="}">
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno"><a class="line" href="class_db_handler.html#a6c9fa2c9f23295fb0c30c43ccfe3cef4">   79</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="class_db_handler.html#a6c9fa2c9f23295fb0c30c43ccfe3cef4">DbHandler::emailExists</a>(<span class="keyword">const</span> std::string&amp; email) {</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    QSqlQuery q(<a class="code hl_variable" href="class_db_handler.html#a3224de60e376c7c119a9a95a71b843ec">db</a>);</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    q.prepare(<span class="stringliteral">&quot;SELECT 1 FROM users WHERE email = :email;&quot;</span>);</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    q.bindValue(<span class="stringliteral">&quot;:email&quot;</span>, QString::fromStdString(email));</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    q.exec();</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    <span class="keywordflow">return</span> q.next();</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>}</div>
+</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span></div>
+<div class="foldopen" id="foldopen00090" data-start="{" data-end="}">
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno"><a class="line" href="class_db_handler.html#a51be19faafb75f69439d7952ada06ede">   90</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="class_db_handler.html#a51be19faafb75f69439d7952ada06ede">DbHandler::updatePassword</a>(<span class="keyword">const</span> std::string&amp; email, <span class="keyword">const</span> std::string&amp; hash) {</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    QSqlQuery q(<a class="code hl_variable" href="class_db_handler.html#a3224de60e376c7c119a9a95a71b843ec">db</a>);</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    q.prepare(<span class="stringliteral">&quot;UPDATE users SET hash = :hash WHERE email = :email;&quot;</span>);</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    q.bindValue(<span class="stringliteral">&quot;:hash&quot;</span>,  QString::fromStdString(hash));</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    q.bindValue(<span class="stringliteral">&quot;:email&quot;</span>, QString::fromStdString(email));</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    <span class="keywordflow">return</span> q.exec() &amp;&amp; q.numRowsAffected() &gt; 0;</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>}</div>
+</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span></div>
+<div class="foldopen" id="foldopen00101" data-start="{" data-end="}">
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno"><a class="line" href="class_db_handler.html#aaf554b127ee51330a680d4de7f3efc36">  101</a></span>std::string <a class="code hl_function" href="class_db_handler.html#aaf554b127ee51330a680d4de7f3efc36">DbHandler::getEmailByLogin</a>(<span class="keyword">const</span> std::string&amp; login) {</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    QSqlQuery q(<a class="code hl_variable" href="class_db_handler.html#a3224de60e376c7c119a9a95a71b843ec">db</a>);</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    q.prepare(<span class="stringliteral">&quot;SELECT email FROM users WHERE login = :login;&quot;</span>);</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    q.bindValue(<span class="stringliteral">&quot;:login&quot;</span>, QString::fromStdString(login));</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    q.exec();</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    <span class="keywordflow">if</span> (q.next())</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>        <span class="keywordflow">return</span> q.value(0).toString().toStdString();</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    <span class="keywordflow">return</span> {};</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>}</div>
+</div>
+<div class="ttc" id="aclass_db_handler_html_a3224de60e376c7c119a9a95a71b843ec"><div class="ttname"><a href="class_db_handler.html#a3224de60e376c7c119a9a95a71b843ec">DbHandler::db</a></div><div class="ttdeci">QSqlDatabase db</div><div class="ttdoc">Дескриптор соединения с SQLite через Qt SQL.</div><div class="ttdef"><b>Определения</b> <a href="db__handler_8h_source.html#l00089">db_handler.h:89</a></div></div>
+<div class="ttc" id="aclass_db_handler_html_a37fc765f8f801253bf370dc565d03c47"><div class="ttname"><a href="class_db_handler.html#a37fc765f8f801253bf370dc565d03c47">DbHandler::initTables</a></div><div class="ttdeci">void initTables()</div><div class="ttdoc">Создаёт таблицы БД, если они ещё не существуют.</div><div class="ttdef"><b>Определения</b> <a href="#l00034">db_handler.cpp:34</a></div></div>
+<div class="ttc" id="aclass_db_handler_html_a51be19faafb75f69439d7952ada06ede"><div class="ttname"><a href="class_db_handler.html#a51be19faafb75f69439d7952ada06ede">DbHandler::updatePassword</a></div><div class="ttdeci">bool updatePassword(const std::string &amp;email, const std::string &amp;hash)</div><div class="ttdoc">Обновляет хэш пароля пользователя, найденного по email.</div><div class="ttdef"><b>Определения</b> <a href="#l00090">db_handler.cpp:90</a></div></div>
+<div class="ttc" id="aclass_db_handler_html_a68a43d0ed68e3eadaed44e5b6be5ab10"><div class="ttname"><a href="class_db_handler.html#a68a43d0ed68e3eadaed44e5b6be5ab10">DbHandler::~DbHandler</a></div><div class="ttdeci">~DbHandler()</div><div class="ttdoc">Закрывает соединение с базой данных.</div><div class="ttdef"><b>Определения</b> <a href="#l00026">db_handler.cpp:26</a></div></div>
+<div class="ttc" id="aclass_db_handler_html_a6c9fa2c9f23295fb0c30c43ccfe3cef4"><div class="ttname"><a href="class_db_handler.html#a6c9fa2c9f23295fb0c30c43ccfe3cef4">DbHandler::emailExists</a></div><div class="ttdeci">bool emailExists(const std::string &amp;email)</div><div class="ttdoc">Проверяет, зарегистрирован ли указанный email в системе.</div><div class="ttdef"><b>Определения</b> <a href="#l00079">db_handler.cpp:79</a></div></div>
+<div class="ttc" id="aclass_db_handler_html_a76a5d0897453819bd523dce3dd383519"><div class="ttname"><a href="class_db_handler.html#a76a5d0897453819bd523dce3dd383519">DbHandler::DbHandler</a></div><div class="ttdeci">DbHandler(const std::string &amp;dbPath)</div><div class="ttdoc">Открывает SQLite-базу данных и инициализирует таблицы.</div><div class="ttdef"><b>Определения</b> <a href="#l00015">db_handler.cpp:15</a></div></div>
+<div class="ttc" id="aclass_db_handler_html_a8ee0efbdcf3f99e545702f9a604bce12"><div class="ttname"><a href="class_db_handler.html#a8ee0efbdcf3f99e545702f9a604bce12">DbHandler::registerUser</a></div><div class="ttdeci">bool registerUser(const std::string &amp;login, const std::string &amp;name, const std::string &amp;hash, const std::string &amp;email)</div><div class="ttdoc">Добавляет новую запись пользователя в базу данных.</div><div class="ttdef"><b>Определения</b> <a href="#l00065">db_handler.cpp:65</a></div></div>
+<div class="ttc" id="aclass_db_handler_html_aaf554b127ee51330a680d4de7f3efc36"><div class="ttname"><a href="class_db_handler.html#aaf554b127ee51330a680d4de7f3efc36">DbHandler::getEmailByLogin</a></div><div class="ttdeci">std::string getEmailByLogin(const std::string &amp;login)</div><div class="ttdoc">Возвращает email пользователя по его логину.</div><div class="ttdef"><b>Определения</b> <a href="#l00101">db_handler.cpp:101</a></div></div>
+<div class="ttc" id="aclass_db_handler_html_aca35ad6a52a618b5aa0e081dba52ef18"><div class="ttname"><a href="class_db_handler.html#aca35ad6a52a618b5aa0e081dba52ef18">DbHandler::authUser</a></div><div class="ttdeci">std::string authUser(const std::string &amp;login, const std::string &amp;hash)</div><div class="ttdoc">Проверяет пару логин/хэш и возвращает имя пользователя.</div><div class="ttdef"><b>Определения</b> <a href="#l00051">db_handler.cpp:51</a></div></div>
+<div class="ttc" id="adb__handler_8h_html"><div class="ttname"><a href="db__handler_8h.html">db_handler.h</a></div><div class="ttdoc">RAII-обёртка над Qt SQL (SQLite) для хранения данных пользователей TaMP.</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><b>TaMP_Server</b></li><li class="navelem"><a href="db__handler_8cpp.html">db_handler.cpp</a></li>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
+  </ul>
+</div>
+</body>
+</html>

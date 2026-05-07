@@ -1,0 +1,374 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.16.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>TaMP: Файл TaMP_Server/smtpclient_mailru.cpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">TaMP<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">Task and Math Platform — клиент-серверное приложение на Qt/C++</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.16.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Поиск',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('smtpclient__mailru_8cpp.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Файл smtpclient_mailru.cpp</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Реализация SMTP/SSL-клиента для отправки писем через Mail.ru.  
+<a href="#details">Подробнее...</a></p>
+<div class="textblock"><code>#include &quot;<a class="el" href="smtpclient__mailru_8h_source.html">smtpclient_mailru.h</a>&quot;</code><br />
+<code>#include &lt;QSslSocket&gt;</code><br />
+<code>#include &lt;QByteArray&gt;</code><br />
+<code>#include &lt;QDebug&gt;</code><br />
+<code>#include &lt;QFile&gt;</code><br />
+<code>#include &lt;QTextStream&gt;</code><br />
+<code>#include &lt;QCoreApplication&gt;</code><br />
+<code>#include &lt;QDir&gt;</code><br />
+</div>
+<p><a href="smtpclient__mailru_8cpp_source.html">См. исходные тексты.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Функции</h2></td></tr>
+<tr class="memitem:aa334a6b0a524b90fb88d18188d53c2f8" id="r_aa334a6b0a524b90fb88d18188d53c2f8"><td class="memItemLeft">static QString&#160;</td><td class="memItemRight"><a class="el" href="#aa334a6b0a524b90fb88d18188d53c2f8">readEmailTxtValue</a> (const QString &amp;key)</td></tr>
+<tr class="memdesc:aa334a6b0a524b90fb88d18188d53c2f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ищет файл email.txt по трём путям и возвращает значение по ключу.  <br /></td></tr>
+<tr class="memitem:aad59138e61022bb12828d6fc5b2ca0d2" id="r_aad59138e61022bb12828d6fc5b2ca0d2"><td class="memItemLeft">static QByteArray&#160;</td><td class="memItemRight"><a class="el" href="#aad59138e61022bb12828d6fc5b2ca0d2">waitForData</a> (QSslSocket *socket, int timeoutMs=15000)</td></tr>
+<tr class="memdesc:aad59138e61022bb12828d6fc5b2ca0d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ожидает поступления данных в сокет и читает всё доступное.  <br /></td></tr>
+<tr class="memitem:afe9fb9e0abbd47ca0eace72bb8f4ad4c" id="r_afe9fb9e0abbd47ca0eace72bb8f4ad4c"><td class="memItemLeft">static QString&#160;</td><td class="memItemRight"><a class="el" href="#afe9fb9e0abbd47ca0eace72bb8f4ad4c">readResponse</a> (QSslSocket *socket, int timeoutMs=15000)</td></tr>
+<tr class="memdesc:afe9fb9e0abbd47ca0eace72bb8f4ad4c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Читает ответ SMTP-сервера и возвращает последнюю строку.  <br /></td></tr>
+<tr class="memitem:a22fb83c66bc84d9abb53242a85cabe6a" id="r_a22fb83c66bc84d9abb53242a85cabe6a"><td class="memItemLeft">static QString&#160;</td><td class="memItemRight"><a class="el" href="#a22fb83c66bc84d9abb53242a85cabe6a">sendCmd</a> (QSslSocket *socket, const QByteArray &amp;cmd)</td></tr>
+<tr class="memdesc:a22fb83c66bc84d9abb53242a85cabe6a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Отправляет SMTP-команду и возвращает ответ сервера.  <br /></td></tr>
+<tr class="memitem:a633ce67582e0b1dba62b2db5224df440" id="r_a633ce67582e0b1dba62b2db5224df440"><td class="memItemLeft">static bool&#160;</td><td class="memItemRight"><a class="el" href="#a633ce67582e0b1dba62b2db5224df440">doSend</a> (const QString &amp;toEmail, const QString &amp;subjectText, const QString &amp;bodyText)</td></tr>
+<tr class="memdesc:a633ce67582e0b1dba62b2db5224df440"><td class="mdescLeft">&#160;</td><td class="mdescRight">Выполняет полный цикл SMTP-аутентификации и отправки одного письма.  <br /></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>Реализация SMTP/SSL-клиента для отправки писем через Mail.ru. </p>
+
+<p class="definition">См. определение в файле <a class="el" href="smtpclient__mailru_8cpp_source.html">smtpclient_mailru.cpp</a></p>
+</div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Функции</h2>
+<a id="a633ce67582e0b1dba62b2db5224df440" name="a633ce67582e0b1dba62b2db5224df440"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a633ce67582e0b1dba62b2db5224df440">&#9670;&#160;</a></span>doSend()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool doSend </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>toEmail</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>subjectText</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>bodyText</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Выполняет полный цикл SMTP-аутентификации и отправки одного письма. </p>
+<p>Последовательность команд: SSL-handshake → EHLO → AUTH LOGIN → base64(login) → base64(password) → MAIL FROM → RCPT TO → DATA → QUIT. Тема письма кодируется в Base64 UTF-8 (RFC 2047, формат =?UTF-8?B?...?=).</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">toEmail</td><td>Email получателя. </td></tr>
+    <tr><td class="paramname">subjectText</td><td>Тема письма в UTF-8 (будет закодирована в Base64). </td></tr>
+    <tr><td class="paramname">bodyText</td><td>Тело письма в UTF-8 (plain text). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd><code>true</code> при получении кода 250 после DATA, <code>false</code> при любой ошибке. </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="smtpclient__mailru_8cpp_source.html">smtpclient_mailru.cpp</a> строка <a class="el" href="smtpclient__mailru_8cpp_source.html#l00145">145</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="smtpclient__mailru_8cpp_source.html#l00067">SmtpClient::getSender()</a>, <a class="el" href="smtpclient__mailru_8cpp_source.html#l00075">SmtpClient::getSenderPassword()</a>, <a class="el" href="smtpclient__mailru_8cpp_source.html#l00106">readResponse()</a>, <a class="el" href="smtpclient__mailru_8cpp_source.html#l00125">sendCmd()</a>, <a class="el" href="smtpclient__mailru_8h_source.html#l00032">SmtpClient::smtpHost</a> и <a class="el" href="smtpclient__mailru_8h_source.html#l00033">SmtpClient::smtpPort</a>.</p>
+
+<p class="reference">Используется в <a class="el" href="smtpclient__mailru_8cpp_source.html#l00222">SmtpClient::sendPasswordResetCode()</a> и <a class="el" href="smtpclient__mailru_8cpp_source.html#l00213">SmtpClient::sendVerificationCode()</a>.</p>
+
+</div>
+</div>
+<a id="aa334a6b0a524b90fb88d18188d53c2f8" name="aa334a6b0a524b90fb88d18188d53c2f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa334a6b0a524b90fb88d18188d53c2f8">&#9670;&#160;</a></span>readEmailTxtValue()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString readEmailTxtValue </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>key</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Ищет файл email.txt по трём путям и возвращает значение по ключу. </p>
+<p>Пути поиска (в порядке приоритета):</p><ol type="1">
+<li>applicationDir/email.txt</li>
+<li>applicationDir/../email.txt</li>
+<li>currentDir/email.txt</li>
+</ol>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td>Ключ для поиска в файле (например, "email" или "key"). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Значение после символа '=' с обрезанными пробелами, или пустая строка. </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="smtpclient__mailru_8cpp_source.html">smtpclient_mailru.cpp</a> строка <a class="el" href="smtpclient__mailru_8cpp_source.html#l00030">30</a></p>
+
+<p class="reference">Используется в <a class="el" href="smtpclient__mailru_8cpp_source.html#l00067">SmtpClient::getSender()</a> и <a class="el" href="smtpclient__mailru_8cpp_source.html#l00075">SmtpClient::getSenderPassword()</a>.</p>
+
+</div>
+</div>
+<a id="afe9fb9e0abbd47ca0eace72bb8f4ad4c" name="afe9fb9e0abbd47ca0eace72bb8f4ad4c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afe9fb9e0abbd47ca0eace72bb8f4ad4c">&#9670;&#160;</a></span>readResponse()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString readResponse </td>
+          <td>(</td>
+          <td class="paramtype">QSslSocket *</td>          <td class="paramname"><span class="paramname"><em>socket</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>timeoutMs</em></span><span class="paramdefsep"> = </span><span class="paramdefval">15000</span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Читает ответ SMTP-сервера и возвращает последнюю строку. </p>
+<p>Многострочные ответы SMTP (например, после EHLO) усекаются до последней строки, которая содержит финальный код ответа.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">socket</td><td>SSL-сокет для чтения. </td></tr>
+    <tr><td class="paramname">timeoutMs</td><td>Таймаут ожидания в миллисекундах (по умолчанию 15 с). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Последняя строка ответа сервера, или пустая строка при таймауте. </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="smtpclient__mailru_8cpp_source.html">smtpclient_mailru.cpp</a> строка <a class="el" href="smtpclient__mailru_8cpp_source.html#l00106">106</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="smtpclient__mailru_8cpp_source.html#l00086">waitForData()</a>.</p>
+
+<p class="reference">Используется в <a class="el" href="smtpclient__mailru_8cpp_source.html#l00145">doSend()</a> и <a class="el" href="smtpclient__mailru_8cpp_source.html#l00125">sendCmd()</a>.</p>
+
+</div>
+</div>
+<a id="a22fb83c66bc84d9abb53242a85cabe6a" name="a22fb83c66bc84d9abb53242a85cabe6a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a22fb83c66bc84d9abb53242a85cabe6a">&#9670;&#160;</a></span>sendCmd()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString sendCmd </td>
+          <td>(</td>
+          <td class="paramtype">QSslSocket *</td>          <td class="paramname"><span class="paramname"><em>socket</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QByteArray &amp;</td>          <td class="paramname"><span class="paramname"><em>cmd</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Отправляет SMTP-команду и возвращает ответ сервера. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">socket</td><td>SSL-сокет для отправки. </td></tr>
+    <tr><td class="paramname">cmd</td><td>Команда в формате SMTP, заканчивающаяся на <span class="tt">\r\n</span>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Последняя строка ответа SMTP-сервера. </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="smtpclient__mailru_8cpp_source.html">smtpclient_mailru.cpp</a> строка <a class="el" href="smtpclient__mailru_8cpp_source.html#l00125">125</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="smtpclient__mailru_8cpp_source.html#l00106">readResponse()</a>.</p>
+
+<p class="reference">Используется в <a class="el" href="smtpclient__mailru_8cpp_source.html#l00145">doSend()</a>.</p>
+
+</div>
+</div>
+<a id="aad59138e61022bb12828d6fc5b2ca0d2" name="aad59138e61022bb12828d6fc5b2ca0d2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aad59138e61022bb12828d6fc5b2ca0d2">&#9670;&#160;</a></span>waitForData()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QByteArray waitForData </td>
+          <td>(</td>
+          <td class="paramtype">QSslSocket *</td>          <td class="paramname"><span class="paramname"><em>socket</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>timeoutMs</em></span><span class="paramdefsep"> = </span><span class="paramdefval">15000</span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Ожидает поступления данных в сокет и читает всё доступное. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">socket</td><td>SSL-сокет для чтения. </td></tr>
+    <tr><td class="paramname">timeoutMs</td><td>Таймаут ожидания первых данных в миллисекундах (по умолчанию 15 с). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Все прочитанные байты; может быть пустым при таймауте. </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="smtpclient__mailru_8cpp_source.html">smtpclient_mailru.cpp</a> строка <a class="el" href="smtpclient__mailru_8cpp_source.html#l00086">86</a></p>
+
+<p class="reference">Используется в <a class="el" href="smtpclient__mailru_8cpp_source.html#l00106">readResponse()</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><b>TaMP_Server</b></li><li class="navelem"><a href="smtpclient__mailru_8cpp.html">smtpclient_mailru.cpp</a></li>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
+  </ul>
+</div>
+</body>
+</html>

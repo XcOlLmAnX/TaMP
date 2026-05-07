@@ -1,0 +1,140 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.16.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>TaMP: Исходный файл TaMP_Server/server_interface.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">TaMP<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">Task and Math Platform — клиент-серверное приложение на Qt/C++</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.16.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Поиск',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('server__interface_8h_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">server_interface.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="server__interface_8h.html">См. документацию.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef TAMP_SERVER_INTERFACE_H</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define TAMP_SERVER_INTERFACE_H</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;QTcpServer&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;QTcpSocket&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;<a class="code" href="server__logic_8h.html">server_logic.h</a>&quot;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span></div>
+<div class="foldopen" id="foldopen00027" data-start="{" data-end="};">
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="class_server_interface.html">   27</a></span><span class="keyword">class </span><a class="code hl_function" href="class_server_interface.html#acb4fa64e1ba9c81c341c76d6375c8584">ServerInterface</a> {</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <a class="code hl_function" href="class_server_interface.html#acb4fa64e1ba9c81c341c76d6375c8584">ServerInterface</a>(<span class="keywordtype">int</span> port, <a class="code hl_class" href="class_server_logic.html">ServerLogic</a>&amp; <a class="code hl_variable" href="class_server_interface.html#a94a8156e20167def58ac56861dde4979">logic</a>);</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <a class="code hl_function" href="class_server_interface.html#abde4a5d7d4d9a3654d349fc526f91974">~ServerInterface</a>();</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_server_interface.html#a6e2ac2dd2e03c211551969966ba9adbd">run</a>();</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="class_server_interface.html#ab9f9c9a203197b5e5792bc59c00857d9">   51</a></span>    QTcpServer*  <a class="code hl_variable" href="class_server_interface.html#ab9f9c9a203197b5e5792bc59c00857d9">server</a>; </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="class_server_interface.html#a94a8156e20167def58ac56861dde4979">   52</a></span>    <a class="code hl_class" href="class_server_logic.html">ServerLogic</a>&amp; <a class="code hl_variable" href="class_server_interface.html#a94a8156e20167def58ac56861dde4979">logic</a>;  </div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span></div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_server_interface.html#a1d6be01fb693b9eb0294d2825f4fe857">handleClient</a>(QTcpSocket* client);</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>};</div>
+</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aclass_server_interface_html_a1d6be01fb693b9eb0294d2825f4fe857"><div class="ttname"><a href="class_server_interface.html#a1d6be01fb693b9eb0294d2825f4fe857">ServerInterface::handleClient</a></div><div class="ttdeci">void handleClient(QTcpSocket *client)</div><div class="ttdoc">Читает запросы клиента в цикле и отправляет ответы до разрыва соединения.</div><div class="ttdef"><b>Определения</b> <a href="server__interface_8cpp_source.html#l00053">server_interface.cpp:53</a></div></div>
+<div class="ttc" id="aclass_server_interface_html_a6e2ac2dd2e03c211551969966ba9adbd"><div class="ttname"><a href="class_server_interface.html#a6e2ac2dd2e03c211551969966ba9adbd">ServerInterface::run</a></div><div class="ttdeci">void run()</div><div class="ttdoc">Запускает бесконечный цикл waitForNewConnection() → handleClient() → …</div><div class="ttdef"><b>Определения</b> <a href="server__interface_8cpp_source.html#l00033">server_interface.cpp:33</a></div></div>
+<div class="ttc" id="aclass_server_interface_html_a94a8156e20167def58ac56861dde4979"><div class="ttname"><a href="class_server_interface.html#a94a8156e20167def58ac56861dde4979">ServerInterface::logic</a></div><div class="ttdeci">ServerLogic &amp; logic</div><div class="ttdoc">Ссылка на обработчик бизнес-логики.</div><div class="ttdef"><b>Определения</b> <a href="#l00052">server_interface.h:52</a></div></div>
+<div class="ttc" id="aclass_server_interface_html_ab9f9c9a203197b5e5792bc59c00857d9"><div class="ttname"><a href="class_server_interface.html#ab9f9c9a203197b5e5792bc59c00857d9">ServerInterface::server</a></div><div class="ttdeci">QTcpServer * server</div><div class="ttdoc">Qt TCP-сервер.</div><div class="ttdef"><b>Определения</b> <a href="#l00051">server_interface.h:51</a></div></div>
+<div class="ttc" id="aclass_server_interface_html_abde4a5d7d4d9a3654d349fc526f91974"><div class="ttname"><a href="class_server_interface.html#abde4a5d7d4d9a3654d349fc526f91974">ServerInterface::~ServerInterface</a></div><div class="ttdeci">~ServerInterface()</div><div class="ttdoc">Закрывает серверный сокет.</div><div class="ttdef"><b>Определения</b> <a href="server__interface_8cpp_source.html#l00026">server_interface.cpp:26</a></div></div>
+<div class="ttc" id="aclass_server_interface_html_acb4fa64e1ba9c81c341c76d6375c8584"><div class="ttname"><a href="class_server_interface.html#acb4fa64e1ba9c81c341c76d6375c8584">ServerInterface::ServerInterface</a></div><div class="ttdeci">ServerInterface(int port, ServerLogic &amp;logic)</div><div class="ttdoc">Инициализирует QTcpServer и начинает прослушивание на указанном порту.</div><div class="ttdef"><b>Определения</b> <a href="server__interface_8cpp_source.html#l00013">server_interface.cpp:13</a></div></div>
+<div class="ttc" id="aclass_server_logic_html"><div class="ttname"><a href="class_server_logic.html">ServerLogic</a></div><div class="ttdoc">Диспетчер запросов: маршрутизирует команды к специализированным обработчикам.</div><div class="ttdef"><b>Определения</b> <a href="server__logic_8h_source.html#l00026">server_logic.h:26</a></div></div>
+<div class="ttc" id="aserver__logic_8h_html"><div class="ttname"><a href="server__logic_8h.html">server_logic.h</a></div><div class="ttdoc">Бизнес-логика обработки клиентских запросов сервера TaMP.</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><b>TaMP_Server</b></li><li class="navelem"><a href="server__interface_8h.html">server_interface.h</a></li>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
+  </ul>
+</div>
+</body>
+</html>

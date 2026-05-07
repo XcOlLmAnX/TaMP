@@ -10,5 +10,4 @@ ui_*
 qrc_*
 .qmake.stash
 *.db
-docs/
 TaMP_Server/email.txt

@@ -1,0 +1,142 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.16.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>TaMP: TaMP - Технологии и Методы Программирования</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">TaMP<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">Task and Math Platform — клиент-серверное приложение на Qt/C++</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.16.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Поиск',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('index.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div><div class="header">
+  <div class="headertitle"><div class="title">TaMP - Технологии и Методы Программирования </div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><h1 class="doxsection"><a class="anchor" id="intro_sec"></a>
+Описание проекта</h1>
+<p><b>TaMP</b> — клиент-серверное приложение на C++/Qt, реализующее:</p><ul>
+<li>систему аутентификации (регистрация, вход, восстановление пароля через email);</li>
+<li>интерактивное исследование кусочно-заданной математической функции с графиком и таблицей.</li>
+</ul>
+<h1 class="doxsection"><a class="anchor" id="arch_sec"></a>
+Архитектура</h1>
+<p>Проект разделён на два независимых подпроекта:</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Подпроект  </th><th class="markdownTableHeadNone">Описание  </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><b>TaMP_Client</b>  </td><td class="markdownTableBodyNone">Qt Widgets GUI, TCP-клиент (QTcpSocket, Singleton)  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><b>TaMP_Server</b>  </td><td class="markdownTableBodyNone">Консольное Qt-приложение, TCP-сервер (Winsock2)  </td></tr>
+</table>
+<h2 class="doxsection"><a class="anchor" id="client_subsec"></a>
+Клиентская часть (TaMP_Client)</h2>
+<ul>
+<li><a class="el" href="class_tcp_client.html" title="Единственный объект TCP-соединения в клиентском приложении.">TcpClient</a> — синглтон-обёртка над QTcpSocket, единая точка сетевого ввода-вывода.</li>
+<li><a class="el" href="class_login_window.html" title="Форма входа в систему с полями логина и пароля.">LoginWindow</a> — форма авторизации.</li>
+<li><a class="el" href="class_register_window.html" title="Форма создания нового аккаунта (логин, имя, пароль, email).">RegisterWindow</a> — форма регистрации с клиентской валидацией.</li>
+<li><a class="el" href="class_reset_password_window.html" title="Мастер восстановления пароля из трёх шагов: ввод логина → код → новый пароль.">ResetPasswordWindow</a> — трёхшаговый мастер восстановления пароля.</li>
+<li><a class="el" href="class_task_window.html" title="Интерфейс для исследования кусочно-заданной функции с параметрами a, b, c.">TaskWindow</a> — главное окно: интерактивный QCustomPlot-график и таблица значений.</li>
+</ul>
+<h2 class="doxsection"><a class="anchor" id="server_subsec"></a>
+Серверная часть (TaMP_Server)</h2>
+<ul>
+<li><a class="el" href="class_server_interface.html" title="Управляет жизненным циклом серверного TCP-сокета и последовательной обработкой клиентов.">ServerInterface</a> — TCP-сервер на Winsock2, однопоточный accept-loop.</li>
+<li><a class="el" href="class_server_logic.html" title="Диспетчер запросов: маршрутизирует команды к специализированным обработчикам.">ServerLogic</a> — диспетчер команд; маршрутизирует запросы к обработчикам.</li>
+<li><a class="el" href="class_db_handler.html" title="Управляет SQLite-базой данных пользователей через Qt SQL.">DbHandler</a> — RAII-обёртка над Qt SQL/SQLite для хранения пользователей.</li>
+<li><a class="el" href="class_smtp_client.html" title="Статический класс-утилита для отправки транзакционных email через Mail.ru SMTP.">SmtpClient</a> — отправка transactional email через Mail.ru SMTP/SSL.</li>
+<li><a class="el" href="protocol_8h.html" title="Описание текстового протокола TaMP и вспомогательные функции формирования ответов.">protocol.h</a> — описание текстового протокола и функции make </li>
+</ul>
+</div></div><!-- PageDoc -->
+<a href="doxygen_crawl.html"></a>
+</div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
+  </ul>
+</div>
+</body>
+</html>

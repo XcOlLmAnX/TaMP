@@ -1,0 +1,218 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.16.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>TaMP: Исходный файл TaMP_Server/protocol.cpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">TaMP<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">Task and Math Platform — клиент-серверное приложение на Qt/C++</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.16.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Поиск',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('protocol_8cpp_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">protocol.cpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="protocol_8cpp.html">См. документацию.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &quot;<a class="code" href="protocol_8h.html">protocol.h</a>&quot;</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &lt;sstream&gt;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keyword">using namespace </span>std;</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span></div>
+<div class="foldopen" id="foldopen00017" data-start="{" data-end="}">
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="protocol_8cpp.html#a81ca132df9bc846e6d8e7b7ce0e40343">   17</a></span><span class="keyword">static</span> vector&lt;string&gt; <a class="code hl_function" href="protocol_8cpp.html#a81ca132df9bc846e6d8e7b7ce0e40343">split</a>(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; s, <span class="keywordtype">char</span> delim) {</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    vector&lt;string&gt; tokens;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    istringstream stream(s);</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <span class="keywordtype">string</span> token;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="keywordflow">while</span> (getline(stream, token, delim))</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        tokens.push_back(token);</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="keywordflow">return</span> tokens;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>}</div>
+</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span></div>
+<div class="foldopen" id="foldopen00036" data-start="{" data-end="}">
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="protocol_8cpp.html#a7dc1957b9c7ad1f9d355c973482ab2c6">   36</a></span><a class="code hl_struct" href="struct_request.html">Request</a> <a class="code hl_function" href="protocol_8cpp.html#a7dc1957b9c7ad1f9d355c973482ab2c6">parseRequest</a>(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; raw) {</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <a class="code hl_struct" href="struct_request.html">Request</a> req;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    req.<a class="code hl_variable" href="struct_request.html#ae884c5c76e42dbfb2df4ee3ec08c0a79">type</a> = <a class="code hl_enumvalue" href="protocol_8h.html#a21e038f5b8958e203d28bc4f18472352a696b031073e74bf2cb98e5ef201d4aa3">CommandType::UNKNOWN</a>;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <span class="keywordtype">string</span> trimmed = raw;</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="keywordflow">while</span> (!trimmed.empty() &amp;&amp; (trimmed.back() == <span class="charliteral">&#39;\r&#39;</span> || trimmed.back() == <span class="charliteral">&#39;\n&#39;</span>))</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        trimmed.pop_back();</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <span class="keywordflow">if</span> (trimmed.empty()) <span class="keywordflow">return</span> req;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    vector&lt;string&gt; parts = <a class="code hl_function" href="protocol_8cpp.html#a81ca132df9bc846e6d8e7b7ce0e40343">split</a>(trimmed, <span class="charliteral">&#39;&amp;&#39;</span>);</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <span class="keywordflow">if</span> (parts.empty()) <span class="keywordflow">return</span> req;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; cmd = parts[0];</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <span class="keywordflow">if</span> (cmd == <span class="stringliteral">&quot;auth&quot;</span>) {</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        <span class="keywordflow">if</span> (parts.size() == 3) {</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>            req.<a class="code hl_variable" href="struct_request.html#ae884c5c76e42dbfb2df4ee3ec08c0a79">type</a> = <a class="code hl_enumvalue" href="protocol_8h.html#a21e038f5b8958e203d28bc4f18472352af458afcda462a9ed24f08634cb2ceced">CommandType::AUTH</a>;</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>            req.<a class="code hl_variable" href="struct_request.html#af91ab7af14093a859bc42242bd9a141d">args</a> = { parts[1], parts[2] };</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        }</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (cmd == <span class="stringliteral">&quot;reg&quot;</span>) {</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        <span class="keywordflow">if</span> (parts.size() == 5) {</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>            req.<a class="code hl_variable" href="struct_request.html#ae884c5c76e42dbfb2df4ee3ec08c0a79">type</a> = <a class="code hl_enumvalue" href="protocol_8h.html#a21e038f5b8958e203d28bc4f18472352af4cf3fe4b67244332eecec055742d449">CommandType::REG</a>;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>            req.<a class="code hl_variable" href="struct_request.html#af91ab7af14093a859bc42242bd9a141d">args</a> = { parts[1], parts[2], parts[3], parts[4] };</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        }</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (cmd == <span class="stringliteral">&quot;stat&quot;</span>) {</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        <span class="keywordflow">if</span> (parts.size() == 2) {</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>            req.<a class="code hl_variable" href="struct_request.html#ae884c5c76e42dbfb2df4ee3ec08c0a79">type</a> = <a class="code hl_enumvalue" href="protocol_8h.html#a21e038f5b8958e203d28bc4f18472352a73f760f8a96d0acec3dec614a688ff79">CommandType::STAT</a>;</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>            req.<a class="code hl_variable" href="struct_request.html#af91ab7af14093a859bc42242bd9a141d">args</a> = { parts[1] };</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        }</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (cmd == <span class="stringliteral">&quot;check&quot;</span>) {</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        <span class="keywordflow">if</span> (parts.size() == 4) {</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>            req.<a class="code hl_variable" href="struct_request.html#ae884c5c76e42dbfb2df4ee3ec08c0a79">type</a> = <a class="code hl_enumvalue" href="protocol_8h.html#a21e038f5b8958e203d28bc4f18472352a8c46d8d9d3402788403e2f6911153089">CommandType::CHECK</a>;</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>            req.<a class="code hl_variable" href="struct_request.html#af91ab7af14093a859bc42242bd9a141d">args</a> = { parts[1], parts[2], parts[3] };</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        }</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (cmd == <span class="stringliteral">&quot;reset&quot;</span>) {</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>        <span class="keywordflow">if</span> (parts.size() == 2) {</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>            req.<a class="code hl_variable" href="struct_request.html#ae884c5c76e42dbfb2df4ee3ec08c0a79">type</a> = <a class="code hl_enumvalue" href="protocol_8h.html#a21e038f5b8958e203d28bc4f18472352ab5859d8721cfdc0312b2838b9c985bc1">CommandType::RESET</a>;</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>            req.<a class="code hl_variable" href="struct_request.html#af91ab7af14093a859bc42242bd9a141d">args</a> = { parts[1] };</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>        }</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (cmd == <span class="stringliteral">&quot;confirm&quot;</span>) {</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>        <span class="keywordflow">if</span> (parts.size() == 3) {</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>            req.<a class="code hl_variable" href="struct_request.html#ae884c5c76e42dbfb2df4ee3ec08c0a79">type</a> = <a class="code hl_enumvalue" href="protocol_8h.html#a21e038f5b8958e203d28bc4f18472352aa9b685a9e8c2047d4b9faac6217d7b4a">CommandType::CONFIRM</a>;</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>            req.<a class="code hl_variable" href="struct_request.html#af91ab7af14093a859bc42242bd9a141d">args</a> = { parts[1], parts[2] };</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>        }</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (cmd == <span class="stringliteral">&quot;newpass&quot;</span>) {</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>        <span class="keywordflow">if</span> (parts.size() == 3) {</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>            req.<a class="code hl_variable" href="struct_request.html#ae884c5c76e42dbfb2df4ee3ec08c0a79">type</a> = <a class="code hl_enumvalue" href="protocol_8h.html#a21e038f5b8958e203d28bc4f18472352a78479f2b6511eb5301a555e91035e4c1">CommandType::NEWPASS</a>;</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>            req.<a class="code hl_variable" href="struct_request.html#af91ab7af14093a859bc42242bd9a141d">args</a> = { parts[1], parts[2] };</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>        }</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    }</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    <span class="keywordflow">return</span> req;</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>}</div>
+</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span></div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span><span class="keywordtype">string</span> <a class="code hl_function" href="protocol_8h.html#abaa86236f116e6d39d140e86295804cc">makeAuthOk</a>(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; name)         { <span class="keywordflow">return</span> <span class="stringliteral">&quot;auth+&amp;&quot;</span>    + name        + <span class="stringliteral">&quot;\n&quot;</span>; }</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span><span class="keywordtype">string</span> <a class="code hl_function" href="protocol_8h.html#af7cedd807741cbce86bade0c33953494">makeAuthFail</a>()                          { <span class="keywordflow">return</span> <span class="stringliteral">&quot;auth-\n&quot;</span>; }</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span><span class="keywordtype">string</span> <a class="code hl_function" href="protocol_8h.html#a7e2b791ca74f86a2d96c8b4daa340f0c">makeRegOk</a>(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; login)          { <span class="keywordflow">return</span> <span class="stringliteral">&quot;reg+&amp;&quot;</span>     + login       + <span class="stringliteral">&quot;\n&quot;</span>; }</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span><span class="keywordtype">string</span> <a class="code hl_function" href="protocol_8h.html#a97906ec2626b8b7ba1e045d4fe251043">makeRegFail</a>()                           { <span class="keywordflow">return</span> <span class="stringliteral">&quot;reg-\n&quot;</span>; }</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span><span class="keywordtype">string</span> <a class="code hl_function" href="protocol_8h.html#af2e21ac6c51d8f0bd42f7385223dc584">makeCheckOk</a>()                           { <span class="keywordflow">return</span> <span class="stringliteral">&quot;check+\n&quot;</span>; }</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span><span class="keywordtype">string</span> <a class="code hl_function" href="protocol_8h.html#a4d72cfc0dbd4c31afc89d43b1aaf7104">makeCheckFail</a>()                         { <span class="keywordflow">return</span> <span class="stringliteral">&quot;check-\n&quot;</span>; }</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span><span class="keywordtype">string</span> <a class="code hl_function" href="protocol_8h.html#afbac05fe8f0a8fea006ccdce8d297058">makeResetOk</a>(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; maskedEmail)  { <span class="keywordflow">return</span> <span class="stringliteral">&quot;reset+&amp;&quot;</span>   + maskedEmail + <span class="stringliteral">&quot;\n&quot;</span>; }</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span><span class="keywordtype">string</span> <a class="code hl_function" href="protocol_8h.html#a6eb303bc9748cebced99b91cd27ccf78">makeResetFail</a>()                         { <span class="keywordflow">return</span> <span class="stringliteral">&quot;reset-\n&quot;</span>; }</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span><span class="keywordtype">string</span> <a class="code hl_function" href="protocol_8h.html#aa2b4e0a62ac301e81327bdd1686930e4">makeConfirmOk</a>()                         { <span class="keywordflow">return</span> <span class="stringliteral">&quot;confirm+\n&quot;</span>; }</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span><span class="keywordtype">string</span> <a class="code hl_function" href="protocol_8h.html#ac170f61a5f3551b9297a1d317eaf52f9">makeConfirmFail</a>()                       { <span class="keywordflow">return</span> <span class="stringliteral">&quot;confirm-\n&quot;</span>; }</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span><span class="keywordtype">string</span> <a class="code hl_function" href="protocol_8h.html#aea5a9ac39c6904319a7020e0a8e57218">makeNewpassOk</a>()                         { <span class="keywordflow">return</span> <span class="stringliteral">&quot;newpass+\n&quot;</span>; }</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span><span class="keywordtype">string</span> <a class="code hl_function" href="protocol_8h.html#a2959efa3b72aeadaf2b0065031f8f930">makeNewpassFail</a>()                       { <span class="keywordflow">return</span> <span class="stringliteral">&quot;newpass-\n&quot;</span>; }</div>
+<div class="ttc" id="aprotocol_8cpp_html_a7dc1957b9c7ad1f9d355c973482ab2c6"><div class="ttname"><a href="protocol_8cpp.html#a7dc1957b9c7ad1f9d355c973482ab2c6">parseRequest</a></div><div class="ttdeci">Request parseRequest(const string &amp;raw)</div><div class="ttdoc">Разбирает сырую строку запроса в структуру Request.</div><div class="ttdef"><b>Определения</b> <a href="#l00036">protocol.cpp:36</a></div></div>
+<div class="ttc" id="aprotocol_8cpp_html_a81ca132df9bc846e6d8e7b7ce0e40343"><div class="ttname"><a href="protocol_8cpp.html#a81ca132df9bc846e6d8e7b7ce0e40343">split</a></div><div class="ttdeci">static vector&lt; string &gt; split(const string &amp;s, char delim)</div><div class="ttdoc">Разбивает строку на токены по заданному разделителю.</div><div class="ttdef"><b>Определения</b> <a href="#l00017">protocol.cpp:17</a></div></div>
+<div class="ttc" id="aprotocol_8h_html"><div class="ttname"><a href="protocol_8h.html">protocol.h</a></div><div class="ttdoc">Описание текстового протокола TaMP и вспомогательные функции формирования ответов.</div></div>
+<div class="ttc" id="aprotocol_8h_html_a21e038f5b8958e203d28bc4f18472352a696b031073e74bf2cb98e5ef201d4aa3"><div class="ttname"><a href="protocol_8h.html#a21e038f5b8958e203d28bc4f18472352a696b031073e74bf2cb98e5ef201d4aa3">CommandType::UNKNOWN</a></div><div class="ttdeci">@ UNKNOWN</div><div class="ttdoc">Неизвестная или некорректно сформированная команда.</div><div class="ttdef"><b>Определения</b> <a href="protocol_8h_source.html#l00028">protocol.h:28</a></div></div>
+<div class="ttc" id="aprotocol_8h_html_a21e038f5b8958e203d28bc4f18472352a73f760f8a96d0acec3dec614a688ff79"><div class="ttname"><a href="protocol_8h.html#a21e038f5b8958e203d28bc4f18472352a73f760f8a96d0acec3dec614a688ff79">CommandType::STAT</a></div><div class="ttdeci">@ STAT</div><div class="ttdoc">Получение статистики (зарезервировано, не реализовано).</div><div class="ttdef"><b>Определения</b> <a href="protocol_8h_source.html#l00023">protocol.h:23</a></div></div>
+<div class="ttc" id="aprotocol_8h_html_a21e038f5b8958e203d28bc4f18472352a78479f2b6511eb5301a555e91035e4c1"><div class="ttname"><a href="protocol_8h.html#a21e038f5b8958e203d28bc4f18472352a78479f2b6511eb5301a555e91035e4c1">CommandType::NEWPASS</a></div><div class="ttdeci">@ NEWPASS</div><div class="ttdoc">Установка нового пароля: newpass&amp;{login}&amp;{md5hash}.</div><div class="ttdef"><b>Определения</b> <a href="protocol_8h_source.html#l00027">protocol.h:27</a></div></div>
+<div class="ttc" id="aprotocol_8h_html_a21e038f5b8958e203d28bc4f18472352a8c46d8d9d3402788403e2f6911153089"><div class="ttname"><a href="protocol_8h.html#a21e038f5b8958e203d28bc4f18472352a8c46d8d9d3402788403e2f6911153089">CommandType::CHECK</a></div><div class="ttdeci">@ CHECK</div><div class="ttdoc">Проверка данных (зарезервировано, не реализовано).</div><div class="ttdef"><b>Определения</b> <a href="protocol_8h_source.html#l00024">protocol.h:24</a></div></div>
+<div class="ttc" id="aprotocol_8h_html_a21e038f5b8958e203d28bc4f18472352aa9b685a9e8c2047d4b9faac6217d7b4a"><div class="ttname"><a href="protocol_8h.html#a21e038f5b8958e203d28bc4f18472352aa9b685a9e8c2047d4b9faac6217d7b4a">CommandType::CONFIRM</a></div><div class="ttdeci">@ CONFIRM</div><div class="ttdoc">Подтверждение кода: confirm&amp;{login}&amp;{code}.</div><div class="ttdef"><b>Определения</b> <a href="protocol_8h_source.html#l00026">protocol.h:26</a></div></div>
+<div class="ttc" id="aprotocol_8h_html_a21e038f5b8958e203d28bc4f18472352ab5859d8721cfdc0312b2838b9c985bc1"><div class="ttname"><a href="protocol_8h.html#a21e038f5b8958e203d28bc4f18472352ab5859d8721cfdc0312b2838b9c985bc1">CommandType::RESET</a></div><div class="ttdeci">@ RESET</div><div class="ttdoc">Запрос кода сброса пароля: reset&amp;{login}.</div><div class="ttdef"><b>Определения</b> <a href="protocol_8h_source.html#l00025">protocol.h:25</a></div></div>
+<div class="ttc" id="aprotocol_8h_html_a21e038f5b8958e203d28bc4f18472352af458afcda462a9ed24f08634cb2ceced"><div class="ttname"><a href="protocol_8h.html#a21e038f5b8958e203d28bc4f18472352af458afcda462a9ed24f08634cb2ceced">CommandType::AUTH</a></div><div class="ttdeci">@ AUTH</div><div class="ttdoc">Авторизация: auth&amp;{login}&amp;{md5hash}.</div><div class="ttdef"><b>Определения</b> <a href="protocol_8h_source.html#l00021">protocol.h:21</a></div></div>
+<div class="ttc" id="aprotocol_8h_html_a21e038f5b8958e203d28bc4f18472352af4cf3fe4b67244332eecec055742d449"><div class="ttname"><a href="protocol_8h.html#a21e038f5b8958e203d28bc4f18472352af4cf3fe4b67244332eecec055742d449">CommandType::REG</a></div><div class="ttdeci">@ REG</div><div class="ttdoc">Регистрация: reg&amp;{login}&amp;{name}&amp;{md5hash}&amp;{email}.</div><div class="ttdef"><b>Определения</b> <a href="protocol_8h_source.html#l00022">protocol.h:22</a></div></div>
+<div class="ttc" id="aprotocol_8h_html_a2959efa3b72aeadaf2b0065031f8f930"><div class="ttname"><a href="protocol_8h.html#a2959efa3b72aeadaf2b0065031f8f930">makeNewpassFail</a></div><div class="ttdeci">std::string makeNewpassFail()</div><div class="ttdoc">Формирует ответ об ошибке установки нового пароля.</div></div>
+<div class="ttc" id="aprotocol_8h_html_a4d72cfc0dbd4c31afc89d43b1aaf7104"><div class="ttname"><a href="protocol_8h.html#a4d72cfc0dbd4c31afc89d43b1aaf7104">makeCheckFail</a></div><div class="ttdeci">std::string makeCheckFail()</div><div class="ttdoc">Формирует ответ об ошибке команды CHECK.</div></div>
+<div class="ttc" id="aprotocol_8h_html_a6eb303bc9748cebced99b91cd27ccf78"><div class="ttname"><a href="protocol_8h.html#a6eb303bc9748cebced99b91cd27ccf78">makeResetFail</a></div><div class="ttdeci">std::string makeResetFail()</div><div class="ttdoc">Формирует ответ об ошибке сброса пароля (логин не найден или ошибка отправки).</div></div>
+<div class="ttc" id="aprotocol_8h_html_a7e2b791ca74f86a2d96c8b4daa340f0c"><div class="ttname"><a href="protocol_8h.html#a7e2b791ca74f86a2d96c8b4daa340f0c">makeRegOk</a></div><div class="ttdeci">std::string makeRegOk(const std::string &amp;login)</div><div class="ttdoc">Формирует ответ об успешной регистрации.</div></div>
+<div class="ttc" id="aprotocol_8h_html_a97906ec2626b8b7ba1e045d4fe251043"><div class="ttname"><a href="protocol_8h.html#a97906ec2626b8b7ba1e045d4fe251043">makeRegFail</a></div><div class="ttdeci">std::string makeRegFail()</div><div class="ttdoc">Формирует ответ об ошибке регистрации (логин занят).</div></div>
+<div class="ttc" id="aprotocol_8h_html_aa2b4e0a62ac301e81327bdd1686930e4"><div class="ttname"><a href="protocol_8h.html#aa2b4e0a62ac301e81327bdd1686930e4">makeConfirmOk</a></div><div class="ttdeci">std::string makeConfirmOk()</div><div class="ttdoc">Формирует ответ об успешном подтверждении кода.</div></div>
+<div class="ttc" id="aprotocol_8h_html_abaa86236f116e6d39d140e86295804cc"><div class="ttname"><a href="protocol_8h.html#abaa86236f116e6d39d140e86295804cc">makeAuthOk</a></div><div class="ttdeci">std::string makeAuthOk(const std::string &amp;name)</div><div class="ttdoc">Формирует ответ об успешной авторизации.</div></div>
+<div class="ttc" id="aprotocol_8h_html_ac170f61a5f3551b9297a1d317eaf52f9"><div class="ttname"><a href="protocol_8h.html#ac170f61a5f3551b9297a1d317eaf52f9">makeConfirmFail</a></div><div class="ttdeci">std::string makeConfirmFail()</div><div class="ttdoc">Формирует ответ об ошибке подтверждения кода (неверный или просроченный код).</div></div>
+<div class="ttc" id="aprotocol_8h_html_aea5a9ac39c6904319a7020e0a8e57218"><div class="ttname"><a href="protocol_8h.html#aea5a9ac39c6904319a7020e0a8e57218">makeNewpassOk</a></div><div class="ttdeci">std::string makeNewpassOk()</div><div class="ttdoc">Формирует ответ об успешной установке нового пароля.</div></div>
+<div class="ttc" id="aprotocol_8h_html_af2e21ac6c51d8f0bd42f7385223dc584"><div class="ttname"><a href="protocol_8h.html#af2e21ac6c51d8f0bd42f7385223dc584">makeCheckOk</a></div><div class="ttdeci">std::string makeCheckOk()</div><div class="ttdoc">Формирует ответ об успешном результате команды CHECK.</div></div>
+<div class="ttc" id="aprotocol_8h_html_af7cedd807741cbce86bade0c33953494"><div class="ttname"><a href="protocol_8h.html#af7cedd807741cbce86bade0c33953494">makeAuthFail</a></div><div class="ttdeci">std::string makeAuthFail()</div><div class="ttdoc">Формирует ответ об ошибке авторизации (неверный логин или пароль).</div></div>
+<div class="ttc" id="aprotocol_8h_html_afbac05fe8f0a8fea006ccdce8d297058"><div class="ttname"><a href="protocol_8h.html#afbac05fe8f0a8fea006ccdce8d297058">makeResetOk</a></div><div class="ttdeci">std::string makeResetOk(const std::string &amp;maskedEmail)</div><div class="ttdoc">Формирует ответ об успешной отправке кода сброса пароля.</div></div>
+<div class="ttc" id="astruct_request_html"><div class="ttname"><a href="struct_request.html">Request</a></div><div class="ttdoc">Разобранный запрос клиента.</div><div class="ttdef"><b>Определения</b> <a href="protocol_8h_source.html#l00035">protocol.h:35</a></div></div>
+<div class="ttc" id="astruct_request_html_ae884c5c76e42dbfb2df4ee3ec08c0a79"><div class="ttname"><a href="struct_request.html#ae884c5c76e42dbfb2df4ee3ec08c0a79">Request::type</a></div><div class="ttdeci">CommandType type</div><div class="ttdoc">Тип команды из перечисления CommandType.</div><div class="ttdef"><b>Определения</b> <a href="protocol_8h_source.html#l00036">protocol.h:36</a></div></div>
+<div class="ttc" id="astruct_request_html_af91ab7af14093a859bc42242bd9a141d"><div class="ttname"><a href="struct_request.html#af91ab7af14093a859bc42242bd9a141d">Request::args</a></div><div class="ttdeci">std::vector&lt; std::string &gt; args</div><div class="ttdoc">Аргументы команды (без первого токена-команды).</div><div class="ttdef"><b>Определения</b> <a href="protocol_8h_source.html#l00037">protocol.h:37</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><b>TaMP_Server</b></li><li class="navelem"><a href="protocol_8cpp.html">protocol.cpp</a></li>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
+  </ul>
+</div>
+</body>
+</html>

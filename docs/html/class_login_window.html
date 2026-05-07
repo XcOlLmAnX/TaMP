@@ -1,0 +1,500 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.16.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>TaMP: Класс LoginWindow</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">TaMP<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">Task and Math Platform — клиент-серверное приложение на Qt/C++</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.16.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Поиск',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('class_login_window.html','','class_login_window-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Класс LoginWindow</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Форма входа в систему с полями логина и пароля.  
+ <a href="#details">Подробнее...</a></p>
+
+<p><code>#include &lt;<a class="el" href="loginwindow_8h_source.html">loginwindow.h</a>&gt;</code></p>
+<div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Граф наследования:LoginWindow:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+ <div class="center">
+  <img src="class_login_window.png" alt=""/>
+ </div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-signals" class="groupheader"><a id="signals" name="signals"></a>
+Сигналы</h2></td></tr>
+<tr class="memitem:a45b1b90c6656dcf7db0e9a18a64ca953" id="r_a45b1b90c6656dcf7db0e9a18a64ca953"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a45b1b90c6656dcf7db0e9a18a64ca953">loginSuccess</a> (const QString &amp;name)</td></tr>
+<tr class="memdesc:a45b1b90c6656dcf7db0e9a18a64ca953"><td class="mdescLeft">&#160;</td><td class="mdescRight">Испускается после успешной авторизации на сервере.  <br /></td></tr>
+<tr class="memitem:a1a1de7dde9485ed6c73fb5fc43f35b5e" id="r_a1a1de7dde9485ed6c73fb5fc43f35b5e"><td class="memItemLeft"><a id="a1a1de7dde9485ed6c73fb5fc43f35b5e" name="a1a1de7dde9485ed6c73fb5fc43f35b5e"></a>
+void&#160;</td><td class="memItemRight"><b>goToRegister</b> ()</td></tr>
+<tr class="memdesc:a1a1de7dde9485ed6c73fb5fc43f35b5e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Испускается при нажатии кнопки перехода к регистрации. <br /></td></tr>
+<tr class="memitem:a2398142ddf9c20753c2d34976698279d" id="r_a2398142ddf9c20753c2d34976698279d"><td class="memItemLeft"><a id="a2398142ddf9c20753c2d34976698279d" name="a2398142ddf9c20753c2d34976698279d"></a>
+void&#160;</td><td class="memItemRight"><b>goToResetPassword</b> ()</td></tr>
+<tr class="memdesc:a2398142ddf9c20753c2d34976698279d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Испускается при нажатии кнопки «Забыли пароль?». <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:aa4c04d26b299de00156bbf3c32b2a082" id="r_aa4c04d26b299de00156bbf3c32b2a082"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#aa4c04d26b299de00156bbf3c32b2a082">LoginWindow</a> (QWidget *parent=nullptr)</td></tr>
+<tr class="memdesc:aa4c04d26b299de00156bbf3c32b2a082"><td class="mdescLeft">&#160;</td><td class="mdescRight">Создаёт и настраивает виджет окна авторизации.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-slots" class="groupheader"><a id="pri-slots" name="pri-slots"></a>
+Закрытые слоты</h2></td></tr>
+<tr class="memitem:ad8a6ec52a0b638e81751867338a17bf5" id="r_ad8a6ec52a0b638e81751867338a17bf5"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ad8a6ec52a0b638e81751867338a17bf5">onLoginClicked</a> ()</td></tr>
+<tr class="memdesc:ad8a6ec52a0b638e81751867338a17bf5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Валидирует поля, хэширует пароль и отправляет запрос авторизации серверу.  <br /></td></tr>
+<tr class="memitem:ad3369422add5817a9010f188acb3551e" id="r_ad3369422add5817a9010f188acb3551e"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ad3369422add5817a9010f188acb3551e">onMessageReceived</a> (const QString &amp;message)</td></tr>
+<tr class="memdesc:ad3369422add5817a9010f188acb3551e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Обрабатывает ответ сервера; реагирует только на строки с префиксом «auth».  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-attribs" class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Закрытые данные</h2></td></tr>
+<tr class="memitem:a3d9627568d456c8793358e6108e40125" id="r_a3d9627568d456c8793358e6108e40125"><td class="memItemLeft">QLineEdit *&#160;</td><td class="memItemRight"><a class="el" href="#a3d9627568d456c8793358e6108e40125">editLogin</a></td></tr>
+<tr class="memdesc:a3d9627568d456c8793358e6108e40125"><td class="mdescLeft">&#160;</td><td class="mdescRight">Поле ввода логина.  <br /></td></tr>
+<tr class="memitem:a02471668e9f3776b6b6c3df7815cc73b" id="r_a02471668e9f3776b6b6c3df7815cc73b"><td class="memItemLeft">QLineEdit *&#160;</td><td class="memItemRight"><a class="el" href="#a02471668e9f3776b6b6c3df7815cc73b">editPassword</a></td></tr>
+<tr class="memdesc:a02471668e9f3776b6b6c3df7815cc73b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Поле ввода пароля (скрытый ввод).  <br /></td></tr>
+<tr class="memitem:a34b86987e0869518b0890c8ba466fc69" id="r_a34b86987e0869518b0890c8ba466fc69"><td class="memItemLeft">QPushButton *&#160;</td><td class="memItemRight"><a class="el" href="#a34b86987e0869518b0890c8ba466fc69">btnLogin</a></td></tr>
+<tr class="memdesc:a34b86987e0869518b0890c8ba466fc69"><td class="mdescLeft">&#160;</td><td class="mdescRight">Кнопка отправки запроса авторизации.  <br /></td></tr>
+<tr class="memitem:a05b38437855f628ab645b7be99bc109b" id="r_a05b38437855f628ab645b7be99bc109b"><td class="memItemLeft">QPushButton *&#160;</td><td class="memItemRight"><a class="el" href="#a05b38437855f628ab645b7be99bc109b">btnRegister</a></td></tr>
+<tr class="memdesc:a05b38437855f628ab645b7be99bc109b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Кнопка перехода к форме регистрации.  <br /></td></tr>
+<tr class="memitem:a1950a8fb5aacdfa6c49d8e088bb3f878" id="r_a1950a8fb5aacdfa6c49d8e088bb3f878"><td class="memItemLeft">QPushButton *&#160;</td><td class="memItemRight"><a class="el" href="#a1950a8fb5aacdfa6c49d8e088bb3f878">btnForgot</a></td></tr>
+<tr class="memdesc:a1950a8fb5aacdfa6c49d8e088bb3f878"><td class="mdescLeft">&#160;</td><td class="mdescRight">Кнопка перехода к восстановлению пароля.  <br /></td></tr>
+<tr class="memitem:a902ae075d080ca2d59d03e93eafcf433" id="r_a902ae075d080ca2d59d03e93eafcf433"><td class="memItemLeft">QLabel *&#160;</td><td class="memItemRight"><a class="el" href="#a902ae075d080ca2d59d03e93eafcf433">labelStatus</a></td></tr>
+<tr class="memdesc:a902ae075d080ca2d59d03e93eafcf433"><td class="mdescLeft">&#160;</td><td class="mdescRight">Метка для отображения статуса операции или ошибки.  <br /></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>Форма входа в систему с полями логина и пароля. </p>
+<p>Отправляет серверу запрос вида <span class="tt">auth&amp;{login}&amp;{md5(password)}\n</span> и обрабатывает ответы с префиксами <span class="tt">auth+</span> (успех) и <span class="tt">auth-</span> (ошибка). При успешном входе испускает <a class="el" href="#a45b1b90c6656dcf7db0e9a18a64ca953" title="Испускается после успешной авторизации на сервере.">loginSuccess()</a> с именем пользователя.</p>
+<dl class="section see"><dt>См. также</dt><dd><a class="el" href="class_tcp_client.html" title="Единственный объект TCP-соединения в клиентском приложении.">TcpClient</a>, <a class="el" href="class_register_window.html" title="Форма создания нового аккаунта (логин, имя, пароль, email).">RegisterWindow</a>, <a class="el" href="class_reset_password_window.html" title="Мастер восстановления пароля из трёх шагов: ввод логина → код → новый пароль.">ResetPasswordWindow</a> </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="loginwindow_8h_source.html">loginwindow.h</a> строка <a class="el" href="loginwindow_8h_source.html#l00023">23</a></p>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Конструктор(ы)</h2>
+<a id="aa4c04d26b299de00156bbf3c32b2a082" name="aa4c04d26b299de00156bbf3c32b2a082"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa4c04d26b299de00156bbf3c32b2a082">&#9670;&#160;</a></span>LoginWindow()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">LoginWindow::LoginWindow </td>
+          <td>(</td>
+          <td class="paramtype">QWidget *</td>          <td class="paramname"><span class="paramname"><em>parent</em></span><span class="paramdefsep"> = </span><span class="paramdefval">nullptr</span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel explicit">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Создаёт и настраивает виджет окна авторизации. </p>
+<p>Создаёт виджеты, компонует layout и подключает сигналы.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">parent</td><td>Родительский виджет (обычно nullptr — окно верхнего уровня). </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">См. определение в файле <a class="el" href="loginwindow_8cpp_source.html">loginwindow.cpp</a> строка <a class="el" href="loginwindow_8cpp_source.html#l00016">16</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="loginwindow_8h_source.html#l00067">btnForgot</a>, <a class="el" href="loginwindow_8h_source.html#l00065">btnLogin</a>, <a class="el" href="loginwindow_8h_source.html#l00066">btnRegister</a>, <a class="el" href="loginwindow_8h_source.html#l00063">editLogin</a>, <a class="el" href="loginwindow_8h_source.html#l00064">editPassword</a>, <a class="el" href="tcpclient_8cpp_source.html#l00015">TcpClient::getInstance()</a>, <a class="el" href="#a1a1de7dde9485ed6c73fb5fc43f35b5e">goToRegister()</a>, <a class="el" href="#a2398142ddf9c20753c2d34976698279d">goToResetPassword()</a>, <a class="el" href="loginwindow_8h_source.html#l00068">labelStatus</a>, <a class="el" href="class_tcp_client.html#a47ebc8fd276d5e391db59986d43feb21">TcpClient::messageReceived()</a>, <a class="el" href="loginwindow_8cpp_source.html#l00068">onLoginClicked()</a> и <a class="el" href="loginwindow_8cpp_source.html#l00104">onMessageReceived()</a>.</p>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Методы</h2>
+<a id="a45b1b90c6656dcf7db0e9a18a64ca953" name="a45b1b90c6656dcf7db0e9a18a64ca953"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a45b1b90c6656dcf7db0e9a18a64ca953">&#9670;&#160;</a></span>loginSuccess</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LoginWindow::loginSuccess </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>name</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel signal">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Испускается после успешной авторизации на сервере. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>Отображаемое имя вошедшего пользователя. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="reference">Используется в <a class="el" href="_ta_m_p___client_2main_8cpp_source.html#l00031">main()</a> и <a class="el" href="loginwindow_8cpp_source.html#l00104">onMessageReceived()</a>.</p>
+
+</div>
+</div>
+<a id="ad8a6ec52a0b638e81751867338a17bf5" name="ad8a6ec52a0b638e81751867338a17bf5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad8a6ec52a0b638e81751867338a17bf5">&#9670;&#160;</a></span>onLoginClicked</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LoginWindow::onLoginClicked </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Валидирует поля, хэширует пароль и отправляет запрос авторизации серверу. </p>
+<p>Проверяет заполненность полей, MD5-хэширует пароль и отправляет запрос серверу.</p>
+<p>Формат запроса: <span class="tt">auth&amp;{login}&amp;{md5hash}\n</span>. При незаполненных полях выводит сообщение об ошибке и устанавливает фокус на поле. </p>
+
+<p class="definition">См. определение в файле <a class="el" href="loginwindow_8cpp_source.html">loginwindow.cpp</a> строка <a class="el" href="loginwindow_8cpp_source.html#l00068">68</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="loginwindow_8h_source.html#l00063">editLogin</a>, <a class="el" href="loginwindow_8h_source.html#l00064">editPassword</a>, <a class="el" href="tcpclient_8cpp_source.html#l00015">TcpClient::getInstance()</a>, <a class="el" href="loginwindow_8h_source.html#l00068">labelStatus</a> и <a class="el" href="tcpclient_8cpp_source.html#l00051">TcpClient::sendMessage()</a>.</p>
+
+<p class="reference">Используется в <a class="el" href="loginwindow_8cpp_source.html#l00016">LoginWindow()</a>.</p>
+
+</div>
+</div>
+<a id="ad3369422add5817a9010f188acb3551e" name="ad3369422add5817a9010f188acb3551e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad3369422add5817a9010f188acb3551e">&#9670;&#160;</a></span>onMessageReceived</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LoginWindow::onMessageReceived </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>message</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Обрабатывает ответ сервера; реагирует только на строки с префиксом «auth». </p>
+<p>Обрабатывает ответы сервера с префиксом «auth».</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">message</td><td>Строка ответа от <a class="el" href="class_tcp_client.html#a47ebc8fd276d5e391db59986d43feb21" title="Испускается при получении одной полной строки от сервера.">TcpClient::messageReceived()</a>.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Формат успешного ответа: <span class="tt">auth+&amp;{name}</span>. Формат ошибки: <span class="tt">auth-</span>.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">message</td><td>Строка ответа от сервера. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">См. определение в файле <a class="el" href="loginwindow_8cpp_source.html">loginwindow.cpp</a> строка <a class="el" href="loginwindow_8cpp_source.html#l00104">104</a></p>
+
+<p class="reference">Перекрестные ссылки <a class="el" href="loginwindow_8h_source.html#l00064">editPassword</a>, <a class="el" href="loginwindow_8h_source.html#l00068">labelStatus</a> и <a class="el" href="#a45b1b90c6656dcf7db0e9a18a64ca953">loginSuccess()</a>.</p>
+
+<p class="reference">Используется в <a class="el" href="loginwindow_8cpp_source.html#l00016">LoginWindow()</a>.</p>
+
+</div>
+</div>
+<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Данные класса</h2>
+<a id="a1950a8fb5aacdfa6c49d8e088bb3f878" name="a1950a8fb5aacdfa6c49d8e088bb3f878"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1950a8fb5aacdfa6c49d8e088bb3f878">&#9670;&#160;</a></span>btnForgot</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QPushButton* LoginWindow::btnForgot</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Кнопка перехода к восстановлению пароля. </p>
+
+<p class="definition">См. определение в файле <a class="el" href="loginwindow_8h_source.html">loginwindow.h</a> строка <a class="el" href="loginwindow_8h_source.html#l00067">67</a></p>
+
+<p class="reference">Используется в <a class="el" href="loginwindow_8cpp_source.html#l00016">LoginWindow()</a>.</p>
+
+</div>
+</div>
+<a id="a34b86987e0869518b0890c8ba466fc69" name="a34b86987e0869518b0890c8ba466fc69"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a34b86987e0869518b0890c8ba466fc69">&#9670;&#160;</a></span>btnLogin</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QPushButton* LoginWindow::btnLogin</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Кнопка отправки запроса авторизации. </p>
+
+<p class="definition">См. определение в файле <a class="el" href="loginwindow_8h_source.html">loginwindow.h</a> строка <a class="el" href="loginwindow_8h_source.html#l00065">65</a></p>
+
+<p class="reference">Используется в <a class="el" href="loginwindow_8cpp_source.html#l00016">LoginWindow()</a>.</p>
+
+</div>
+</div>
+<a id="a05b38437855f628ab645b7be99bc109b" name="a05b38437855f628ab645b7be99bc109b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a05b38437855f628ab645b7be99bc109b">&#9670;&#160;</a></span>btnRegister</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QPushButton* LoginWindow::btnRegister</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Кнопка перехода к форме регистрации. </p>
+
+<p class="definition">См. определение в файле <a class="el" href="loginwindow_8h_source.html">loginwindow.h</a> строка <a class="el" href="loginwindow_8h_source.html#l00066">66</a></p>
+
+<p class="reference">Используется в <a class="el" href="loginwindow_8cpp_source.html#l00016">LoginWindow()</a>.</p>
+
+</div>
+</div>
+<a id="a3d9627568d456c8793358e6108e40125" name="a3d9627568d456c8793358e6108e40125"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3d9627568d456c8793358e6108e40125">&#9670;&#160;</a></span>editLogin</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QLineEdit* LoginWindow::editLogin</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Поле ввода логина. </p>
+
+<p class="definition">См. определение в файле <a class="el" href="loginwindow_8h_source.html">loginwindow.h</a> строка <a class="el" href="loginwindow_8h_source.html#l00063">63</a></p>
+
+<p class="reference">Используется в <a class="el" href="loginwindow_8cpp_source.html#l00016">LoginWindow()</a> и <a class="el" href="loginwindow_8cpp_source.html#l00068">onLoginClicked()</a>.</p>
+
+</div>
+</div>
+<a id="a02471668e9f3776b6b6c3df7815cc73b" name="a02471668e9f3776b6b6c3df7815cc73b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a02471668e9f3776b6b6c3df7815cc73b">&#9670;&#160;</a></span>editPassword</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QLineEdit* LoginWindow::editPassword</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Поле ввода пароля (скрытый ввод). </p>
+
+<p class="definition">См. определение в файле <a class="el" href="loginwindow_8h_source.html">loginwindow.h</a> строка <a class="el" href="loginwindow_8h_source.html#l00064">64</a></p>
+
+<p class="reference">Используется в <a class="el" href="loginwindow_8cpp_source.html#l00016">LoginWindow()</a>, <a class="el" href="loginwindow_8cpp_source.html#l00068">onLoginClicked()</a> и <a class="el" href="loginwindow_8cpp_source.html#l00104">onMessageReceived()</a>.</p>
+
+</div>
+</div>
+<a id="a902ae075d080ca2d59d03e93eafcf433" name="a902ae075d080ca2d59d03e93eafcf433"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a902ae075d080ca2d59d03e93eafcf433">&#9670;&#160;</a></span>labelStatus</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QLabel* LoginWindow::labelStatus</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Метка для отображения статуса операции или ошибки. </p>
+
+<p class="definition">См. определение в файле <a class="el" href="loginwindow_8h_source.html">loginwindow.h</a> строка <a class="el" href="loginwindow_8h_source.html#l00068">68</a></p>
+
+<p class="reference">Используется в <a class="el" href="loginwindow_8cpp_source.html#l00016">LoginWindow()</a>, <a class="el" href="loginwindow_8cpp_source.html#l00068">onLoginClicked()</a> и <a class="el" href="loginwindow_8cpp_source.html#l00104">onMessageReceived()</a>.</p>
+
+</div>
+</div>
+<hr/>Объявления и описания членов классов находятся в файлах:<ul>
+<li>TaMP_Client/<a class="el" href="loginwindow_8h_source.html">loginwindow.h</a></li>
+<li>TaMP_Client/<a class="el" href="loginwindow_8cpp_source.html">loginwindow.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="class_login_window.html">LoginWindow</a></li>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
+  </ul>
+</div>
+</body>
+</html>
