@@ -1,0 +1,13 @@
+build/
+cmake-build-debug/
+.idea/
+*.pro.user
+*.pro.user.*
+Makefile
+*.o
+moc_*
+ui_*
+qrc_*
+.qmake.stash
+*.db
+docs/

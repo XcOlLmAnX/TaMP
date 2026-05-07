@@ -1,0 +1,60 @@
+/**
+ * @mainpage TaMP — Task and Math Platform
+ *
+ * @section intro_sec Описание проекта
+ *
+ * **TaMP** — клиент-серверное приложение на C++/Qt, реализующее:
+ * - систему аутентификации (регистрация, вход, восстановление пароля через email);
+ * - интерактивное исследование кусочно-заданной математической функции с графиком и таблицей.
+ *
+ * @section arch_sec Архитектура
+ *
+ * Проект разделён на два независимых подпроекта:
+ *
+ * | Подпроект       | Описание                                              |
+ * |-----------------|-------------------------------------------------------|
+ * | **TaMP_Client** | Qt Widgets GUI, TCP-клиент (QTcpSocket, Singleton)    |
+ * | **TaMP_Server** | Консольное Qt-приложение, TCP-сервер (Winsock2)       |
+ *
+ * @subsection client_subsec Клиентская часть (TaMP_Client)
+ *
+ * - TcpClient — синглтон-обёртка над QTcpSocket, единая точка сетевого ввода-вывода.
+ * - LoginWindow — форма авторизации.
+ * - RegisterWindow — форма регистрации с клиентской валидацией.
+ * - ResetPasswordWindow — трёхшаговый мастер восстановления пароля.
+ * - TaskWindow — главное окно: интерактивный QCustomPlot-график и таблица значений.
+ *
+ * @subsection server_subsec Серверная часть (TaMP_Server)
+ *
+ * - ServerInterface — TCP-сервер на Winsock2, однопоточный accept-loop.
+ * - ServerLogic — диспетчер команд; маршрутизирует запросы к обработчикам.
+ * - DbHandler — RAII-обёртка над Qt SQL/SQLite для хранения пользователей.
+ * - SmtpClient — отправка transactional email через Mail.ru SMTP/SSL.
+ * - protocol.h — описание текстового протокола и функции make*/parse*.
+ *
+ * @section protocol_sec Протокол обмена данными
+ *
+ * Текстовый протокол TaMP: строки UTF-8, разделённые `\n`, поля разделены `&`.
+ *
+ * | Запрос клиента                        | Ответ сервера             |
+ * |---------------------------------------|---------------------------|
+ * | `auth&<login>&<md5>`                  | `auth+&<name>` / `auth-`  |
+ * | `reg&<login>&<name>&<md5>&<email>`    | `reg+&<login>` / `reg-`   |
+ * | `reset&<login>`                       | `reset+&<masked>` / `reset-` |
+ * | `confirm&<login>&<code>`              | `confirm+` / `confirm-`   |
+ * | `newpass&<login>&<md5>`               | `newpass+` / `newpass-`   |
+ *
+ * @section build_sec Сборка
+ *
+ * Оба подпроекта собираются через CMake:
+ * @code{.sh}
+ *   cmake -B build && cmake --build build
+ * @endcode
+ *
+ * @section docs_sec Генерация документации
+ *
+ * @code{.sh}
+ *   doxygen Doxyfile
+ * @endcode
+ * Результат: `docs/html/index.html`
+ */
