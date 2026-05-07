@@ -88,6 +88,7 @@ Request parseRequest(const string& raw) {
     return req;
 }
 
+/// @cond
 string makeAuthOk(const string& name)         { return "auth+&"    + name        + "\n"; }
 string makeAuthFail()                          { return "auth-\n"; }
 string makeRegOk(const string& login)          { return "reg+&"     + login       + "\n"; }
@@ -100,3 +101,4 @@ string makeConfirmOk()                         { return "confirm+\n"; }
 string makeConfirmFail()                       { return "confirm-\n"; }
 string makeNewpassOk()                         { return "newpass+\n"; }
 string makeNewpassFail()                       { return "newpass-\n"; }
+/// @endcond

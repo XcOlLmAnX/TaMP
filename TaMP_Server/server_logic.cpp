@@ -18,8 +18,6 @@ ServerLogic::ServerLogic(DbHandler& db) : db(db) {}
 
 /**
  * @brief Диспетчеризирует запрос по типу команды.
- * @param req Разобранный запрос клиента.
- * @return Строка ответа в формате протокола TaMP.
  */
 string ServerLogic::handleRequest(const Request& req) {
     switch (req.type) {
@@ -34,8 +32,6 @@ string ServerLogic::handleRequest(const Request& req) {
 
 /**
  * @brief Проверяет учётные данные через DbHandler::authUser().
- * @param args {login, hash}. При размере < 2 возвращает ошибку.
- * @return makeAuthOk(name) или makeAuthFail().
  */
 string ServerLogic::handleAuth(const vector<string>& args) {
     if (args.size() < 2) return makeAuthFail();
@@ -45,8 +41,6 @@ string ServerLogic::handleAuth(const vector<string>& args) {
 
 /**
  * @brief Регистрирует нового пользователя через DbHandler::registerUser().
- * @param args {login, name, hash, email}. При размере < 4 возвращает ошибку.
- * @return makeRegOk(login) или makeRegFail().
  */
 string ServerLogic::handleReg(const vector<string>& args) {
     if (args.size() < 4) return makeRegFail();
@@ -60,8 +54,6 @@ string ServerLogic::handleReg(const vector<string>& args) {
  * @details Код хранится в resetCodes[login] до подтверждения.
  * Email маскируется: все символы до '@' кроме последних двух заменяются на '*****'.
  *
- * @param args {login}. При размере < 1 или отсутствии email возвращает ошибку.
- * @return makeResetOk(maskedEmail) или makeResetFail().
  */
 string ServerLogic::handleReset(const vector<string>& args) {
     if (args.size() < 1) return makeResetFail();
@@ -97,8 +89,6 @@ string ServerLogic::handleReset(const vector<string>& args) {
 
 /**
  * @brief Проверяет код из resetCodes против введённого пользователем.
- * @param args {login, code}. При размере < 2 возвращает ошибку.
- * @return makeConfirmOk() при совпадении, makeConfirmFail() иначе.
  */
 string ServerLogic::handleConfirm(const vector<string>& args) {
     if (args.size() < 2) return makeConfirmFail();
@@ -119,8 +109,6 @@ string ServerLogic::handleConfirm(const vector<string>& args) {
  * @details Код удаляется из resetCodes независимо от результата обновления пароля,
  * чтобы предотвратить повторное использование.
  *
- * @param args {login, hash}. При размере < 2 возвращает ошибку.
- * @return makeNewpassOk() при успехе, makeNewpassFail() иначе.
  */
 string ServerLogic::handleNewpass(const vector<string>& args) {
     if (args.size() < 2) return makeNewpassFail();

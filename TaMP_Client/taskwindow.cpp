@@ -69,7 +69,6 @@ TaskWindow::TaskWindow(QWidget* parent) : QWidget(parent) {
 
 /**
  * @brief Отображает имя пользователя в заголовке окна.
- * @param name Имя вошедшего пользователя.
  */
 void TaskWindow::setName(const QString& name) {
     setWindowTitle(QString(" [%1]").arg(name));
@@ -130,10 +129,6 @@ void TaskWindow::setupPlot() {
 
 /**
  * @brief Создаёт горизонтальную строку: метка параметра, слайдер, метка значения.
- * @param name       Отображаемое имя параметра (например, "a").
- * @param slider     Выходная ссылка для созданного QSlider.
- * @param valueLabel Выходная ссылка для метки текущего значения.
- * @return Layout строки управления.
  */
 QHBoxLayout* TaskWindow::makeSliderRow(const QString& name,
                                         QSlider*& slider,
@@ -162,11 +157,6 @@ QHBoxLayout* TaskWindow::makeSliderRow(const QString& name,
 
 /**
  * @brief Вычисляет значение кусочной функции в точке x.
- * @param x Аргумент.
- * @param a Параметр ветви x < 0.
- * @param b Показатель степени ветви 0 ≤ x < 2.
- * @param c Параметр ветви x ≥ 2.
- * @return Значение функции f(x).
  */
 double TaskWindow::f(double x, int a, int b, int c) {
     if (x < 0)      return -x + a;
@@ -176,9 +166,6 @@ double TaskWindow::f(double x, int a, int b, int c) {
 
 /**
  * @brief Перезаполняет таблицу: x от −10 до 10 с шагом 2, значения f(x).
- * @param a Параметр a.
- * @param b Параметр b.
- * @param c Параметр c.
  */
 void TaskWindow::updateTable(int a, int b, int c) {
     QVector<double> xs;

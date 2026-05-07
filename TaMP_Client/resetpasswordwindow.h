@@ -21,7 +21,7 @@
  * - Шаг 3: пользователь задаёт и подтверждает новый пароль.
  *
  * Все сетевые запросы идут через TcpClient. Ответы фильтруются по префиксам
- * <tt>reset</tt>, <tt>confirm</tt>, <tt>newpass</tt>.
+ * `reset`, `confirm`, `newpass`.
  *
  * @see TcpClient, LoginWindow
  */
@@ -45,7 +45,7 @@ private slots:
     /**
      * @brief Отправляет логин серверу для запроса кода восстановления.
      *
-     * @details Формат запроса: <tt>reset&<login>\n</tt>.
+     * @details Формат запроса: `reset&{login}\n`.
      * При пустом поле показывает ошибку, не отправляя запрос.
      */
     void onSendCodeClicked();
@@ -53,7 +53,7 @@ private slots:
     /**
      * @brief Отправляет введённый код подтверждения серверу.
      *
-     * @details Формат запроса: <tt>confirm&<login>&<code>\n</tt>.
+     * @details Формат запроса: `confirm&{login}&{code}\n`.
      * Логин сохранён в currentLogin с первого шага.
      */
     void onConfirmClicked();
@@ -61,7 +61,7 @@ private slots:
     /**
      * @brief Проверяет совпадение паролей, их сложность и отправляет MD5-хэш серверу.
      *
-     * @details Формат запроса: <tt>newpass&<login>&<md5hash>\n</tt>.
+     * @details Формат запроса: `newpass&{login}&{md5hash}\n`.
      * Требования к паролю: ≥ 6 символов, хотя бы одна цифра.
      */
     void onSetPasswordClicked();
@@ -70,12 +70,12 @@ private slots:
      * @brief Обрабатывает ответы сервера и управляет переключением шагов.
      *
      * @details Обрабатываемые префиксы:
-     * - <tt>reset+</tt> — переход на шаг 2, отображение замаскированного email;
-     * - <tt>reset-</tt> — ошибка: логин не найден;
-     * - <tt>confirm+</tt> — переход на шаг 3;
-     * - <tt>confirm-</tt> — ошибка: неверный код;
-     * - <tt>newpass+</tt> — успех, сигнал goToLogin();
-     * - <tt>newpass-</tt> — ошибка при сохранении пароля.
+     * - `reset+` — переход на шаг 2, отображение замаскированного email;
+     * - `reset-` — ошибка: логин не найден;
+     * - `confirm+` — переход на шаг 3;
+     * - `confirm-` — ошибка: неверный код;
+     * - `newpass+` — успех, сигнал goToLogin();
+     * - `newpass-` — ошибка при сохранении пароля.
      *
      * @param message Строка ответа от TcpClient::messageReceived().
      */

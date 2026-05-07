@@ -21,7 +21,6 @@ TcpClient* TcpClient::getInstance() {
 
 /**
  * @brief Создаёт сокет и подключает его сигналы к слотам этого класса.
- * @param parent Родительский QObject.
  */
 TcpClient::TcpClient(QObject* parent) : QObject(parent) {
     socket = new QTcpSocket(this);
@@ -41,8 +40,6 @@ TcpClient::TcpClient(QObject* parent) : QObject(parent) {
 
 /**
  * @brief Инициирует асинхронное подключение к серверу.
- * @param host Адрес сервера.
- * @param port Порт сервера.
  */
 void TcpClient::connectToServer(const QString& host, int port) {
     socket->connectToHost(host, port);
@@ -50,7 +47,6 @@ void TcpClient::connectToServer(const QString& host, int port) {
 
 /**
  * @brief Отправляет UTF-8 строку на сервер, если соединение активно.
- * @param message Сообщение для отправки.
  */
 void TcpClient::sendMessage(const QString& message) {
     if (isConnected()) {

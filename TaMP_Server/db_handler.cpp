@@ -47,9 +47,6 @@ void DbHandler::initTables() {
 
 /**
  * @brief Ищет пользователя по логину и MD5-хэшу пароля.
- * @param login Логин.
- * @param hash  MD5-хэш пароля.
- * @return Поле name при совпадении, пустая строка иначе.
  */
 std::string DbHandler::authUser(const std::string& login, const std::string& hash) {
     QSqlQuery q(db);
@@ -64,11 +61,6 @@ std::string DbHandler::authUser(const std::string& login, const std::string& has
 
 /**
  * @brief Вставляет новую запись в таблицу users.
- * @param login Логин (UNIQUE).
- * @param name  Имя.
- * @param hash  MD5-хэш пароля.
- * @param email Email.
- * @return @c true при успехе, @c false при нарушении UNIQUE-ограничения (логин занят).
  */
 bool DbHandler::registerUser(const std::string& login, const std::string& name,
                               const std::string& hash, const std::string& email) {
@@ -83,8 +75,6 @@ bool DbHandler::registerUser(const std::string& login, const std::string& name,
 
 /**
  * @brief Проверяет наличие строки с указанным email в таблице users.
- * @param email Email для поиска.
- * @return @c true если запись найдена.
  */
 bool DbHandler::emailExists(const std::string& email) {
     QSqlQuery q(db);
@@ -96,9 +86,6 @@ bool DbHandler::emailExists(const std::string& email) {
 
 /**
  * @brief Обновляет поле hash у записи с указанным email.
- * @param email Email пользователя.
- * @param hash  Новый MD5-хэш пароля.
- * @return @c true если запрос выполнен и изменена хотя бы одна строка.
  */
 bool DbHandler::updatePassword(const std::string& email, const std::string& hash) {
     QSqlQuery q(db);
@@ -110,8 +97,6 @@ bool DbHandler::updatePassword(const std::string& email, const std::string& hash
 
 /**
  * @brief Возвращает поле email по логину пользователя.
- * @param login Логин.
- * @return Строка email при нахождении, пустая строка иначе.
  */
 std::string DbHandler::getEmailByLogin(const std::string& login) {
     QSqlQuery q(db);

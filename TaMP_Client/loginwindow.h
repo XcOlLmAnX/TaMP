@@ -14,8 +14,8 @@
  * @class LoginWindow
  * @brief Форма входа в систему с полями логина и пароля.
  *
- * @details Отправляет серверу запрос вида <tt>auth&<login>&<md5(password)>\n</tt>
- * и обрабатывает ответы с префиксами <tt>auth+</tt> (успех) и <tt>auth-</tt> (ошибка).
+ * @details Отправляет серверу запрос вида `auth&{login}&{md5(password)}\n`
+ * и обрабатывает ответы с префиксами `auth+` (успех) и `auth-` (ошибка).
  * При успешном входе испускает loginSuccess() с именем пользователя.
  *
  * @see TcpClient, RegisterWindow, ResetPasswordWindow

@@ -115,7 +115,7 @@ QWidget* ResetPasswordWindow::makeStep3() {
 }
 
 /**
- * @brief Проверяет поле логина и отправляет запрос <tt>reset&<login>\n</tt>.
+ * @brief Проверяет поле логина и отправляет запрос `reset&{login}\n`.
  */
 void ResetPasswordWindow::onSendCodeClicked() {
     QString login = editLogin->text().trimmed();
@@ -130,7 +130,7 @@ void ResetPasswordWindow::onSendCodeClicked() {
 }
 
 /**
- * @brief Проверяет поле кода и отправляет запрос <tt>confirm&<login>&<code>\n</tt>.
+ * @brief Проверяет поле кода и отправляет запрос `confirm&{login}&{code}\n`.
  */
 void ResetPasswordWindow::onConfirmClicked() {
     QString code = editCode->text().trimmed();
@@ -145,7 +145,7 @@ void ResetPasswordWindow::onConfirmClicked() {
 }
 
 /**
- * @brief Валидирует совпадение и сложность паролей, затем отправляет <tt>newpass&<login>&<md5>\n</tt>.
+ * @brief Валидирует совпадение и сложность паролей, затем отправляет `newpass&{login}&{md5}\n`.
  */
 void ResetPasswordWindow::onSetPasswordClicked() {
     QString p1 = editNewPassword->text().trimmed();

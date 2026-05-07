@@ -20,9 +20,9 @@ const int     SmtpClient::smtpPort = 465;
  * @brief Ищет файл email.txt по трём путям и возвращает значение по ключу.
  *
  * @details Пути поиска (в порядке приоритета):
- * 1. <applicationDir>/email.txt
- * 2. <applicationDir>/../email.txt
- * 3. <currentDir>/email.txt
+ * 1. applicationDir/email.txt
+ * 2. applicationDir/../email.txt
+ * 3. currentDir/email.txt
  *
  * @param key Ключ для поиска в файле (например, "email" или "key").
  * @return Значение после символа '=' с обрезанными пробелами, или пустая строка.
@@ -209,9 +209,6 @@ static bool doSend(const QString& toEmail,
 
 /**
  * @brief Отправляет письмо с кодом верификации на указанный email.
- * @param toEmail Email получателя.
- * @param code    6-значный код.
- * @return @c true при успешной отправке.
  */
 bool SmtpClient::sendVerificationCode(const QString& toEmail, const QString& code) {
     QString subject = QString::fromUtf8("Код подтверждения TaMP");
@@ -221,10 +218,6 @@ bool SmtpClient::sendVerificationCode(const QString& toEmail, const QString& cod
 
 /**
  * @brief Отправляет письмо с кодом сброса пароля и приветствием по имени пользователя.
- * @param toEmail Email получателя.
- * @param login   Логин пользователя для приветствия в теле письма.
- * @param code    6-значный код сброса.
- * @return @c true при успешной отправке.
  */
 bool SmtpClient::sendPasswordResetCode(const QString& toEmail,
                                       const QString& login,

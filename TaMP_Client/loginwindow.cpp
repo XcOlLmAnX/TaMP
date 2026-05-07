@@ -62,7 +62,7 @@ LoginWindow::LoginWindow(QWidget* parent) : QWidget(parent) {
 /**
  * @brief Проверяет заполненность полей, MD5-хэширует пароль и отправляет запрос серверу.
  *
- * @details Формат запроса: <tt>auth&<login>&<md5hash>\n</tt>.
+ * @details Формат запроса: `auth&{login}&{md5hash}\n`.
  * При незаполненных полях выводит сообщение об ошибке и устанавливает фокус на поле.
  */
 void LoginWindow::onLoginClicked() {
@@ -96,8 +96,8 @@ void LoginWindow::onLoginClicked() {
 /**
  * @brief Обрабатывает ответы сервера с префиксом «auth».
  *
- * @details Формат успешного ответа: <tt>auth+&<name></tt>.
- * Формат ошибки: <tt>auth-</tt>.
+ * @details Формат успешного ответа: `auth+&{name}`.
+ * Формат ошибки: `auth-`.
  *
  * @param message Строка ответа от сервера.
  */

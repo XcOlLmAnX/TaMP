@@ -65,7 +65,7 @@ RegisterWindow::RegisterWindow(QWidget* parent) : QWidget(parent) {
  * @details Проверяет: заполненность всех полей, корректность формата email
  * (наличие '@' и домена с точкой), длину пароля (≥ 6 символов) и наличие
  * хотя бы одной цифры в пароле. При прохождении всех проверок отправляет
- * серверу запрос: <tt>reg&<login>&<name>&<md5hash>&<email>\n</tt>.
+ * серверу запрос: `reg&{login}&{name}&{md5hash}&{email}\n`.
  */
 void RegisterWindow::onRegisterClicked() {
     QString login    = editLogin->text().trimmed();
@@ -135,8 +135,8 @@ void RegisterWindow::onRegisterClicked() {
 /**
  * @brief Обрабатывает ответы сервера с префиксом «reg».
  *
- * @details Формат успешного ответа: <tt>reg+&<login></tt>.
- * Формат ошибки (логин занят): <tt>reg-</tt>.
+ * @details Формат успешного ответа: `reg+&{login}`.
+ * Формат ошибки (логин занят): `reg-`.
  *
  * @param message Строка ответа от сервера.
  */
