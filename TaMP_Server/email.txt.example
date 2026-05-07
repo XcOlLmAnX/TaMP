@@ -1,6 +1,6 @@
 # Учётные данные для SMTP Mail.ru
-# Скопируй этот файл: cp email.txt.example email.txt
-# Затем заполни реальными значениями (файл не попадает в git)
+# email = your@mail.ru (Ваш Mail.ru)
+# key   = app_password_here (Специальный ключ)
 
 email = your@mail.ru
 key   = app_password_here
