@@ -5,7 +5,9 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
-set(CMAKE_PREFIX_PATH "C:/Qt/6.11.0/mingw_64")
+if(WIN32)
+    set(CMAKE_PREFIX_PATH "C:/Qt/6.11.0/mingw_64")
+endif()
 
 find_package(Qt6 REQUIRED COMPONENTS Core Network Sql)
 
@@ -27,5 +29,4 @@ target_link_libraries(TaMP PRIVATE
         Qt6::Core
         Qt6::Network
         Qt6::Sql
-        ws2_32
 )
